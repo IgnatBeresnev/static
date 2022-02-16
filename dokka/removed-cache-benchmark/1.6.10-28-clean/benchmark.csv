@@ -1,0 +1,20 @@
+scenario,default
+version,Gradle 6.8.3
+tasks,clean dokkaHtmlMultiModule
+value,total execution time
+warm-up build #1,144698
+warm-up build #2,116963
+warm-up build #3,121866
+warm-up build #4,103772
+warm-up build #5,108598
+warm-up build #6,107980
+measured build #1,105176
+measured build #2,105062
+measured build #3,104431
+measured build #4,107813
+measured build #5,101751
+measured build #6,101285
+measured build #7,106156
+measured build #8,104096
+measured build #9,111287
+measured build #10,111094
