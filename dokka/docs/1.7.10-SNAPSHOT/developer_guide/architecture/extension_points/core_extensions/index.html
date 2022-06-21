@@ -1419,9 +1419,11 @@ pages generated for individual modules and assembles everything together, creati
 modules and so on.</p>
 <h3 id="singlemodulegeneration-stages">SingleModuleGeneration stages<a class="headerlink" href="#singlemodulegeneration-stages" title="Permanent link">&para;</a></h3>
 <p>When developing a feature or a plugin, it's more convenient to think that you are generating documentation for single
-module projects, believeing that Dokka will somehow take care of the rest in multimodule environment.</p>
+module projects, believing that Dokka will somehow take care of the rest in multimodule environment.</p>
 <p><code>SingleModuleGeneration</code> is at heart of generating documentation and utilizes other core extension points, so
 it's worth going over its stages. </p>
+<p>Below you can see the transformations of <a href="../../architecture_overview/#overview-of-data-model">Dokka's models</a> and 
+extension interfaces responsible for each one. Notice how <code>Documentables</code> and <code>Pages</code> are transformed multiple times.</p>
 <pre class="mermaid"><code>flowchart TD
     Input -- SourceToDocumentableTranslator --&gt; 
     docFirst[Documentables] -- PreMergeDocumentableTransformer --&gt; 

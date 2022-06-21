@@ -1346,11 +1346,11 @@ Output formats are explained in <a href="../../introduction/#output-formats">the
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>Dokka extracts the information about sourcesets from the Kotlin Gradle plugin.
 Therefore, if you are using Dokka in a <a href="https://docs.gradle.org/current/userguide/custom_plugins.html#sec:precompiled_plugins">precompiled script plugin</a>,
 you will have to add a depencency to the Kotlin Gradle Plugin as well
 (<code>implementation(kotlin("gradle-plugin", "&lt;kotlin-version&gt;"))</code> resp. <code>implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:&lt;kotlin-version&gt;")</code>).</p>
+</div>
 <h2 id="configuration-options">Configuration options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <p>Dokka documents single-platform as well as multi-platform projects.
 Most of the configuration options are set per one source set.
@@ -1541,8 +1541,8 @@ and configured automatically although test source sets are suppressed</p>
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>If you want to share the configuration between source sets, you can use Gradle's <code>configureEach</code></p>
+</div>
 <h2 id="applying-plugins">Applying plugins<a class="headerlink" href="#applying-plugins" title="Permanent link">&para;</a></h2>
 <p>Dokka plugin creates Gradle configuration for each output format in the form of <code>dokka${format}Plugin</code> (or <code>dokka${format}PartialPlugin</code> for multi-module tasks) :</p>
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span> <span class="p">{</span>
@@ -1558,8 +1558,8 @@ and configured automatically although test source sets are suppressed</p>
 </code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-</div>
 <p>Please note that <code>dokkaJavadoc</code> task will properly document only single <code>jvm</code> source set</p>
+</div>
 <p>To generate the documentation, use the appropriate <code>dokka${format}</code> Gradle task:</p>
 <div class="highlight"><pre><span></span><code>./gradlew dokkaHtml
 </code></pre></div>
@@ -1587,8 +1587,8 @@ For example, you can add <code>DokkaBase</code> to gain access to aforementioned
 <h2 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-</div>
 <p>Make sure you apply Dokka after <code>com.android.library</code> and <code>kotlin-android</code>.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="n">buildscript</span> <span class="p">{</span>
     <span class="n">dependencies</span> <span class="p">{</span>
         <span class="n">classpath</span><span class="p">(</span><span class="s">&quot;org.jetbrains.kotlin:kotlin-gradle-plugin:</span><span class="si">${</span><span class="n">kotlin_version</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>

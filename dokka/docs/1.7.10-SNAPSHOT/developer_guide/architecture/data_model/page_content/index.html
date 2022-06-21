@@ -1296,7 +1296,8 @@ should be created as (<code>.html</code>, <code>.md</code>, etc) and how is up t
 <p>Subclasses of <code>PageNode</code> represent different kinds of rendered pages, such as <code>ModulePage</code>, <code>PackagePage</code>,
 <code>ClasslikePage</code>, <code>MemberPage</code> (properties, functions), etc.</p>
 <p>The Page Model is a tree structure, with <code>RootPageNode</code> at the root.</p>
-<p>Here's an example of how an arbitrary <code>Page</code> tree might look like:</p>
+<p>Here's an example of how an arbitrary <code>Page</code> tree might look like for a module with 3 packages, one of which contains
+a top level function, top level property and a class, inside which there's a function and a property:</p>
 <pre class="mermaid"><code>flowchart TD
     RootPageNode --&gt; firstPackage[PackagePageNode]
     RootPageNode --&gt; secondPackage[PackagePageNode]
@@ -1305,7 +1306,9 @@ should be created as (<code>.html</code>, <code>.md</code>, etc) and how is up t
     firstPackage --&gt; firstPackageSecondMember[MemberPageNode - Property]
     firstPackage ---&gt; firstPackageClasslike[ClasslikePageNode - Class]
     firstPackageClasslike --&gt; firstPackageClasslikeFirstMember[MemberPageNode - Function]
-    firstPackageClasslike --&gt; firstPackageClasslikeSecondMember[MemberPageNode - Property]</code></pre>
+    firstPackageClasslike --&gt; firstPackageClasslikeSecondMember[MemberPageNode - Property]
+    secondPackage --&gt; etcOne[...]
+    thirdPackage --&gt; etcTwo[...]</code></pre>
 <p>Almost all pages are derivatives of <code>ContentPage</code> - it's the type of <code>Page</code> that has <code>Content</code> on it.</p>
 <h2 id="content-model">Content Model<a class="headerlink" href="#content-model" title="Permanent link">&para;</a></h2>
 <p>Content model describes how the actual <code>Page</code> content is presented. The important thing to understand is that it's

@@ -1232,26 +1232,28 @@
 <h1 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
 <p>Normally, you would think that a tool like <code>Dokka</code> simply parses some programming language sources and generates
 <code>HTML</code> pages for whatever it sees along the way, with little to no abstractions. That would be the simplest and
-shortest way to implement a documentation engine.</p>
+shortest way to implement an API documentation engine.</p>
 <p>However, it was clear that <code>Dokka</code> may need to generate documentation from various sources (not only <code>Kotlin</code>), that users
 might request additional output formats (like <code>Markdown</code>), that users might need additional features like supporting
 custom <code>KDoc</code> tags or rendering <code>mermaid.js</code> diagrams - all these things would require changing a lot of code inside
 <code>Dokka</code> itself if all solutions were hardcoded.</p>
-<p>For this reason, <code>Dokka</code> was built from the ground up to be extensible and customizable. You can think of the general
-flow of generating documentation with <code>Dokka</code> as mapping one intermediate representation / abstraction into another.
-You, as a <code>Dokka</code> developer or a plugin writer, can use extension points and introduce selective changes to the
-model on one particular level without touching the rest.</p>
+<p>For this reason, <code>Dokka</code> was built from the ground up to be easily extensible and customizable by adding several layers
+of abstractions to the data model, and by providing pluggable extension points, giving one the ability to introduce
+selective changes on a single level.</p>
 <h2 id="overview-of-data-model">Overview of data model<a class="headerlink" href="#overview-of-data-model" title="Permanent link">&para;</a></h2>
-<p>Below you can find the general flow and transformation of Dokka's models.</p>
+<p>Generating API documentation begins with <code>Input</code> source files (<code>.kts</code>, <code>.java</code>, etc) and ends with some <code>Output</code> files
+(<code>.html</code>/<code>.md</code> pages, etc). However, to allow for extensibility and customization, several input and output independent
+abstractions have been added to the data model.</p>
+<p>Below you can find the general pipeline of processing data gathered from sources and the explanation for each stage.</p>
 <pre class="mermaid"><code>flowchart TD
-    Input --&gt; Documentables --&gt; Documentables --&gt; Pages --&gt; Pages --&gt; Output</code></pre>
+    Input --&gt; Documentables --&gt; Pages --&gt; Output</code></pre>
 <ul>
 <li><code>Input</code> - generalization of sources, by default <code>Kotlin</code>/<code>Java</code> sources, but could be virtually anything</li>
-<li><code>Documentables</code> - unified data model that represents any parsed sources as a tree. 
-  Examples: class/function/package/property</li>
-<li><code>Pages</code> - universal model that represents pages (e.g a function/property page) and its content
+<li><code>Documentables</code> - unified data model that represents <em>any</em> parsed sources as a tree, independent of the source
+  language. Examples of a <code>Documentable</code>: class, function, package, property, etc</li>
+<li><code>Pages</code> - universal model that represents output pages (e.g a function/property page) and the content it's composed of
   (lists, text, code blocks) that the users needs to see. Not to be confused with <code>.html</code> pages. Goes hand in hand
-  with so-called Content Model.</li>
+  with so-called <code>Content</code> model.</li>
 <li><code>Output</code> - specific output format like <code>HTML</code>/<code>Markdown</code>/<code>Javadoc</code>/etc. This is a mapping of pages/content model to
   some human-readable and visual representation. For instance:<ul>
 <li><code>PageNode</code> is mapped as <ul>
@@ -1272,16 +1274,22 @@ model on one particular level without touching the rest.</p>
 </ul>
 </li>
 </ul>
-<p>For a deeper dive into Dokka's data model with more examples and details,
+<p>You, as a <code>Dokka</code> developer or a plugin writer, can use extension points and introduce selective changes to the
+model on one particular level without touching everything else. </p>
+<p>For instance, if you wanted to make some annotation/function/class invisible in the final documentation, you would only
+need to modify the <code>Documentables</code> model by filtering it out. If you wanted to display all overloaded methods on the same
+page instead of on separate ones, you would only need to modify the <code>Page</code> model by merging multiple pages into one, 
+and so on.</p>
+<p>For a deeper dive into Dokka's model with more examples and details,
 see sections about <a href="../data_model/documentables/">Documentables</a> and <a href="../data_model/page_content/">Page/Content</a></p>
+<p>For an overview of existing extension points that let you transform Dokka's models, see 
+<a href="../extension_points/core_extensions/">Core extension points</a> and <a href="../extension_points/base_extensions/">Base extensions</a>.</p>
 <h2 id="overview-of-extension-points">Overview of extension points<a class="headerlink" href="#overview-of-extension-points" title="Permanent link">&para;</a></h2>
 <p>An extension point usually represents some pluggable interface that performs an action during one of the stages of
 generating documentation. An extension is therefore an implementation of that interface which is extending the
 extension point.</p>
 <p>You can create extension points, provide your own implementations (extensions) and configure them. All of
 this is possible with Dokka's plugin/extension point API.</p>
-<p>For a deeper dive into extensions and extension points with more examples and details, see
-<a href="../extension_points/introduction/">Introduction to Extensions</a>.</p>
 <p>Here's a sneak peek of the DSL:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyPlugin</span> <span class="p">:</span> <span class="n">DokkaPlugin</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// create an extension point for other developers</span>
@@ -1319,6 +1327,10 @@ this is possible with Dokka's plugin/extension point API.</p>
     <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">signature</span><span class="p">(</span><span class="n">documentable</span><span class="p">:</span> <span class="n">Documentable</span><span class="p">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ContentNode</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">listOf</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>For a deeper dive into extensions and extension points with more examples and details, see
+<a href="../extension_points/introduction/">Introduction to Extensions</a>.</p>
+<p>For an overview of existing extension points, see <a href="../extension_points/core_extensions/">Core extension points</a> and
+<a href="../extension_points/base_extensions/">Base extensions</a>.</p>
 <h2 id="historical-context">Historical context<a class="headerlink" href="#historical-context" title="Permanent link">&para;</a></h2>
 <p>This is a second iteration of Dokka that was built from scratch.</p>
 <p>If you want to learn more about why Dokka has been designed this way, watch this great talk by Paweł Marks:

@@ -1362,7 +1362,20 @@ and <a href="https://plugins.jetbrains.com/docs/intellij/psi.html">Psi</a>
 <li><code>DefaultPsiToDocumentableTranslator</code> - responsible for <code>Java</code> -&gt; <code>Documentable</code> mapping</li>
 </ul>
 <p>Upon creation, it's a collection of trees, each with <code>DModule</code> as root.</p>
-<p>Here's an example of how an arbitrary <code>Documentable</code> tree might look like:</p>
+<p>Take some arbitrary <code>Kotlin</code> source code that is located within the same module:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Package 1</span>
+<span class="kd">class</span> <span class="nc">Clazz</span><span class="p">(</span><span class="kd">val</span> <span class="nv">property</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">fun</span> <span class="nf">function</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">fun</span> <span class="nf">topLevelFunction</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="c1">// Package 2</span>
+<span class="kd">enum</span> <span class="kd">class</span> <span class="nc">Enum</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="kd">val</span> <span class="nv">topLevelProperty</span><span class="p">:</span> <span class="kt">String</span>
+</code></pre></div>
+<p>This would be represented roughly as the following <code>Documentable</code> tree:</p>
 <pre class="mermaid"><code>flowchart TD
     DModule --&gt; firstPackage[DPackage]
     firstPackage --&gt; DClass
