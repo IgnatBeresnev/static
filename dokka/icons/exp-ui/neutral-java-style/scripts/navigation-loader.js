@@ -15,11 +15,22 @@ displayNavigationFromPage = () => {
     }).then(() => {
         revealNavigationForCurrentPage()
     }).then(() => {
-        document.querySelector('div.sideMenuPart[data-active]').scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        })
+        let selectedElement = document.querySelector('div.sideMenuPart[data-active]')
+
+        let isPackageElement = selectedElement.children.length > 1
+        if (isPackageElement) {
+            // if package is selected or linked, it makes sense to align it to top
+            // so that you can see all the members it contains
+            selectedElement.scrollIntoView(true)
+        } else {
+            // if a member within a package is linked, it makes sense to center it since it,
+            // this should make it easier to look at surrounding members
+            selectedElement.scrollIntoView({
+                behavior: 'auto',
+                block: 'center',
+                inline: 'center'
+            })
+        }
     })
     document.querySelectorAll('.footer a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
