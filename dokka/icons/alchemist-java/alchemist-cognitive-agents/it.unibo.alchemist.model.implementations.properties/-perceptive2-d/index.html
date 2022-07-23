@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Perceptive2D</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-cognitive-agents::it.unibo.alchemist.model.implementations.properties/Perceptive2D///PointingToDeclaration//1511080972">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-cognitive-agents</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.implementations.properties</a><span class="delimiter">/</span><a href="index.html">Perceptive2D</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Perceptive2D</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Perceptive2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>environment<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.environments/-physics2-d-environment/index.html">Physics2DEnvironment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>fieldOfView<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.geometry.euclidean2d/-influence-sphere2-d/index.html">InfluenceSphere2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator"> = </span>FieldOfView2D(environment, node, defaultFieldOfViewDepth, defaultFieldOfViewAperture)</span></span><span class="token punctuation">)</span> : <a href="../../it.unibo.alchemist.model.interfaces.properties/-perceptive-property/index.html">PerceptiveProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Base implementation of a pedestrian's capability to influence each other in a 2D space.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="-1925869638%2FConstructors%2F1511080972" anchor-label="Perceptive2D" id="-1925869638%2FConstructors%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-cognitive-agents:dokkaHtmlPartial/main" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-perceptive2-d.html"><span><span>Perceptive2D</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1925869638%2FConstructors%2F1511080972"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt; </span><a href="-perceptive2-d.html"><span class="token function">Perceptive2D</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.environments/-physics2-d-environment/index.html">Physics2DEnvironment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;fieldOfView<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.geometry.euclidean2d/-influence-sphere2-d/index.html">InfluenceSphere2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator"> = </span>FieldOfView2D(environment, node, defaultFieldOfViewDepth, defaultFieldOfViewAperture)</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Types</h2>
+      <div class="table" data-togglable="Types"><a data-name="-429259118%2FClasslikes%2F1511080972" anchor-label="Companion" id="-429259118%2FClasslikes%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-cognitive-agents:dokkaHtmlPartial/main" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-429259118%2FClasslikes%2F1511080972"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="308960742%2FFunctions%2F1511080972" anchor-label="cloneOnNewNode" id="308960742%2FFunctions%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-cognitive-agents:dokkaHtmlPartial/main" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="clone-on-new-node.html"><span>clone</span><wbr><span>On</span><wbr><span>New</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="308960742%2FFunctions%2F1511080972"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="clone-on-new-node.html"><span class="token function">cloneOnNewNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">Perceptive2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-1737800936%2FProperties%2F1511080972" anchor-label="environment" id="-1737800936%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-cognitive-agents:dokkaHtmlPartial/main" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="environment.html"><span><span>environment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1737800936%2FProperties%2F1511080972"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><a data-name="-1737800936%2FProperties%2F1511080972" anchor-label="environment" id="-1737800936%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="environment.html">environment</a><span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.environments/-physics2-d-environment/index.html">Physics2DEnvironment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1737800936%2FProperties%2F1511080972" anchor-label="environment" id="-1737800936%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a><p class="paragraph">The environment where <a href="node.html">node</a> is moving.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1853947861%2FProperties%2F1511080972" anchor-label="fieldOfView" id="1853947861%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-cognitive-agents:dokkaHtmlPartial/main" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="field-of-view.html"><span>field</span><wbr><span>Of</span><wbr><span><span>View</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1853947861%2FProperties%2F1511080972"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><a data-name="1853947861%2FProperties%2F1511080972" anchor-label="fieldOfView" id="1853947861%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="field-of-view.html">fieldOfView</a><span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.geometry.euclidean2d/-influence-sphere2-d/index.html">InfluenceSphere2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1853947861%2FProperties%2F1511080972" anchor-label="fieldOfView" id="1853947861%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a><p class="paragraph">The field of view of the pedestrian.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="185829805%2FProperties%2F1511080972" anchor-label="node" id="185829805%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-cognitive-agents:dokkaHtmlPartial/main" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="node.html"><span><span>node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="185829805%2FProperties%2F1511080972"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><a data-name="185829805%2FProperties%2F1511080972" anchor-label="node" id="185829805%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="node.html">node</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1992236208%2FProperties%2F1511080972" anchor-label="senses" id="-1992236208%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-cognitive-agents:dokkaHtmlPartial/main" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-perceptive-property/senses.html"><span><span>senses</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1992236208%2FProperties%2F1511080972"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-cognitive-agents:dokkaHtmlPartial/main"><a data-name="-1992236208%2FProperties%2F1511080972" anchor-label="senses" id="-1992236208%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-perceptive-property/senses.html">senses</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces.geometry/-influence-sphere/index.html">InfluenceSphere</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1992236208%2FProperties%2F1511080972" anchor-label="senses" id="-1992236208%2FProperties%2F1511080972" data-filterable-set=":alchemist-cognitive-agents:dokkaHtmlPartial/main"></a><p class="paragraph">The list of influence spheres belonging to this pedestrian (by default, only its <a href="field-of-view.html">fieldOfView</a>).</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

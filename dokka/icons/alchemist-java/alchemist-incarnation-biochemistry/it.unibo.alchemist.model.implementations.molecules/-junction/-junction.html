@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Junction</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-incarnation-biochemistry::it.unibo.alchemist.model.implementations.molecules/Junction/Junction/#java.lang.String#java.util.Map<it.unibo.alchemist.model.implementations.molecules.Biomolecule,java.lang.Double>#java.util.Map<it.unibo.alchemist.model.implementations.molecules.Biomolecule,java.lang.Double>/PointingToDeclaration//1857472442">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-incarnation-biochemistry</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.implementations.molecules</a><span class="delimiter">/</span><a href="index.html">Junction</a><span class="delimiter">/</span><a href="-junction.html">Junction</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Junction</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-junction.html"><span class="token function">Junction</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;name<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;moleculesInCurrentNode<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="../-biomolecule/index.html">Biomolecule</a><span class="token punctuation">, </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html">Double</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;moleculesInNeighborNode<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a><span class="token operator">&lt;</span><a href="../-biomolecule/index.html">Biomolecule</a><span class="token punctuation">, </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html">Double</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Build a junction.</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>name</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the name of the junction.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span>molecules</span><wbr><span>In</span><wbr><span>Current</span><wbr><span><span>Node</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">A map of molecules (with their concentration) which was in the current node. When the junction is removed the molecules will be released in the current node.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span>molecules</span><wbr><span>In</span><wbr><span>Neighbor</span><wbr><span><span>Node</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">A map of molecules (with their concentration) which was in the current node. When the junction is removed the molecules will be released in the current node.</p></div></div></div></div></div></div></div><br><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-junction.html"><span class="token function">Junction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">toClone<span class="token operator">: </span><a href="index.html">Junction</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Builds a junction from another junction.</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span>to</span><wbr><span><span>Clone</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the junction to clone.</p></div></div></div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

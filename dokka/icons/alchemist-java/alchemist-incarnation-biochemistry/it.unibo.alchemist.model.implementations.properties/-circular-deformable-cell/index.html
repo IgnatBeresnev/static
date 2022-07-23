@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>CircularDeformableCell</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-incarnation-biochemistry::it.unibo.alchemist.model.implementations.properties/CircularDeformableCell///PointingToDeclaration//1857472442">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-incarnation-biochemistry</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.implementations.properties</a><span class="delimiter">/</span><a href="index.html">CircularDeformableCell</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Circular</span><wbr><span>Deformable</span><wbr><span><span>Cell</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">CircularDeformableCell</a>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>maximumDiameter<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>rigidity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>junctions<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../it.unibo.alchemist.model.implementations.molecules/-junction/index.html">Junction</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator"> = </span>LinkedHashMap()</span></span><span class="token punctuation">)</span> : <a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.implementations.properties/-abstract-node-property/index.html">AbstractNodeProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt; </span>, <a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-deformable-cell-property/index.html">CircularDeformableCellProperty</a>, <a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-cell-property/index.html">CircularCellProperty</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Base implementation of a <a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-cell-property/index.html">CircularCellProperty</a>.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="-305499394%2FConstructors%2F1857472442" anchor-label="CircularDeformableCell" id="-305499394%2FConstructors%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-circular-deformable-cell.html"><span>Circular</span><wbr><span>Deformable</span><wbr><span><span>Cell</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-305499394%2FConstructors%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="-circular-deformable-cell.html"><span class="token function">CircularDeformableCell</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;maximumDiameter<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;rigidity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;junctions<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../it.unibo.alchemist.model.implementations.molecules/-junction/index.html">Junction</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token operator"> = </span>LinkedHashMap()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-1468430670%2FFunctions%2F1857472442" anchor-label="addJunction" id="-1468430670%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/add-junction.html"><span>add</span><wbr><span><span>Junction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1468430670%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/add-junction.html"><span class="token function">addJunction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">junction<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.implementations.molecules/-junction/index.html">Junction</a><span class="token punctuation">, </span></span><span class="parameter ">neighbor<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Add a junction to the current node. <a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/add-junction.html">junction</a> the junction. <a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/add-junction.html">neighbor</a> the neighbor node at the other side of the junction.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1655510379%2FFunctions%2F1857472442" anchor-label="addPolarizationVersor" id="1655510379%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-deformable-cell-property/index.html#1655510379%2FFunctions%2F1857472442"><span>add</span><wbr><span>Polarization</span><wbr><span><span>Versor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1655510379%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-deformable-cell-property/index.html#1655510379%2FFunctions%2F1857472442"><span class="token function">addPolarizationVersor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">versor<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">add <a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/add-polarization-versor.html">versor</a> to the polarization versor inside the cell; useful for considering the combination of various stimuli in a cell.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="978129610%2FFunctions%2F1857472442" anchor-label="cloneOnNewNode" id="978129610%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-deformable-cell-property/index.html#978129610%2FFunctions%2F1857472442"><span>clone</span><wbr><span>On</span><wbr><span>New</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="978129610%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-deformable-cell-property/index.html#978129610%2FFunctions%2F1857472442"><span class="token function">cloneOnNewNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node-property/index.html">NodeProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2138909572%2FFunctions%2F1857472442" anchor-label="containsJunction" id="-2138909572%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/contains-junction.html"><span>contains</span><wbr><span><span>Junction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2138909572%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/contains-junction.html"><span class="token function">containsJunction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">junction<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.implementations.molecules/-junction/index.html">Junction</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Return true if a junction is present in the current node, false otherwise. Note: a junction is considered present if the method junction.equals(j) return true. <a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/contains-junction.html">junction</a> the junction.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1986025598%2FFunctions%2F1857472442" anchor-label="getAllNodesLinkWithJunction" id="1986025598%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/get-all-nodes-link-with-junction.html"><span>get</span><wbr><span>All</span><wbr><span>Nodes</span><wbr><span>Link</span><wbr><span>With</span><wbr><span><span>Junction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1986025598%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/get-all-nodes-link-with-junction.html"><span class="token function">getAllNodesLinkWithJunction</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns set of <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a>s which are linked by a junction with the current <a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.interfaces.properties/-cell-property/node.html">node</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="562739311%2FFunctions%2F1857472442" anchor-label="getNeighborLinkWithJunction" id="562739311%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/get-neighbor-link-with-junction.html"><span>get</span><wbr><span>Neighbor</span><wbr><span>Link</span><wbr><span>With</span><wbr><span><span>Junction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="562739311%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/get-neighbor-link-with-junction.html"><span class="token function">getNeighborLinkWithJunction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">junction<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.implementations.molecules/-junction/index.html">Junction</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns a set of <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a>s which are linked with the current node by a junction of the type <a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/get-neighbor-link-with-junction.html">junction</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1401940139%2FFunctions%2F1857472442" anchor-label="removeJunction" id="1401940139%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/remove-junction.html"><span>remove</span><wbr><span><span>Junction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1401940139%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/remove-junction.html"><span class="token function">removeJunction</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">junction<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.implementations.molecules/-junction/index.html">Junction</a><span class="token punctuation">, </span></span><span class="parameter ">neighbor<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Removes a <a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/remove-junction.html">junction</a> from this <a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.interfaces.properties/-cell-property/node.html">node</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-113523620%2FFunctions%2F1857472442" anchor-label="toString" id="-113523620%2FFunctions%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="to-string.html"><span>to</span><wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-113523620%2FFunctions%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-310174412%2FProperties%2F1857472442" anchor-label="diameter" id="-310174412%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-cell-property/diameter.html"><span><span>diameter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-310174412%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="-310174412%2FProperties%2F1857472442" anchor-label="diameter" id="-310174412%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-cell-property/diameter.html">diameter</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-310174412%2FProperties%2F1857472442" anchor-label="diameter" id="-310174412%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><p class="paragraph">The diameter of the cell.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1737756461%2FProperties%2F1857472442" anchor-label="junctions" id="-1737756461%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="junctions.html"><span><span>junctions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1737756461%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="-1737756461%2FProperties%2F1857472442" anchor-label="junctions" id="-1737756461%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="junctions.html">junctions</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../it.unibo.alchemist.model.implementations.molecules/-junction/index.html">Junction</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html">MutableMap</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1737756461%2FProperties%2F1857472442" anchor-label="junctions" id="-1737756461%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><p class="paragraph">The map junction - node - quantity.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="667426610%2FProperties%2F1857472442" anchor-label="junctionsCount" id="667426610%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/junctions-count.html"><span>junctions</span><wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="667426610%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="667426610%2FProperties%2F1857472442" anchor-label="junctionsCount" id="667426610%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/junctions-count.html">junctionsCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-48856667%2FProperties%2F1857472442" anchor-label="maximumDiameter" id="-48856667%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="maximum-diameter.html"><span>maximum</span><wbr><span><span>Diameter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-48856667%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="-48856667%2FProperties%2F1857472442" anchor-label="maximumDiameter" id="-48856667%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="maximum-diameter.html">maximumDiameter</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-48856667%2FProperties%2F1857472442" anchor-label="maximumDiameter" id="-48856667%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><p class="paragraph">The max diameter that this cell can have, e.g. the diameter that this cell has if no other cell is around.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1381378264%2FProperties%2F1857472442" anchor-label="maximumRadius" id="-1381378264%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-deformable-cell-property/maximum-radius.html"><span>maximum</span><wbr><span><span>Radius</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1381378264%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="-1381378264%2FProperties%2F1857472442" anchor-label="maximumRadius" id="-1381378264%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-deformable-cell-property/maximum-radius.html">maximumRadius</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1381378264%2FProperties%2F1857472442" anchor-label="maximumRadius" id="-1381378264%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><p class="paragraph">The max radius that this cell can have, e.g. the radius that this cell has if no other cell is around.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="32373510%2FProperties%2F1857472442" anchor-label="node" id="32373510%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="node.html"><span><span>node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="32373510%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="32373510%2FProperties%2F1857472442" anchor-label="node" id="32373510%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="node.html">node</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1189309289%2FProperties%2F1857472442" anchor-label="polarizationVersor" id="1189309289%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/polarization-versor.html"><span>polarization</span><wbr><span><span>Versor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1189309289%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="1189309289%2FProperties%2F1857472442" anchor-label="polarizationVersor" id="1189309289%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-cell-property/polarization-versor.html">polarizationVersor</a><span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1448481329%2FProperties%2F1857472442" anchor-label="radius" id="-1448481329%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-cell-property/radius.html"><span><span>radius</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1448481329%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="-1448481329%2FProperties%2F1857472442" anchor-label="radius" id="-1448481329%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../it.unibo.alchemist.model.interfaces.properties/-circular-cell-property/radius.html">radius</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1448481329%2FProperties%2F1857472442" anchor-label="radius" id="-1448481329%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><p class="paragraph">The radius of the cell.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1644244987%2FProperties%2F1857472442" anchor-label="rigidity" id="-1644244987%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="rigidity.html"><span><span>rigidity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1644244987%2FProperties%2F1857472442"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"><a data-name="-1644244987%2FProperties%2F1857472442" anchor-label="rigidity" id="-1644244987%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="rigidity.html">rigidity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1644244987%2FProperties%2F1857472442" anchor-label="rigidity" id="-1644244987%2FProperties%2F1857472442" data-filterable-set=":alchemist-incarnation-biochemistry:dokkaHtmlPartial/main"></a><p class="paragraph">Cellular rigidity.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

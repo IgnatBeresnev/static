@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ProtelisDevice</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-incarnation-protelis::it.unibo.alchemist.model.implementations.properties/ProtelisDevice///PointingToDeclaration//-1815394722">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-incarnation-protelis</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.implementations.properties</a><span class="delimiter">/</span><a href="index.html">ProtelisDevice</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Protelis</span><wbr><span><span>Device</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ProtelisDevice</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator"> : </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-position/index.html">Position</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;networkManagers<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../it.unibo.alchemist.model.implementations.actions/-run-protelis-program/index.html">RunProtelisProgram</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../it.unibo.alchemist.protelis/-alchemist-network-manager/index.html">AlchemistNetworkManager</a><span class="token operator">&gt;</span><span class="token operator"> = </span>mapOf()</span></span><span class="token punctuation">)</span> : <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node-property/index.html">NodeProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt; </span>, <span data-unresolved-link="org.protelis.vm/ExecutionEnvironment///PointingToDeclaration/">ExecutionEnvironment</span>, <span data-unresolved-link="org.protelis.lang.datatype/DeviceUID///PointingToDeclaration/">DeviceUID</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Base implementation of <a href="index.html">ProtelisDevice</a>. Requires an <a href="environment.html">environment</a> to work.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="1656701618%2FConstructors%2F-1815394722" anchor-label="ProtelisDevice" id="1656701618%2FConstructors%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-protelis-device.html"><span>Protelis</span><wbr><span><span>Device</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1656701618%2FConstructors%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator"> : </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-position/index.html">Position</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><a href="-protelis-device.html"><span class="token function">ProtelisDevice</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;networkManagers<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../it.unibo.alchemist.model.implementations.actions/-run-protelis-program/index.html">RunProtelisProgram</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../it.unibo.alchemist.protelis/-alchemist-network-manager/index.html">AlchemistNetworkManager</a><span class="token operator">&gt;</span><span class="token operator"> = </span>mapOf()</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Types</h2>
+      <div class="table" data-togglable="Types"><a data-name="910689739%2FClasslikes%2F-1815394722" anchor-label="Companion" id="910689739%2FClasslikes%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="910689739%2FClasslikes%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-120753651%2FFunctions%2F-1815394722" anchor-label="addNetworkManger" id="-120753651%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-network-manger.html"><span>add</span><wbr><span>Network</span><wbr><span><span>Manger</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-120753651%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-network-manger.html"><span class="token function">addNetworkManger</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">program<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.implementations.actions/-run-protelis-program/index.html">RunProtelisProgram</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">networkManager<span class="token operator">: </span><a href="../../it.unibo.alchemist.protelis/-alchemist-network-manager/index.html">AlchemistNetworkManager</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Adds a new <a href="../../it.unibo.alchemist.protelis/-alchemist-network-manager/index.html">AlchemistNetworkManager</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1287989884%2FFunctions%2F-1815394722" anchor-label="allProtelisPrograms" id="1287989884%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="all-protelis-programs.html"><span>all</span><wbr><span>Protelis</span><wbr><span><span>Programs</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1287989884%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="all-protelis-programs.html"><span class="token function">allProtelisPrograms</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../it.unibo.alchemist.model.implementations.actions/-run-protelis-program/index.html">RunProtelisProgram</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Finds all the <a href="../../it.unibo.alchemist.model.implementations.actions/-run-protelis-program/index.html">RunProtelisProgram</a>s installed on this node.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2120084340%2FFunctions%2F-1815394722" anchor-label="cloneOnNewNode" id="-2120084340%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="clone-on-new-node.html"><span>clone</span><wbr><span>On</span><wbr><span>New</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2120084340%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="clone-on-new-node.html"><span class="token function">cloneOnNewNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ProtelisDevice</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1781134079%2FFunctions%2F-1815394722" anchor-label="commit" id="1781134079%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="commit.html"><span><span>commit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1781134079%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="commit.html"><span class="token function">commit</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Called just after the VM is executed, to finalize information of the execution for the environment.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="143606516%2FFunctions%2F-1815394722" anchor-label="get" id="143606516%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get.html"><span><span>get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="143606516%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator override </span><span class="token keyword">fun </span><a href="get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator override </span><span class="token keyword">fun </span><a href="get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">defaultValue<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns the value associated with <a href="get.html">id</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="692326997%2FFunctions%2F-1815394722" anchor-label="getNetworkManager" id="692326997%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-network-manager.html"><span>get</span><wbr><span>Network</span><wbr><span><span>Manager</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="692326997%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-network-manager.html"><span class="token function">getNetworkManager</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">program<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.implementations.actions/-run-protelis-program/index.html">RunProtelisProgram</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.protelis/-alchemist-network-manager/index.html">AlchemistNetworkManager</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-409974566%2FFunctions%2F-1815394722" anchor-label="has" id="-409974566%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="has.html"><span><span>has</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-409974566%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="has.html"><span class="token function">has</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Returns true if node contains <a href="has.html">id</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1611582413%2FFunctions%2F-1815394722" anchor-label="keySet" id="-1611582413%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="key-set.html"><span>key</span><wbr><span><span>Set</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1611582413%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="key-set.html"><span class="token function">keySet</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Return all stored variables names.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="719332817%2FFunctions%2F-1815394722" anchor-label="put" id="719332817%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="put.html"><span><span>put</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="719332817%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="put.html"><span class="token function">put</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Stores a <a href="put.html">value</a> associated with <a href="put.html">key</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1705916334%2FFunctions%2F-1815394722" anchor-label="putField" id="-1705916334%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="put-field.html"><span>put</span><wbr><span><span>Field</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1705916334%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="put-field.html"><span class="token function">putField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><span data-unresolved-link="org.protelis.lang.datatype/Field///PointingToDeclaration/">Field</span><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Stores a <a href="put-field.html">value</a> associated with <a href="put-field.html">key</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1843781134%2FFunctions%2F-1815394722" anchor-label="remove" id="-1843781134%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="remove.html"><span><span>remove</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1843781134%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="remove.html"><span class="token function">remove</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Removes the value associated with <a href="remove.html">id</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-617133017%2FFunctions%2F-1815394722" anchor-label="setup" id="-617133017%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="setup.html"><span><span>setup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-617133017%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="setup.html"><span class="token function">setup</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Called just before the VM is executed, to enable and preparations needed in the environment.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1498701098%2FFunctions%2F-1815394722" anchor-label="toString" id="1498701098%2FFunctions%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="to-string.html"><span>to</span><wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1498701098%2FFunctions%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="1757829137%2FProperties%2F-1815394722" anchor-label="environment" id="1757829137%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="environment.html"><span><span>environment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1757829137%2FProperties%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><a data-name="1757829137%2FProperties%2F-1815394722" anchor-label="environment" id="1757829137%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="environment.html">environment</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="336374811%2FProperties%2F-1815394722" anchor-label="id" id="336374811%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="id.html"><span><span>id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="336374811%2FProperties%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><a data-name="336374811%2FProperties%2F-1815394722" anchor-label="id" id="336374811%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="id.html">id</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="336374811%2FProperties%2F-1815394722" anchor-label="id" id="336374811%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a><p class="paragraph">The node's id.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1296834800%2FProperties%2F-1815394722" anchor-label="networkManagers" id="-1296834800%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="network-managers.html"><span>network</span><wbr><span><span>Managers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1296834800%2FProperties%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><a data-name="-1296834800%2FProperties%2F-1815394722" anchor-label="networkManagers" id="-1296834800%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="network-managers.html">networkManagers</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../it.unibo.alchemist.model.implementations.actions/-run-protelis-program/index.html">RunProtelisProgram</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../it.unibo.alchemist.protelis/-alchemist-network-manager/index.html">AlchemistNetworkManager</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1296834800%2FProperties%2F-1815394722" anchor-label="networkManagers" id="-1296834800%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a><p class="paragraph">All the <a href="../../it.unibo.alchemist.protelis/-alchemist-network-manager/index.html">AlchemistNetworkManager</a>s in this node.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1595987244%2FProperties%2F-1815394722" anchor-label="node" id="-1595987244%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-incarnation-protelis:dokkaHtmlPartial/main" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="node.html"><span><span>node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1595987244%2FProperties%2F-1815394722"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"><a data-name="-1595987244%2FProperties%2F-1815394722" anchor-label="node" id="-1595987244%2FProperties%2F-1815394722" data-filterable-set=":alchemist-incarnation-protelis:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="node.html">node</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

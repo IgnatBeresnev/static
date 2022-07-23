@@ -1,0 +1,395 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>NavigationPrioritisedSteeringWithPhysics</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-physics::it.unibo.alchemist.model.implementations.reactions/NavigationPrioritisedSteeringWithPhysics///PointingToDeclaration//55842382">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-physics</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.implementations.reactions</a><span class="delimiter">/</span><a href="index.html">NavigationPrioritisedSteeringWithPhysics</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Navigation</span><wbr><span>Prioritised</span><wbr><span>Steering</span><wbr><span>With</span><wbr><span><span>Physics</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">NavigationPrioritisedSteeringWithPhysics</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">N</a><span class="token operator"> : </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-convex-polygon/index.html">ConvexPolygon</a><span class="token operator">&gt;</span>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.environments/-euclidean-physics2-d-environment-with-graph/index.html">EuclideanPhysics2DEnvironmentWithGraph</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">N</a><span class="token punctuation">, </span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;pedestrian<span class="token operator">: </span><a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.interfaces.properties/-pedestrian-property/index.html">PedestrianProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;timeDistribution<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time-distribution/index.html">TimeDistribution</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;toleranceAngle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span>Math.toDegrees(SinglePrevalent.DEFAULT_TOLERANCE_ANGLE)<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;alpha<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span>SinglePrevalent.DEFAULT_ALPHA</span></span><span class="token punctuation">)</span> : <a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.implementations.reactions/-navigation-prioritised-steering/index.html">NavigationPrioritisedSteering</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">N</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph"><a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.implementations.reactions/-navigation-prioritised-steering/index.html">NavigationPrioritisedSteering</a> strategy for physical pedestrians, taking into account physical forces as well. <a href="../../it.unibo.alchemist.model.implementations.actions.physicalstrategies/-sum/index.html">Sum</a> strategy is used to combine steering actions and physical forces.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="1819933216%2FConstructors%2F55842382" anchor-label="NavigationPrioritisedSteeringWithPhysics" id="1819933216%2FConstructors%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-navigation-prioritised-steering-with-physics.html"><span>Navigation</span><wbr><span>Prioritised</span><wbr><span>Steering</span><wbr><span>With</span><wbr><span><span>Physics</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1819933216%2FConstructors%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">N</a><span class="token operator"> : </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-convex-polygon/index.html">ConvexPolygon</a><span class="token operator">&gt; </span><a href="-navigation-prioritised-steering-with-physics.html"><span class="token function">NavigationPrioritisedSteeringWithPhysics</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.environments/-euclidean-physics2-d-environment-with-graph/index.html">EuclideanPhysics2DEnvironmentWithGraph</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">N</a><span class="token punctuation">, </span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;pedestrian<span class="token operator">: </span><a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.interfaces.properties/-pedestrian-property/index.html">PedestrianProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;timeDistribution<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time-distribution/index.html">TimeDistribution</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;toleranceAngle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span>Math.toDegrees(SinglePrevalent.DEFAULT_TOLERANCE_ANGLE)<span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;alpha<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span>SinglePrevalent.DEFAULT_ALPHA</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="916704475%2FFunctions%2F55842382" anchor-label="canExecute" id="916704475%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#916704475%2FFunctions%2F55842382"><span>can</span><wbr><span><span>Execute</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="916704475%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#916704475%2FFunctions%2F55842382"><span class="token function">canExecute</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="96422710%2FFunctions%2F55842382" anchor-label="cloneOnNewNode" id="96422710%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#96422710%2FFunctions%2F55842382"><span>clone</span><wbr><span>On</span><wbr><span>New</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="96422710%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#96422710%2FFunctions%2F55842382"><span class="token function">cloneOnNewNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">currentTime<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.implementations.reactions/-steering-behavior/index.html">SteeringBehavior</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-447859549%2FFunctions%2F55842382" anchor-label="compareTo" id="-447859549%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-447859549%2FFunctions%2F55842382"><span>compare</span><wbr><span><span>To</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-447859549%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">operator override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#-447859549%2FFunctions%2F55842382"><span class="token function">compareTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-actionable/index.html">Actionable</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-267299839%2FFunctions%2F55842382" anchor-label="equals" id="-267299839%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-267299839%2FFunctions%2F55842382"><span><span>equals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-267299839%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">operator override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#-267299839%2FFunctions%2F55842382"><span class="token function">equals</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="580935501%2FFunctions%2F55842382" anchor-label="execute" id="580935501%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#580935501%2FFunctions%2F55842382"><span><span>execute</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="580935501%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="index.html#580935501%2FFunctions%2F55842382"><span class="token function">execute</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1468981307%2FFunctions%2F55842382" anchor-label="hashCode" id="-1468981307%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-1468981307%2FFunctions%2F55842382"><span>hash</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1468981307%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#-1468981307%2FFunctions%2F55842382"><span class="token function">hashCode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="496764034%2FFunctions%2F55842382" anchor-label="initializationComplete" id="496764034%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#496764034%2FFunctions%2F55842382"><span>initialization</span><wbr><span><span>Complete</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="496764034%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#496764034%2FFunctions%2F55842382"><span class="token function">initializationComplete</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">atTime<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a><span class="token punctuation">, </span></span><span class="parameter ">environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="94016780%2FFunctions%2F55842382" anchor-label="steerActions" id="94016780%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#94016780%2FFunctions%2F55842382"><span>steer</span><wbr><span><span>Actions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="94016780%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#94016780%2FFunctions%2F55842382"><span class="token function">steerActions</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-steering-action/index.html">SteeringAction</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1647147372%2FFunctions%2F55842382" anchor-label="toString" id="-1647147372%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-1647147372%2FFunctions%2F55842382"><span>to</span><wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1647147372%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#-1647147372%2FFunctions%2F55842382"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1541973436%2FFunctions%2F55842382" anchor-label="update" id="-1541973436%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-1541973436%2FFunctions%2F55842382"><span><span>update</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1541973436%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../-physical-blended-steering/index.html#-1541973436%2FFunctions%2F55842382"><span class="token function">update</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;currentTime<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;hasBeenExecuted<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="224434493%2FProperties%2F55842382" anchor-label="actions" id="224434493%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#224434493%2FProperties%2F55842382"><span><span>actions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="224434493%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="224434493%2FProperties%2F55842382" anchor-label="actions" id="224434493%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="../-physical-blended-steering/index.html#224434493%2FProperties%2F55842382">actions</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-action/index.html">Action</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-240653560%2FProperties%2F55842382" anchor-label="conditions" id="-240653560%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-240653560%2FProperties%2F55842382"><span><span>conditions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-240653560%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="-240653560%2FProperties%2F55842382" anchor-label="conditions" id="-240653560%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="../-physical-blended-steering/index.html#-240653560%2FProperties%2F55842382">conditions</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-condition/index.html">Condition</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-377313512%2FProperties%2F55842382" anchor-label="inboundDependencies" id="-377313512%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-377313512%2FProperties%2F55842382"><span>inbound</span><wbr><span><span>Dependencies</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-377313512%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="-377313512%2FProperties%2F55842382" anchor-label="inboundDependencies" id="-377313512%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#-377313512%2FProperties%2F55842382">inboundDependencies</a><span class="token operator">: </span><span data-unresolved-link="org.danilopianini.util/ListSet///PointingToDeclaration/">ListSet</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-dependency/index.html">Dependency</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1911283483%2FProperties%2F55842382" anchor-label="inputContext" id="1911283483%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#1911283483%2FProperties%2F55842382"><span>input</span><wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1911283483%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="1911283483%2FProperties%2F55842382" anchor-label="inputContext" id="1911283483%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#1911283483%2FProperties%2F55842382">inputContext</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-context/index.html">Context</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1894684990%2FProperties%2F55842382" anchor-label="node" id="1894684990%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#1894684990%2FProperties%2F55842382"><span><span>node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1894684990%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="1894684990%2FProperties%2F55842382" anchor-label="node" id="1894684990%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#1894684990%2FProperties%2F55842382">node</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2053855001%2FProperties%2F55842382" anchor-label="outboundDependencies" id="-2053855001%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-2053855001%2FProperties%2F55842382"><span>outbound</span><wbr><span><span>Dependencies</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2053855001%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="-2053855001%2FProperties%2F55842382" anchor-label="outboundDependencies" id="-2053855001%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#-2053855001%2FProperties%2F55842382">outboundDependencies</a><span class="token operator">: </span><span data-unresolved-link="org.danilopianini.util/ListSet///PointingToDeclaration/">ListSet</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-dependency/index.html">Dependency</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="947370028%2FProperties%2F55842382" anchor-label="outputContext" id="947370028%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#947370028%2FProperties%2F55842382"><span>output</span><wbr><span><span>Context</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="947370028%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="947370028%2FProperties%2F55842382" anchor-label="outputContext" id="947370028%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#947370028%2FProperties%2F55842382">outputContext</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-context/index.html">Context</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-554753410%2FProperties%2F55842382" anchor-label="rate" id="-554753410%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-554753410%2FProperties%2F55842382"><span><span>rate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-554753410%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="-554753410%2FProperties%2F55842382" anchor-label="rate" id="-554753410%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#-554753410%2FProperties%2F55842382">rate</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="981628283%2FProperties%2F55842382" anchor-label="steerStrategy" id="981628283%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="steer-strategy.html"><span>steer</span><wbr><span><span>Strategy</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="981628283%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="981628283%2FProperties%2F55842382" anchor-label="steerStrategy" id="981628283%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="steer-strategy.html">steerStrategy</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-steering-strategy/index.html">SteeringStrategy</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2048057202%2FProperties%2F55842382" anchor-label="tau" id="2048057202%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#2048057202%2FProperties%2F55842382"><span><span>tau</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2048057202%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="2048057202%2FProperties%2F55842382" anchor-label="tau" id="2048057202%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#2048057202%2FProperties%2F55842382">tau</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1931261009%2FProperties%2F55842382" anchor-label="timeDistribution" id="-1931261009%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-blended-steering/index.html#-1931261009%2FProperties%2F55842382"><span>time</span><wbr><span><span>Distribution</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1931261009%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="-1931261009%2FProperties%2F55842382" anchor-label="timeDistribution" id="-1931261009%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">override </span><span class="token keyword">val </span><a href="../-physical-blended-steering/index.html#-1931261009%2FProperties%2F55842382">timeDistribution</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time-distribution/index.html">TimeDistribution</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

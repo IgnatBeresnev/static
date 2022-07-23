@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>AbstractDistribution</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-implementationbase::it.unibo.alchemist.model.implementations.timedistributions/AbstractDistribution///PointingToDeclaration//-703413846">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-implementationbase</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.implementations.timedistributions</a><span class="delimiter">/</span><a href="index.html">AbstractDistribution</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Abstract</span><wbr><span><span>Distribution</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="index.html">AbstractDistribution</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span> : <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time-distribution/index.html">TimeDistribution</a><span class="token operator">&lt;</span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time-distribution/index.html">T</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">This class provides, through a template method pattern, an utility that ensures that the distribution does not trigger events before its initial scheduling time.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Parameters">Parameters</button><button class="section-tab" data-togglable="Inheritors">Inheritors</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Parameters</h2>
+      <div data-togglable="Parameters">
+        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>&lt;T&gt;</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">concentration type</p></div></div></div></div></div></div></div></div></div>
+      </div>
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="-795966863%2FConstructors%2F-703413846" anchor-label="AbstractDistribution" id="-795966863%2FConstructors%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-abstract-distribution.html"><span>Abstract</span><wbr><span><span>Distribution</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-795966863%2FConstructors%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-abstract-distribution.html"><span class="token function">AbstractDistribution</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">start<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="1237252339%2FFunctions%2F-703413846" anchor-label="cloneOnNewNode" id="1237252339%2FFunctions%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="clone-on-new-node.html"><span>clone</span><wbr><span>On</span><wbr><span>New</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1237252339%2FFunctions%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clone-on-new-node.html"><span class="token function">cloneOnNewNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">destination<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-routing-strategy/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">currentTime<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">AbstractDistribution</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-routing-strategy/index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1522297675%2FFunctions%2F-703413846" anchor-label="getNextOccurence" id="-1522297675%2FFunctions%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-next-occurence.html"><span>get</span><wbr><span>Next</span><wbr><span><span>Occurence</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1522297675%2FFunctions%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-next-occurence.html"><span class="token function">getNextOccurence</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1243689637%2FFunctions%2F-703413846" anchor-label="getRate" id="1243689637%2FFunctions%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#1243689637%2FFunctions%2F-703413846"><span>get</span><wbr><span><span>Rate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1243689637%2FFunctions%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1243689637%2FFunctions%2F-703413846"><span class="token function">getRate</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1275637541%2FFunctions%2F-703413846" anchor-label="update" id="-1275637541%2FFunctions%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="update.html"><span><span>update</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1275637541%2FFunctions%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update.html"><span class="token function">update</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;currentTime<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time/index.html">Time</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;hasBeenExecuted<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;additionalParameter<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-routing-strategy/index.html">T</a><span class="token punctuation">, </span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Inheritors</h2>
+      <div class="table" data-togglable="Inheritors"><a data-name="2098150216%2FInheritors%2F-703413846" anchor-label="Trigger" id="2098150216%2FInheritors%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-trigger/index.html">Trigger</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2098150216%2FInheritors%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="1974731250%2FInheritors%2F-703413846" anchor-label="AnyRealDistribution" id="1974731250%2FInheritors%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-any-real-distribution/index.html">AnyRealDistribution</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1974731250%2FInheritors%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="537515824%2FInheritors%2F-703413846" anchor-label="DiracComb" id="537515824%2FInheritors%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-dirac-comb/index.html">DiracComb</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="537515824%2FInheritors%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="218626053%2FInheritors%2F-703413846" anchor-label="WeibullTime" id="218626053%2FInheritors%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-weibull-time/index.html">WeibullTime</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="218626053%2FInheritors%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+<a data-name="1246615950%2FInheritors%2F-703413846" anchor-label="ExponentialTime" id="1246615950%2FInheritors%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-exponential-time/index.html">ExponentialTime</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1246615950%2FInheritors%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

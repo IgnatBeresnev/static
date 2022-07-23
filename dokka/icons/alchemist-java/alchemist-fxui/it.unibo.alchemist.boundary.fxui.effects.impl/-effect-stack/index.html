@@ -1,0 +1,624 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>EffectStack</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-fxui::it.unibo.alchemist.boundary.fxui.effects.impl/EffectStack///PointingToDeclaration//-1009815641">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-fxui</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.boundary.fxui.effects.impl</a><span class="delimiter">/</span><a href="index.html">EffectStack</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Effect</span><wbr><span><span>Stack</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">EffectStack</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator"> : </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-position2-d/index.html">Position2D</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> : <a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html">EffectGroup</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html">P</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">The class models a group of effects, stored as a stack. It can manage priority of visualization and visibility of each effect inside it.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Parameters">Parameters</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Parameters</h2>
+      <div data-togglable="Parameters">
+        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>&lt;P&gt;</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">The position type</p></div></div></div></div></div></div></div></div></div>
+      </div>
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="762758733%2FConstructors%2F-1009815641" anchor-label="EffectStack" id="762758733%2FConstructors%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-effect-stack.html"><span>Effect</span><wbr><span><span>Stack</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="762758733%2FConstructors%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-effect-stack.html"><span class="token function">EffectStack</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor that creates an empty stack of effects with default name.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="866989640%2FConstructors%2F-1009815641" anchor-label="EffectStack" id="866989640%2FConstructors%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-effect-stack.html"><span>Effect</span><wbr><span><span>Stack</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="866989640%2FConstructors%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-effect-stack.html"><span class="token function">EffectStack</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Default constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="1534278000%2FFunctions%2F-1009815641" anchor-label="add" id="1534278000%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add.html"><span><span>add</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1534278000%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add.html"><span class="token function">add</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">e<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1209330671%2FFunctions%2F-1009815641" anchor-label="addAll" id="-1209330671%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-all.html"><span>add</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1209330671%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-all.html"><span class="token function">addAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">c<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1457644253%2FFunctions%2F-1009815641" anchor-label="changePriority" id="-1457644253%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="change-priority.html"><span>change</span><wbr><span><span>Priority</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1457644253%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="change-priority.html"><span class="token function">changePriority</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">effect<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">offset<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Changes the specified offset priority of the specified offset.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="39130455%2FFunctions%2F-1009815641" anchor-label="clear" id="39130455%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="clear.html"><span><span>clear</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="39130455%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear.html"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="718223731%2FFunctions%2F-1009815641" anchor-label="computeDrawCommands" id="718223731%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="compute-draw-commands.html"><span>compute</span><wbr><span>Draw</span><wbr><span><span>Commands</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="718223731%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="compute-draw-commands.html">T</a><span class="token operator">&gt; </span><a href="compute-draw-commands.html"><span class="token function">computeDrawCommands</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/compute-draw-commands.html">T</a><span class="token punctuation">, </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">Queue</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.api/-draw-command/index.html">DrawCommand</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Computes a queue of commands to Draw something.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="938320612%2FFunctions%2F-1009815641" anchor-label="contains" id="938320612%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="contains.html"><span><span>contains</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="938320612%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="contains.html"><span class="token function">contains</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1941189789%2FFunctions%2F-1009815641" anchor-label="containsAll" id="-1941189789%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="contains-all.html"><span>contains</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1941189789%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="contains-all.html"><span class="token function">containsAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">c<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="361744840%2FFunctions%2F-1009815641" anchor-label="element" id="361744840%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="element.html"><span><span>element</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="361744840%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="element.html"><span class="token function">element</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-467701884%2FFunctions%2F-1009815641" anchor-label="equals" id="-467701884%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="equals.html"><span><span>equals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-467701884%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="equals.html"><span class="token function">equals</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">obj<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-655675525%2FFunctions%2F-1009815641" anchor-label="forEach" id="-655675525%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-655675525%2FFunctions%2F-1009815641"><span>for</span><wbr><span><span>Each</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-655675525%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-655675525%2FFunctions%2F-1009815641"><span class="token function">forEach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">action<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-311288905%2FFunctions%2F-1009815641" anchor-label="getTypeAdapter" id="-311288905%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-type-adapter.html"><span>get</span><wbr><span>Type</span><wbr><span><span>Adapter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-311288905%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://docs.oracle.com/javase/8/docs/api/javax/annotation/Nonnull.html"><span class="token annotation">Nonnull</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-type-adapter.html"><span class="token function">getTypeAdapter</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.serialization.impl/-effect-group-adapter/index.html">EffectGroupAdapter</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Returns a <span data-unresolved-link="com.google.gson/JsonSerializer///PointingToDeclaration/">com.google.gson.JsonSerializer</span> and <span data-unresolved-link="com.google.gson/JsonDeserializer///PointingToDeclaration/">com.google.gson.JsonDeserializer</span> combo class to be used as a <code class="lang-kotlin">TypeAdapter</code> for this <code class="lang-kotlin">EffectStack</code>.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1538943918%2FFunctions%2F-1009815641" anchor-label="getVisibilityOf" id="-1538943918%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-visibility-of.html"><span>get</span><wbr><span>Visibility</span><wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1538943918%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-visibility-of.html"><span class="token function">getVisibilityOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">effect<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Returns the visibility of the specified effect.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2144713563%2FFunctions%2F-1009815641" anchor-label="hashCode" id="2144713563%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="hash-code.html"><span>hash</span><wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2144713563%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hash-code.html"><span class="token function">hashCode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1832461409%2FFunctions%2F-1009815641" anchor-label="isEmpty" id="1832461409%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-empty.html"><span>is</span><wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1832461409%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-empty.html"><span class="token function">isEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1412238492%2FFunctions%2F-1009815641" anchor-label="isVisible" id="1412238492%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-visible.html"><span>is</span><wbr><span><span>Visible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1412238492%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-visible.html"><span class="token function">isVisible</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Gets the visibility of the effect.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="214044579%2FFunctions%2F-1009815641" anchor-label="iterator" id="214044579%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="iterator.html"><span><span>iterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="214044579%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="iterator.html"><span class="token function">iterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html">Iterator</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-1606146105%2FFunctions%2F-1009815641"><span class="token function">iterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html">Iterator</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/compute-draw-commands.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1245948075%2FFunctions%2F-1009815641" anchor-label="offer" id="-1245948075%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="offer.html"><span><span>offer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1245948075%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="offer.html"><span class="token function">offer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">e<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-708921786%2FFunctions%2F-1009815641" anchor-label="parallelStream" id="-708921786%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-708921786%2FFunctions%2F-1009815641"><span>parallel</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-708921786%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-708921786%2FFunctions%2F-1009815641"><span class="token function">parallelStream</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">E</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-305466725%2FFunctions%2F-1009815641" anchor-label="peek" id="-305466725%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek.html"><span><span>peek</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-305466725%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek.html"><span class="token function">peek</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Returns the effect with maximum priority, without removing it.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-385481545%2FFunctions%2F-1009815641" anchor-label="poll" id="-385481545%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="poll.html"><span><span>poll</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-385481545%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="poll.html"><span class="token function">poll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-901706861%2FFunctions%2F-1009815641" anchor-label="pop" id="-901706861%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop.html"><span><span>pop</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-901706861%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop.html"><span class="token function">pop</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Removes the effect with maximum priority and returns it.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-939666199%2FFunctions%2F-1009815641" anchor-label="push" id="-939666199%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="push.html"><span><span>push</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-939666199%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="push.html"><span class="token function">push</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">effect<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Puts the effects in the group, giving it the maximum priority.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="928369881%2FFunctions%2F-1009815641" anchor-label="remove" id="928369881%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="remove.html"><span><span>remove</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="928369881%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove.html"><span class="token function">remove</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove.html"><span class="token function">remove</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1142447330%2FFunctions%2F-1009815641" anchor-label="removeAll" id="-1142447330%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="remove-all.html"><span>remove</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1142447330%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-all.html"><span class="token function">removeAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">c<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1420767036%2FFunctions%2F-1009815641" anchor-label="removeIf" id="1420767036%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#1420767036%2FFunctions%2F-1009815641"><span>remove</span><wbr><span><span>If</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1420767036%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#1420767036%2FFunctions%2F-1009815641"><span class="token function">removeIf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">filter<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html">Predicate</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-531139331%2FFunctions%2F-1009815641" anchor-label="retainAll" id="-531139331%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="retain-all.html"><span>retain</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-531139331%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="retain-all.html"><span class="token function">retainAll</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">c<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="207219163%2FFunctions%2F-1009815641" anchor-label="search" id="207219163%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="search.html"><span><span>search</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="207219163%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="search.html"><span class="token function">search</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">effect<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Checks if an effect is present in the group.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1449816798%2FFunctions%2F-1009815641" anchor-label="setName" id="-1449816798%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/set-name.html"><span>set</span><wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1449816798%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/set-name.html"><span class="token function">setName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Sets the name of the effect.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-67447638%2FFunctions%2F-1009815641" anchor-label="setVisibility" id="-67447638%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set-visibility.html"><span>set</span><wbr><span><span>Visibility</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-67447638%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-visibility.html"><span class="token function">setVisibility</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">visibility<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Sets the visibility of the effect.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="104871297%2FFunctions%2F-1009815641" anchor-label="setVisibilityOf" id="104871297%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set-visibility-of.html"><span>set</span><wbr><span>Visibility</span><wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="104871297%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-visibility-of.html"><span class="token function">setVisibilityOf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">effect<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">EffectFX</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">visibility<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Sets the visibility of the specified effect.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-712168779%2FFunctions%2F-1009815641" anchor-label="size" id="-712168779%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="size.html"><span><span>size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-712168779%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="size.html"><span class="token function">size</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1078828876%2FFunctions%2F-1009815641" anchor-label="spliterator" id="-1078828876%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-677603448%2FFunctions%2F-1009815641"><span><span>spliterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1078828876%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-677603448%2FFunctions%2F-1009815641"><span class="token function">spliterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html">Spliterator</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/compute-draw-commands.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#485701680%2FFunctions%2F-1009815641"><span class="token function">spliterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html">Spliterator</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">E</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1977615027%2FFunctions%2F-1009815641" anchor-label="stream" id="-1977615027%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-1977615027%2FFunctions%2F-1009815641"><span><span>stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1977615027%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html#-1977615027%2FFunctions%2F-1009815641"><span class="token function">stream</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html">E</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1924271628%2FFunctions%2F-1009815641" anchor-label="toArray" id="1924271628%2FFunctions%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="to-array.html"><span>to</span><wbr><span><span>Array</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1924271628%2FFunctions%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://docs.oracle.com/javase/8/docs/api/javax/annotation/Nonnull.html"><span class="token annotation">Nonnull</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="to-array.html"><span class="token function">toArray</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://docs.oracle.com/javase/8/docs/api/javax/annotation/Nonnull.html"><span class="token annotation">Nonnull</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="to-array.html">T</a><span class="token operator">&gt; </span><a href="to-array.html"><span class="token function">toArray</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">a<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/compute-draw-commands.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/compute-draw-commands.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-1755865237%2FProperties%2F-1009815641" anchor-label="name" id="-1755865237%2FProperties%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="name.html"><span><span>name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1755865237%2FProperties%2F-1009815641"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><a data-name="-1755865237%2FProperties%2F-1009815641" anchor-label="name" id="-1755865237%2FProperties%2F-1009815641" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="name.html">name</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

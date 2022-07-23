@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ConstantSpeed</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-implementationbase::it.unibo.alchemist.model.implementations.movestrategies.speed/ConstantSpeed///PointingToDeclaration//-703413846">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-implementationbase</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.implementations.movestrategies.speed</a><span class="delimiter">/</span><a href="index.html">ConstantSpeed</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Constant</span><wbr><span><span>Speed</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ConstantSpeed</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator"> : </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-position/index.html">Position</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-route/index.html">P</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> : <a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-speed-selection-strategy/index.html">SpeedSelectionStrategy</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-speed-selection-strategy/index.html">T</a><span class="token punctuation">, </span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-speed-selection-strategy/index.html">P</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">This strategy makes the node move at an average constant speed, which is influenced by the <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time-distribution/index.html">it.unibo.alchemist.model.interfaces.TimeDistribution</a> of the <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-reaction/index.html">Reaction</a> hosting this <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-action/index.html">it.unibo.alchemist.model.interfaces.Action</a>. This action tries to normalize on the <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-reaction/index.html">Reaction</a> rate, but if the <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-time-distribution/index.html">it.unibo.alchemist.model.interfaces.TimeDistribution</a> has a high variance, the movements on the map will inherit this tract.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Parameters">Parameters</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Parameters</h2>
+      <div data-togglable="Parameters">
+        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>&lt;T&gt;</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Concentration type</p></div></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>&lt;P&gt;</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Position type</p></div></div></div></div></div></div></div></div></div>
+      </div>
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="1242577495%2FConstructors%2F-703413846" anchor-label="ConstantSpeed" id="1242577495%2FConstructors%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-constant-speed.html"><span>Constant</span><wbr><span><span>Speed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1242577495%2FConstructors%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-constant-speed.html"><span class="token function">ConstantSpeed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reaction<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-reaction/index.html">Reaction</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">speed<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-317702442%2FFunctions%2F-703413846" anchor-label="cloneIfNeeded" id="-317702442%2FFunctions%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="clone-if-needed.html"><span>clone</span><wbr><span>If</span><wbr><span><span>Needed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-317702442%2FFunctions%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clone-if-needed.html"><span class="token function">cloneIfNeeded</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">destination<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-routing-strategy/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">reaction<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-reaction/index.html">Reaction</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-routing-strategy/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ConstantSpeed</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces.movestrategies/-routing-strategy/index.html">T</a><span class="token punctuation">, </span><a href="../../it.unibo.alchemist.model.interfaces/-route/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-939248284%2FFunctions%2F-703413846" anchor-label="getNodeMovementLength" id="-939248284%2FFunctions%2F-703413846" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-implementationbase:dokkaHtmlPartial/main" data-filterable-set=":alchemist-implementationbase:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-node-movement-length.html"><span>get</span><wbr><span>Node</span><wbr><span>Movement</span><wbr><span><span>Length</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-939248284%2FFunctions%2F-703413846"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-implementationbase:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-node-movement-length.html"><span class="token function">getNodeMovementLength</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">target<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-route/index.html">P</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

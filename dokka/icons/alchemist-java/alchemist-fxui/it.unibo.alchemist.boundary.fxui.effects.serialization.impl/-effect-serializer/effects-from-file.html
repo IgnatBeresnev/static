@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>effectsFromFile</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-fxui::it.unibo.alchemist.boundary.fxui.effects.serialization.impl/EffectSerializer/effectsFromFile/#java.io.File/PointingToDeclaration//-1009815641">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-fxui</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.boundary.fxui.effects.serialization.impl</a><span class="delimiter">/</span><a href="index.html">EffectSerializer</a><span class="delimiter">/</span><a href="effects-from-file.html">effectsFromFile</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>effects</span><wbr><span>From</span><wbr><span><span>File</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-fxui:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="effects-from-file.html">P</a><span class="token operator"> : </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-position2-d/index.html">Position2D</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator">&gt; </span><a href="effects-from-file.html"><span class="token function">effectsFromFile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">effectFile<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html">EffectGroup</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-f-x/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Get an <a href="../../it.unibo.alchemist.boundary.fxui.effects.api/-effect-group/index.html">EffectGroup</a> from the specified file. It tries to deserialize a JSON file.</p><h4 class="">Return</h4><p class="paragraph">Group of effects collected from the file</p><h2 class="">Parameters</h2><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>&lt;P&gt;</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">the position type</p></div></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span>effect</span><wbr><span><span>File</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Source file</p></div></div></div></div></div></div></div><h2 class="">Throws</h2><div class="table"><div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://docs.oracle.com/javase/8/docs/api/java/io/FileNotFoundException.html"><span>java.</span><wbr><span>io.</span><wbr><span>File</span><wbr><span>Not</span><wbr><span>Found</span><wbr><span><span>Exception</span></span></a></div></span></div><div><div class="title"><p class="paragraph">If the file does not exist, is a directory rather than a regular file, or for some other reason cannot be opened for reading</p></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><span data-unresolved-link="com.google.gson/JsonIOException///PointingToDeclaration/"><span>com.</span><wbr><span>google.</span><wbr><span>gson.</span><wbr><span>Json</span><wbr><span><span>IOException</span></span></span></div></span></div><div><div class="title"><p class="paragraph">If there was a problem reading from the Reader</p></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><span data-unresolved-link="com.google.gson/JsonSyntaxException///PointingToDeclaration/"><span>com.</span><wbr><span>google.</span><wbr><span>gson.</span><wbr><span>Json</span><wbr><span>Syntax</span><wbr><span><span>Exception</span></span></span></div></span></div><div><div class="title"><p class="paragraph">If JSON is not a valid representation for an object of type</p></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-fxui:dokkaHtmlPartial/main" data-filterable-set=":alchemist-fxui:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html"><span>java.</span><wbr><span>io.</span><wbr><span><span>IOException</span></span></a></div></span></div><div><div class="title"><p class="paragraph">If some other I/O error occurs</p></div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

@@ -1,0 +1,440 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>SimpleCharStream</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-sapere-mathexp::it.unibo.alchemist.expressions.parser/SimpleCharStream///PointingToDeclaration//1824609551">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-sapere-mathexp</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.expressions.parser</a><span class="delimiter">/</span><a href="index.html">SimpleCharStream</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">SimpleCharStream</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">An implementation of interface CharStream, where the stream is assumed to contain only ASCII characters (without unicode processing).</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="-1836959240%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="-1836959240%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1836959240%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;buffersize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1880434148%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="1880434148%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1880434148%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="460750780%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="460750780%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="460750780%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1893312637%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="1893312637%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1893312637%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;encoding<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;buffersize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1711228779%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="-1711228779%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1711228779%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;buffersize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1737137897%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="1737137897%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1737137897%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;encoding<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1808958719%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="-1808958719%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1808958719%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-255603263%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="-255603263%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-255603263%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter ">encoding<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-525319719%2FConstructors%2F1824609551" anchor-label="SimpleCharStream" id="-525319719%2FConstructors%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-simple-char-stream.html"><span>Simple</span><wbr><span>Char</span><wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-525319719%2FConstructors%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-simple-char-stream.html"><span class="token function">SimpleCharStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Constructor.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-423931980%2FFunctions%2F1824609551" anchor-label="adjustBeginLineColumn" id="-423931980%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="adjust-begin-line-column.html"><span>adjust</span><wbr><span>Begin</span><wbr><span>Line</span><wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-423931980%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="adjust-begin-line-column.html"><span class="token function">adjustBeginLineColumn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newLine<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">newCol<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Method to adjust line and column numbers for the start of a token.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1011818098%2FFunctions%2F1824609551" anchor-label="backup" id="1011818098%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="backup.html"><span><span>backup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1011818098%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="backup.html"><span class="token function">backup</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">amount<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Backup a number of characters.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-560882061%2FFunctions%2F1824609551" anchor-label="BeginToken" id="-560882061%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-begin-token.html"><span>Begin</span><wbr><span><span>Token</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-560882061%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-begin-token.html"><span class="token function">BeginToken</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char/index.html">Char</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Start.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1736980097%2FFunctions%2F1824609551" anchor-label="Done" id="1736980097%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-done.html"><span><span>Done</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1736980097%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-done.html"><span class="token function">Done</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Reset buffer when finished.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2033520730%2FFunctions%2F1824609551" anchor-label="getBeginColumn" id="2033520730%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-begin-column.html"><span>get</span><wbr><span>Begin</span><wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2033520730%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-begin-column.html"><span class="token function">getBeginColumn</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Get token beginning column number.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="715862588%2FFunctions%2F1824609551" anchor-label="getBeginLine" id="715862588%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-begin-line.html"><span>get</span><wbr><span>Begin</span><wbr><span><span>Line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="715862588%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-begin-line.html"><span class="token function">getBeginLine</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Get token beginning line number.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1303735669%2FFunctions%2F1824609551" anchor-label="getColumn" id="-1303735669%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-column.html"><span>get</span><wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1303735669%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace strikethrough"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html"><span class="token annotation">Deprecated</span></a></div></div><strike><span class="token keyword">open </span></strike><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="get-column.html"><strike><span class="token function">getColumn</span></strike></a><strike><span class="token punctuation">(</span></strike><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-414576408%2FFunctions%2F1824609551" anchor-label="getEndColumn" id="-414576408%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-end-column.html"><span>get</span><wbr><span>End</span><wbr><span><span>Column</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-414576408%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-end-column.html"><span class="token function">getEndColumn</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Get token end column number.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1870855754%2FFunctions%2F1824609551" anchor-label="getEndLine" id="1870855754%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-end-line.html"><span>get</span><wbr><span>End</span><wbr><span><span>Line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1870855754%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-end-line.html"><span class="token function">getEndLine</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Get token end line number.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1451455678%2FFunctions%2F1824609551" anchor-label="GetImage" id="1451455678%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-get-image.html"><span>Get</span><wbr><span><span>Image</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1451455678%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-get-image.html"><span class="token function">GetImage</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Get token literal value.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1793952941%2FFunctions%2F1824609551" anchor-label="getLine" id="1793952941%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-line.html"><span>get</span><wbr><span><span>Line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1793952941%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace strikethrough"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html"><span class="token annotation">Deprecated</span></a></div></div><strike><span class="token keyword">open </span></strike><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="get-line.html"><strike><span class="token function">getLine</span></strike></a><strike><span class="token punctuation">(</span></strike><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-479937565%2FFunctions%2F1824609551" anchor-label="GetSuffix" id="-479937565%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-get-suffix.html"><span>Get</span><wbr><span><span>Suffix</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-479937565%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-get-suffix.html"><span class="token function">GetSuffix</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">len<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char/index.html">Char</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Get the suffix.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1922183081%2FFunctions%2F1824609551" anchor-label="readChar" id="-1922183081%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="read-char.html"><span>read</span><wbr><span><span>Char</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1922183081%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="read-char.html"><span class="token function">readChar</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char/index.html">Char</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Read a character.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="997349561%2FFunctions%2F1824609551" anchor-label="ReInit" id="997349561%2FFunctions%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-re-init.html"><span>Re</span><wbr><span><span>Init</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="997349561%2FFunctions%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter ">encoding<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;buffersize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;encoding<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html">Reader</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;buffersize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-re-init.html"><span class="token function">ReInit</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;dstream<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html">InputStream</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;encoding<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startline<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startcolumn<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;buffersize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Reinitialise.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-230368638%2FProperties%2F1824609551" anchor-label="bufpos" id="-230368638%2FProperties%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="bufpos.html"><span><span>bufpos</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-230368638%2FProperties%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><a data-name="-230368638%2FProperties%2F1824609551" anchor-label="bufpos" id="-230368638%2FProperties%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">var </span><a href="bufpos.html">bufpos</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-230368638%2FProperties%2F1824609551" anchor-label="bufpos" id="-230368638%2FProperties%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>Position in buffer.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="206647721%2FProperties%2F1824609551" anchor-label="staticFlag" id="206647721%2FProperties%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-sapere-mathexp:dokkaHtmlPartial/main" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="static-flag.html"><span>static</span><wbr><span><span>Flag</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="206647721%2FProperties%2F1824609551"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"><a data-name="206647721%2FProperties%2F1824609551" anchor-label="staticFlag" id="206647721%2FProperties%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="static-flag.html">staticFlag</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="206647721%2FProperties%2F1824609551" anchor-label="staticFlag" id="206647721%2FProperties%2F1824609551" data-filterable-set=":alchemist-sapere-mathexp:dokkaHtmlPartial/main"></a>Whether parser is static.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

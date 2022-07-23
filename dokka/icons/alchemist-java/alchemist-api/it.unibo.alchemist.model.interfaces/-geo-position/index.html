@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>GeoPosition</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-api::it.unibo.alchemist.model.interfaces/GeoPosition///PointingToDeclaration//-116258597">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-api</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.interfaces</a><span class="delimiter">/</span><a href="index.html">GeoPosition</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Geo</span><wbr><span><span>Position</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">GeoPosition</a> : <a href="../-position2-d/index.html">Position2D</a><span class="token operator">&lt;</span><a href="../-position2-d/index.html">P</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Represents a specific point on the Earth's surface.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-1470108373%2FFunctions%2F-116258597" anchor-label="boundingBox" id="-1470108373%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-1470108373%2FFunctions%2F-116258597"><span>bounding</span><wbr><span><span>Box</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1470108373%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1470108373%2FFunctions%2F-116258597"><span class="token function">boundingBox</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">range<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a><span class="token operator">&lt;</span><a href="../-linking-rule/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Given a range, produces N coordinates, representing the N opposite vertices of the hypercube having the current coordinate as center and circumscribing the N-sphere defined by the range.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-346428117%2FFunctions%2F-116258597" anchor-label="distanceTo" id="-346428117%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-346428117%2FFunctions%2F-116258597"><span>distance</span><wbr><span><span>To</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-346428117%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-346428117%2FFunctions%2F-116258597"><span class="token function">distanceTo</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="../-linking-rule/index.html">P</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Computes the distance between this position and another compatible position.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="980532079%2FFunctions%2F-116258597" anchor-label="getCoordinate" id="980532079%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-coordinate.html"><span>get</span><wbr><span><span>Coordinate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="980532079%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace strikethrough"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html"><span class="token annotation">Deprecated</span></a></div></div><strike><span class="token keyword">abstract </span></strike><strike><span class="token keyword"></span></strike><strike><span class="token keyword">fun </span></strike><a href="get-coordinate.html"><strike><span class="token function">getCoordinate</span></strike></a><strike><span class="token punctuation">(</span></strike><span class="parameters "><span class="parameter ">dimension<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><strike><span class="token punctuation">)</span></strike><strike><span class="token operator">: </span></strike><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Allows to access the value of a coordinate.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1594970258%2FFunctions%2F-116258597" anchor-label="getCoordinates" id="1594970258%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#1594970258%2FFunctions%2F-116258597"><span>get</span><wbr><span><span>Coordinates</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1594970258%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1594970258%2FFunctions%2F-116258597"><span class="token function">getCoordinates</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Allows to get the position as a Number array.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-269418464%2FFunctions%2F-116258597" anchor-label="getDimensions" id="-269418464%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-269418464%2FFunctions%2F-116258597"><span>get</span><wbr><span><span>Dimensions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-269418464%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-269418464%2FFunctions%2F-116258597"><span class="token function">getDimensions</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-83231152%2FFunctions%2F-116258597" anchor-label="getLatitude" id="-83231152%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-latitude.html"><span>get</span><wbr><span><span>Latitude</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-83231152%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-latitude.html"><span class="token function">getLatitude</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1000552625%2FFunctions%2F-116258597" anchor-label="getLongitude" id="-1000552625%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-longitude.html"><span>get</span><wbr><span><span>Longitude</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1000552625%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-longitude.html"><span class="token function">getLongitude</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-585176761%2FFunctions%2F-116258597" anchor-label="getX" id="-585176761%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-585176761%2FFunctions%2F-116258597"><span>get</span><wbr><span><span>X</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-585176761%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-585176761%2FFunctions%2F-116258597"><span class="token function">getX</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-554156954%2FFunctions%2F-116258597" anchor-label="getY" id="-554156954%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-554156954%2FFunctions%2F-116258597"><span>get</span><wbr><span><span>Y</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-554156954%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-554156954%2FFunctions%2F-116258597"><span class="token function">getY</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-996311577%2FFunctions%2F-116258597" anchor-label="minus" id="-996311577%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="minus.html"><span><span>minus</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-996311577%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="minus.html"><span class="token function">minus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="index.html">GeoPosition</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GeoPosition</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Subtracts the provided <a href="index.html">GeoPosition</a> from this <a href="index.html">GeoPosition</a>.</div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#1854457792%2FFunctions%2F-116258597"><span class="token function">minus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-linking-rule/index.html">P</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Considers both positions as vectors, and returns the difference between this position and the passed one.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-885278857%2FFunctions%2F-116258597" anchor-label="plus" id="-885278857%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="plus.html"><span><span>plus</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-885278857%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="plus.html"><span class="token function">plus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="index.html">GeoPosition</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GeoPosition</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Adds two <a href="index.html">GeoPosition</a>.</div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1455048310%2FFunctions%2F-116258597"><span class="token function">plus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-linking-rule/index.html">P</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Considers both positions as vectors, and sums them.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

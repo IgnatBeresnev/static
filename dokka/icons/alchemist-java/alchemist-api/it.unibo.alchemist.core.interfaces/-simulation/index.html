@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Simulation</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-api::it.unibo.alchemist.core.interfaces/Simulation///PointingToDeclaration//-116258597">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-api</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.core.interfaces</a><span class="delimiter">/</span><a href="index.html">Simulation</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Simulation</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">Simulation</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator"> : </span><a href="../../it.unibo.alchemist.model.interfaces/-position/index.html">Position</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="../../it.unibo.alchemist.model.interfaces/-linking-rule/index.html">P</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> : <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html">Runnable</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">This interface forces simulations to be independent threads, and make them controllable from an external console.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Parameters">Parameters</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Parameters</h2>
+      <div data-togglable="Parameters">
+        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>&lt;T&gt;</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Concentration type</p></div></div></div></div></div><div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><span><span>&lt;P&gt;</span></span></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Position Type</p></div></div></div></div></div></div></div></div></div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-39947130%2FFunctions%2F-116258597" anchor-label="addOutputMonitor" id="-39947130%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-output-monitor.html"><span>add</span><wbr><span>Output</span><wbr><span><span>Monitor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-39947130%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-output-monitor.html"><span class="token function">addOutputMonitor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">op<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.interfaces/-output-monitor/index.html">OutputMonitor</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token punctuation">, </span><a href="../../it.unibo.alchemist.model.interfaces/-linking-rule/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Adds an <a href="../../it.unibo.alchemist.boundary.interfaces/-output-monitor/index.html">OutputMonitor</a> to this simulation.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-881121170%2FFunctions%2F-116258597" anchor-label="getEnvironment" id="-881121170%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-environment.html"><span>get</span><wbr><span><span>Environment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-881121170%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-environment.html"><span class="token function">getEnvironment</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token punctuation">, </span><a href="../../it.unibo.alchemist.model.interfaces/-linking-rule/index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Allows to access the current environment.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1304800999%2FFunctions%2F-116258597" anchor-label="getError" id="-1304800999%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-error.html"><span>get</span><wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1304800999%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-error.html"><span class="token function">getError</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">Optional</a><span class="token operator">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html">Throwable</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1294149377%2FFunctions%2F-116258597" anchor-label="getFinalStep" id="-1294149377%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-final-step.html"><span>get</span><wbr><span>Final</span><wbr><span><span>Step</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1294149377%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-final-step.html"><span class="token function">getFinalStep</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="962813982%2FFunctions%2F-116258597" anchor-label="getFinalTime" id="962813982%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-final-time.html"><span>get</span><wbr><span>Final</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="962813982%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-final-time.html"><span class="token function">getFinalTime</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-time/index.html">Time</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Allows to at which time this simulation will end.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1170641369%2FFunctions%2F-116258597" anchor-label="getStatus" id="-1170641369%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-status.html"><span>get</span><wbr><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1170641369%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-status.html"><span class="token function">getStatus</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Allows to access the current status.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-181037171%2FFunctions%2F-116258597" anchor-label="getStep" id="-181037171%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-step.html"><span>get</span><wbr><span><span>Step</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-181037171%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-step.html"><span class="token function">getStep</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Allows to access the current simulation step.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2075926188%2FFunctions%2F-116258597" anchor-label="getTime" id="2075926188%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-time.html"><span>get</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2075926188%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-time.html"><span class="token function">getTime</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-time/index.html">Time</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Allows to know which is the current simulation time.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-376687200%2FFunctions%2F-116258597" anchor-label="goToStep" id="-376687200%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="go-to-step.html"><span>go</span><wbr><span>To</span><wbr><span><span>Step</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-376687200%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="go-to-step.html"><span class="token function">goToStep</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">steps<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Executes a certain number of steps, then pauses it.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1300241551%2FFunctions%2F-116258597" anchor-label="goToTime" id="1300241551%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="go-to-time.html"><span>go</span><wbr><span>To</span><wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1300241551%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="go-to-time.html"><span class="token function">goToTime</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">t<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-time/index.html">Time</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Executes the simulation until the target time is reached, then pauses it.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="409647834%2FFunctions%2F-116258597" anchor-label="neighborAdded" id="409647834%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="neighbor-added.html"><span>neighbor</span><wbr><span><span>Added</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="409647834%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="neighbor-added.html"><span class="token function">neighborAdded</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">n<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">This method must get called in case a a communication link connecting two nodes gets created during the simulation.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1185350854%2FFunctions%2F-116258597" anchor-label="neighborRemoved" id="-1185350854%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="neighbor-removed.html"><span>neighbor</span><wbr><span><span>Removed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1185350854%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="neighbor-removed.html"><span class="token function">neighborRemoved</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">n<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">This method must get called in case a a communication link connecting two nodes gets broken during the simulation.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1631571924%2FFunctions%2F-116258597" anchor-label="nodeAdded" id="-1631571924%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="node-added.html"><span>node</span><wbr><span><span>Added</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1631571924%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="node-added.html"><span class="token function">nodeAdded</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">This method must get called in case a node is added to the environment during the simulation and after its neighborhood has been computed (or can be consistently computed by the simulated environment).</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2053675937%2FFunctions%2F-116258597" anchor-label="nodeMoved" id="-2053675937%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="node-moved.html"><span>node</span><wbr><span><span>Moved</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2053675937%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="node-moved.html"><span class="token function">nodeMoved</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">This method must get called in case a node is moved in the environment during the simulation and after its neighborhood has been computed (or can be consistently computed by the simulated environment).</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="755462710%2FFunctions%2F-116258597" anchor-label="nodeRemoved" id="755462710%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="node-removed.html"><span>node</span><wbr><span><span>Removed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="755462710%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="node-removed.html"><span class="token function">nodeRemoved</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">oldNeighborhood<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-neighborhood/index.html">Neighborhood</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">This method must get called in case a node is removed from the environment during the simulation and after its neighborhood has been computed (or can be consistently computed by the simulated environment).</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="84746201%2FFunctions%2F-116258597" anchor-label="pause" id="84746201%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pause.html"><span><span>pause</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="84746201%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="pause.html"><span class="token function">pause</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Sends a pause command to the simulation.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1931229321%2FFunctions%2F-116258597" anchor-label="play" id="-1931229321%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="play.html"><span><span>play</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1931229321%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="play.html"><span class="token function">play</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Sends a play command to the simulation.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="711724019%2FFunctions%2F-116258597" anchor-label="reactionAdded" id="711724019%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="reaction-added.html"><span>reaction</span><wbr><span><span>Added</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="711724019%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="reaction-added.html"><span class="token function">reactionAdded</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reactionToAdd<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-actionable/index.html">Actionable</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Adds a reaction during the simulation to the scheduler and start to execute it.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-352698861%2FFunctions%2F-116258597" anchor-label="reactionRemoved" id="-352698861%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="reaction-removed.html"><span>reaction</span><wbr><span><span>Removed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-352698861%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="reaction-removed.html"><span class="token function">reactionRemoved</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reactionToRemove<span class="token operator">: </span><a href="../../it.unibo.alchemist.model.interfaces/-actionable/index.html">Actionable</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Removes a reaction during the simulation from the scheduler and stop to execute it.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1898473055%2FFunctions%2F-116258597" anchor-label="removeOutputMonitor" id="1898473055%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="remove-output-monitor.html"><span>remove</span><wbr><span>Output</span><wbr><span><span>Monitor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1898473055%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-output-monitor.html"><span class="token function">removeOutputMonitor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">op<span class="token operator">: </span><a href="../../it.unibo.alchemist.boundary.interfaces/-output-monitor/index.html">OutputMonitor</a><span class="token operator">&lt;</span><a href="../../it.unibo.alchemist.model.interfaces/-concentration/index.html">T</a><span class="token punctuation">, </span><a href="../../it.unibo.alchemist.model.interfaces/-linking-rule/index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Removes an <a href="../../it.unibo.alchemist.boundary.interfaces/-output-monitor/index.html">OutputMonitor</a> to this simulation.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-853624561%2FFunctions%2F-116258597" anchor-label="run" id="-853624561%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-853624561%2FFunctions%2F-116258597"><span><span>run</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-853624561%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-853624561%2FFunctions%2F-116258597"><span class="token function">run</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-260117271%2FFunctions%2F-116258597" anchor-label="schedule" id="-260117271%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="schedule.html"><span><span>schedule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-260117271%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="schedule.html"><span class="token function">schedule</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><span data-unresolved-link="org.jooq.lambda.fi.lang/CheckedRunnable///PointingToDeclaration/">CheckedRunnable</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Schedules a runnable to be executed by the Simulation thread, useful for synchronization purposes (e.g.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1022997298%2FFunctions%2F-116258597" anchor-label="terminate" id="-1022997298%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="terminate.html"><span><span>terminate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1022997298%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="terminate.html"><span class="token function">terminate</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Sends a terminate command to the simulation.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="197294078%2FFunctions%2F-116258597" anchor-label="waitFor" id="197294078%2FFunctions%2F-116258597" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-api:dokkaHtmlPartial/main" data-filterable-set=":alchemist-api:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="wait-for.html"><span>wait</span><wbr><span><span>For</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="197294078%2FFunctions%2F-116258597"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-api:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="wait-for.html"><span class="token function">waitFor</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;s<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;timeout<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;timeunit<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html">TimeUnit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief ">Suspends the caller until the simulation reaches the selected <a href="../-status/index.html">Status</a> or the timeout ends.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

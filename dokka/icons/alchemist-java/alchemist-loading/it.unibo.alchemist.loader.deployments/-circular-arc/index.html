@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>CircularArc</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-loading::it.unibo.alchemist.loader.deployments/CircularArc///PointingToDeclaration//-104114183">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-loading</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.loader.deployments</a><span class="delimiter">/</span><a href="index.html">CircularArc</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Circular</span><wbr><span><span>Arc</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">CircularArc</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator"> : </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-position2-d/index.html">Position2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span>&nbsp;<span><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a>&nbsp;</span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>randomGenerator<span class="token operator">: </span><span data-unresolved-link="org.apache.commons.math3.random/RandomGenerator///PointingToDeclaration/">RandomGenerator</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>nodeCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>centerX<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>centerY<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>radius<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">1.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>radiusRandomness<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>angleRandomness<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>startAngle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>endAngle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span>2 * PI</span></span><span class="token punctuation">)</span> : <a href="../-deployment/index.html">Deployment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Displaces the nodes in the <a href="environment.html">environment</a> in a circular arc, given a <a href="node-count.html">nodeCount</a>, the coordinates of the circle's center <a href="center-x.html">centerX</a> and <a href="center-y.html">centerY</a>, the circle's radius <a href="radius.html">radius</a>, perturbation randomness (uniform, generated via <a href="random-generator.html">randomGenerator</a>) for radius <a href="radius-randomness.html">radiusRandomness</a> and for angle <a href="angle-randomness.html">angleRandomness</a>, a <a href="start-angle.html">startAngle</a>, and an <a href="end-angle.html">endAngle</a>.</p><p class="paragraph">Default values generate a uniform deployment on a circumference.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="-1763627919%2FConstructors%2F-104114183" anchor-label="CircularArc" id="-1763627919%2FConstructors%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-circular-arc.html"><span>Circular</span><wbr><span><span>Arc</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1763627919%2FConstructors%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation">JvmOverloads</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator"> : </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-position2-d/index.html">Position2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><a href="-circular-arc.html"><span class="token function">CircularArc</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;environment<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;randomGenerator<span class="token operator">: </span><span data-unresolved-link="org.apache.commons.math3.random/RandomGenerator///PointingToDeclaration/">RandomGenerator</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;nodeCount<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;centerX<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;centerY<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;radius<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">1.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;radiusRandomness<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;angleRandomness<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;startAngle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;endAngle<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span>2 * PI</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="570985313%2FFunctions%2F-104114183" anchor-label="forEach" id="570985313%2FFunctions%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-polygon/index.html#570985313%2FFunctions%2F-104114183"><span>for</span><wbr><span><span>Each</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="570985313%2FFunctions%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-polygon/index.html#570985313%2FFunctions%2F-104114183"><span class="token function">forEach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a><span class="token operator">&lt;</span><span class="token keyword">in </span><a href="index.html">P</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1221025911%2FFunctions%2F-104114183" anchor-label="getAssociatedLinkingRule" id="1221025911%2FFunctions%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-deployment/get-associated-linking-rule.html"><span>get</span><wbr><span>Associated</span><wbr><span>Linking</span><wbr><span><span>Rule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1221025911%2FFunctions%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><a href="https://docs.oracle.com/javase/8/docs/api/javax/annotation/Nullable.html"><span class="token annotation">Nullable</span></a></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-deployment/get-associated-linking-rule.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt; </span><a href="../-deployment/get-associated-linking-rule.html"><span class="token function">getAssociatedLinkingRule</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-linking-rule/index.html">LinkingRule</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-deployment/get-associated-linking-rule.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Optional <a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-linking-rule/index.html">LinkingRule</a> associated to the deployment.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-333291279%2FFunctions%2F-104114183" anchor-label="iterator" id="-333291279%2FFunctions%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-deployment/iterator.html"><span><span>iterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-333291279%2FFunctions%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator override </span><span class="token keyword">fun </span><a href="../-deployment/iterator.html"><span class="token function">iterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterator/index.html">MutableIterator</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1387152138%2FFunctions%2F-104114183" anchor-label="spliterator" id="-1387152138%2FFunctions%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-specific-positions/index.html#-1387152138%2FFunctions%2F-104114183"><span><span>spliterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1387152138%2FFunctions%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-specific-positions/index.html#-1387152138%2FFunctions%2F-104114183"><span class="token function">spliterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html">Spliterator</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2015154891%2FFunctions%2F-104114183" anchor-label="stream" id="-2015154891%2FFunctions%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="stream.html"><span><span>stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2015154891%2FFunctions%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="stream.html"><span class="token function">stream</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html">Stream</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="1158488984%2FProperties%2F-104114183" anchor-label="angleRandomness" id="1158488984%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="angle-randomness.html"><span>angle</span><wbr><span><span>Randomness</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1158488984%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="1158488984%2FProperties%2F-104114183" anchor-label="angleRandomness" id="1158488984%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="angle-randomness.html">angleRandomness</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="773802114%2FProperties%2F-104114183" anchor-label="centerX" id="773802114%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="center-x.html"><span>center</span><wbr><span><span>X</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="773802114%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="773802114%2FProperties%2F-104114183" anchor-label="centerX" id="773802114%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="center-x.html">centerX</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="804821921%2FProperties%2F-104114183" anchor-label="centerY" id="804821921%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="center-y.html"><span>center</span><wbr><span><span>Y</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="804821921%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="804821921%2FProperties%2F-104114183" anchor-label="centerY" id="804821921%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="center-y.html">centerY</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1078926589%2FProperties%2F-104114183" anchor-label="endAngle" id="1078926589%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="end-angle.html"><span>end</span><wbr><span><span>Angle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1078926589%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="1078926589%2FProperties%2F-104114183" anchor-label="endAngle" id="1078926589%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="end-angle.html">endAngle</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1766437102%2FProperties%2F-104114183" anchor-label="environment" id="-1766437102%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="environment.html"><span><span>environment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1766437102%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="-1766437102%2FProperties%2F-104114183" anchor-label="environment" id="-1766437102%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="environment.html">environment</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-environment/index.html">Environment</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token punctuation">, </span><span class="token keyword"></span><a href="index.html">P</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1714155576%2FProperties%2F-104114183" anchor-label="nodeCount" id="1714155576%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="node-count.html"><span>node</span><wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1714155576%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="1714155576%2FProperties%2F-104114183" anchor-label="nodeCount" id="1714155576%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="node-count.html">nodeCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1820100707%2FProperties%2F-104114183" anchor-label="radius" id="1820100707%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="radius.html"><span><span>radius</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1820100707%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="1820100707%2FProperties%2F-104114183" anchor-label="radius" id="1820100707%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="radius.html">radius</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">1.0</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1136081815%2FProperties%2F-104114183" anchor-label="radiusRandomness" id="-1136081815%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="radius-randomness.html"><span>radius</span><wbr><span><span>Randomness</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1136081815%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="-1136081815%2FProperties%2F-104114183" anchor-label="radiusRandomness" id="-1136081815%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="radius-randomness.html">radiusRandomness</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1187211893%2FProperties%2F-104114183" anchor-label="randomGenerator" id="1187211893%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="random-generator.html"><span>random</span><wbr><span><span>Generator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1187211893%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="1187211893%2FProperties%2F-104114183" anchor-label="randomGenerator" id="1187211893%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="random-generator.html">randomGenerator</a><span class="token operator">: </span><span data-unresolved-link="org.apache.commons.math3.random/RandomGenerator///PointingToDeclaration/">RandomGenerator</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1482042300%2FProperties%2F-104114183" anchor-label="startAngle" id="-1482042300%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-loading:dokkaHtmlPartial/main" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="start-angle.html"><span>start</span><wbr><span><span>Angle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1482042300%2FProperties%2F-104114183"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-loading:dokkaHtmlPartial/main"><a data-name="-1482042300%2FProperties%2F-104114183" anchor-label="startAngle" id="-1482042300%2FProperties%2F-104114183" data-filterable-set=":alchemist-loading:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="start-angle.html">startAngle</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

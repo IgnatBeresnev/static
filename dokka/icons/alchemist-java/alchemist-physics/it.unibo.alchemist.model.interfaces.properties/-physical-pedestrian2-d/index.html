@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>PhysicalPedestrian2D</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>alchemist</span>            </a>    </div>
+    <div>24.0.7-dev06+b76482905
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="alchemist-physics::it.unibo.alchemist.model.interfaces.properties/PhysicalPedestrian2D///PointingToDeclaration//55842382">
+  <div class="breadcrumbs"><a href="../../index.html">alchemist-physics</a><span class="delimiter">/</span><a href="../index.html">it.unibo.alchemist.model.interfaces.properties</a><span class="delimiter">/</span><a href="index.html">PhysicalPedestrian2D</a></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Physical</span><wbr><span><span>Pedestrian2D</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">PhysicalPedestrian2D</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span> : <a href="../-physical-pedestrian/index.html">PhysicalPedestrian</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-euclidean2-d-transformation/index.html">Euclidean2DTransformation</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-euclidean2-d-shape-factory/index.html">Euclidean2DShapeFactory</a><span class="token operator">&gt; </span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">A pedestrian's capability to experience physical forces in a 2D space.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Inheritors">Inheritors</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="1349249543%2FFunctions%2F55842382" anchor-label="avoid" id="1349249543%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/avoid.html"><span><span>avoid</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1349249543%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-pedestrian/avoid.html"><span class="token function">avoid</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Computes the repulsion force caused by a node that entered the <a href="../-physical-pedestrian/rectangle-of-influence.html">rectangleOfInfluence</a>. This is derived from the work of <a href="https://bit.ly/3e3C7Tb">Pelechano et al</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="738549105%2FFunctions%2F55842382" anchor-label="avoidanceForces" id="738549105%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/avoidance-forces.html"><span>avoidance</span><wbr><span><span>Forces</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="738549105%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-pedestrian/avoidance-forces.html"><span class="token function">avoidanceForces</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Computes the total avoidance force this node is subject to.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="90431022%2FFunctions%2F55842382" anchor-label="checkAndPossiblyFall" id="90431022%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/check-and-possibly-fall.html"><span>check</span><wbr><span>And</span><wbr><span>Possibly</span><wbr><span><span>Fall</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="90431022%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-pedestrian/check-and-possibly-fall.html"><span class="token function">checkAndPossiblyFall</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Turn this <a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.interfaces.properties/-physical-pedestrian/node.html">node</a> into a fallen pedestrian if it <a href="../-physical-pedestrian/should-fall.html">shouldFall</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="444373264%2FFunctions%2F55842382" anchor-label="cloneOnNewNode" id="444373264%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-property/index.html#444373264%2FFunctions%2F55842382"><span>clone</span><wbr><span>On</span><wbr><span>New</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="444373264%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-property/index.html#444373264%2FFunctions%2F55842382"><span class="token function">cloneOnNewNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node-property/index.html">NodeProperty</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1357855634%2FFunctions%2F55842382" anchor-label="fallenAgentAvoidanceForces" id="1357855634%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/fallen-agent-avoidance-forces.html"><span>fallen</span><wbr><span>Agent</span><wbr><span>Avoidance</span><wbr><span><span>Forces</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1357855634%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-pedestrian/fallen-agent-avoidance-forces.html"><span class="token function">fallenAgentAvoidanceForces</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Computes the avoidance force from a fallen pedestrian.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1777570283%2FFunctions%2F55842382" anchor-label="onFall" id="1777570283%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/on-fall.html"><span>on</span><wbr><span><span>Fall</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1777570283%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-pedestrian/on-fall.html"><span class="token function">onFall</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Adds a listener to be called when <a href="../../../alchemist-cognitive-agents/it.unibo.alchemist.model.interfaces.properties/-physical-pedestrian/node.html">node</a> falls.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1961412792%2FFunctions%2F55842382" anchor-label="physicalForces" id="-1961412792%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#-1961412792%2FFunctions%2F55842382"><span>physical</span><wbr><span><span>Forces</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1961412792%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1961412792%2FFunctions%2F55842382"><span class="token function">physicalForces</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">environment<span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.environments/-physics-environment/index.html">PhysicsEnvironment</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-euclidean2-d-transformation/index.html">Euclidean2DTransformation</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-euclidean2-d-shape-factory/index.html">Euclidean2DShapeFactory</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1223788952%2FFunctions%2F55842382" anchor-label="repulse" id="1223788952%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/repulse.html"><span><span>repulse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1223788952%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-pedestrian/repulse.html"><span class="token function">repulse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Computes the repulsion force caused by a node that entered the <a href="../-physical-pedestrian/comfort-area.html">comfortArea</a>. This is derived from the work of <a href="https://bit.ly/3e3C7Tb">Pelechano et al</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1149890668%2FFunctions%2F55842382" anchor-label="repulsionForces" id="1149890668%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/repulsion-forces.html"><span>repulsion</span><wbr><span><span>Forces</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1149890668%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-physical-pedestrian/repulsion-forces.html"><span class="token function">repulsionForces</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Computes the total repulsion force this node is subject to.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="724136224%2FFunctions%2F55842382" anchor-label="shouldFall" id="724136224%2FFunctions%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="index.html#724136224%2FFunctions%2F55842382"><span>should</span><wbr><span><span>Fall</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="724136224%2FFunctions%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#724136224%2FFunctions%2F55842382"><span class="token function">shouldFall</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pushingForces<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Determines if this pedestrian subject to <a href="index.html#724136224%2FFunctions%2F55842382">pushingForces</a> should fall. According to the work of <a href="https://bit.ly/3e3C7Tb">Pelechano et al</a> this should happen when the majority of pushing forces affecting one individual are approximately in the same direction and the sum of forces have a magnitude high enough to make it lose equilibrium.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-1740928540%2FProperties%2F55842382" anchor-label="comfortArea" id="-1740928540%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/comfort-area.html"><span>comfort</span><wbr><span><span>Area</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1740928540%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="-1740928540%2FProperties%2F55842382" anchor-label="comfortArea" id="-1740928540%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../-physical-pedestrian/comfort-area.html">comfortArea</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces.geometry/-geometric-shape/index.html">GeometricShape</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-euclidean2-d-transformation/index.html">Euclidean2DTransformation</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1740928540%2FProperties%2F55842382" anchor-label="comfortArea" id="-1740928540%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><p class="paragraph">The comfort area of this pedestrian, it's a circle of radius shape.radius + <a href="../-physical-pedestrian/comfort-ray.html">comfortRay</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1442345409%2FProperties%2F55842382" anchor-label="comfortRay" id="-1442345409%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/comfort-ray.html"><span>comfort</span><wbr><span><span>Ray</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1442345409%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="-1442345409%2FProperties%2F55842382" anchor-label="comfortRay" id="-1442345409%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../-physical-pedestrian/comfort-ray.html">comfortRay</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1442345409%2FProperties%2F55842382" anchor-label="comfortRay" id="-1442345409%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><p class="paragraph">The comfort ray of this pedestrian, this is added to the radius of its shape to obtain the <a href="../-physical-pedestrian/comfort-area.html">comfortArea</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="264462287%2FProperties%2F55842382" anchor-label="isFallen" id="264462287%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/is-fallen.html"><span>is</span><wbr><span><span>Fallen</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="264462287%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="264462287%2FProperties%2F55842382" anchor-label="isFallen" id="264462287%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../-physical-pedestrian/is-fallen.html">isFallen</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="264462287%2FProperties%2F55842382" anchor-label="isFallen" id="264462287%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><p class="paragraph">Whether the pedestrian has fallen and it is thus an obstacle.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1177144003%2FProperties%2F55842382" anchor-label="node" id="1177144003%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-property/index.html#1177144003%2FProperties%2F55842382"><span><span>node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1177144003%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="1177144003%2FProperties%2F55842382" anchor-label="node" id="1177144003%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../-physical-property/index.html#1177144003%2FProperties%2F55842382">node</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces/-node/index.html">Node</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1866009646%2FProperties%2F55842382" anchor-label="rectangleOfInfluence" id="1866009646%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-physical-pedestrian/rectangle-of-influence.html"><span>rectangle</span><wbr><span>Of</span><wbr><span><span>Influence</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1866009646%2FProperties%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":alchemist-physics:dokkaHtmlPartial/main"><a data-name="1866009646%2FProperties%2F55842382" anchor-label="rectangleOfInfluence" id="1866009646%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="../-physical-pedestrian/rectangle-of-influence.html">rectangleOfInfluence</a><span class="token operator">: </span><a href="../../../alchemist-api/it.unibo.alchemist.model.interfaces.geometry/-geometric-shape/index.html">GeometricShape</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.implementations.positions/-euclidean2-d-position/index.html">Euclidean2DPosition</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../../../alchemist-euclidean-geometry/it.unibo.alchemist.model.interfaces.geometry.euclidean2d/-euclidean2-d-transformation/index.html">Euclidean2DTransformation</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1866009646%2FProperties%2F55842382" anchor-label="rectangleOfInfluence" id="1866009646%2FProperties%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a><p class="paragraph">Rectangle of influence. When a pedestrian enters this area, the node could experience a tangential avoidance force. See <a href="../-physical-pedestrian/avoid.html">avoid</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Inheritors</h2>
+      <div class="table" data-togglable="Inheritors"><a data-name="-1756932109%2FInheritors%2F55842382" anchor-label="PhysicalPedestrian2D" id="-1756932109%2FInheritors%2F55842382" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main"></a>
+        <div class="table-row" data-filterable-current=":alchemist-physics:dokkaHtmlPartial/main" data-filterable-set=":alchemist-physics:dokkaHtmlPartial/main">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../it.unibo.alchemist.model.implementations.properties/-physical-pedestrian2-d/index.html">PhysicalPedestrian2D</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1756932109%2FInheritors%2F55842382"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+
