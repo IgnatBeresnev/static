@@ -41,7 +41,7 @@
     --white-10: hsla(0, 0%, 100%, .1);
 
     --active-tab-border-color: #7F52FF;
-    --inactive-tab-border-color: rgba(25,25,28,.7);
+    --inactive-tab-border-color: rgba(164, 164, 170, 0.7);
 
     --active-section-color: #7F52FF;
     --inactive-section-color: rgba(25,25,28,.7);
@@ -166,29 +166,21 @@ html ::-webkit-scrollbar-thumb {
     margin-left: 0;
 }
 
-.section-tab {
+.section-tab,
+.platform-hinted > .platform-bookmarks-row > .platform-bookmark {
     border: 0;
-    background-color: transparent;
-    border-bottom: 1px solid var(--inactive-tab-border-color);
-    color: var(--inactive-tab-border-color);
-    margin: 0 8px;
     padding: 11px 3px;
+    margin: 0 8px;
     cursor: pointer;
     outline: none;
     font-size: var(--default-font-size);
+    background-color: transparent;
+    color: var(--inactive-section-color);
+    border-bottom: 1px solid var(--inactive-tab-border-color);
 }
 
 .platform-hinted > .platform-bookmarks-row {
     margin-bottom: 16px;
-}
-
-.platform-hinted > .platform-bookmarks-row > .platform-bookmark {
-    margin: 0 8px;
-    padding: 11px 3px;
-    cursor: pointer;
-    outline: none;
-    font-size: var(--default-font-size);
-    color: inherit;
 }
 
 .section-tab:hover {
@@ -804,15 +796,10 @@ td.content {
 
 .platform-hinted > .platform-bookmarks-row > .platform-bookmark {
     min-width: 64px;
-    border: 0;
-    border-bottom: 1px solid var(--inactive-tab-border-color);
     background: inherit;
-    outline: none;
     flex: none;
     order: 5;
     align-self: flex-start;
-    background-color: transparent;
-    color: var(--inactive-tab-border-color);
 }
 
 .platform-hinted > .platform-bookmarks-row > .platform-bookmark:hover {
@@ -822,7 +809,7 @@ td.content {
 
 .platform-hinted > .platform-bookmarks-row > .platform-bookmark[data-active=''] {
     border-bottom: 2px solid var(--active-tab-border-color);
-    color: var(--active-tab-border-color);
+    color: var(--active-section-color);
 }
 
 .platform-hinted > .content:not([data-active]),
