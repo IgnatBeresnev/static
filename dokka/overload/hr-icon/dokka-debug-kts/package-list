@@ -1,0 +1,29 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:me.beresnev.dokka.debug.internal////PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug.internal/index.html
+$dokka.location:me.beresnev.dokka.debug.internal/BeanFactory///PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug.internal/-bean-factory/index.html
+$dokka.location:me.beresnev.dokka.debug.internal/BeanFactory/getBean/#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]?#kotlin.Array[kotlin.Any?]/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug.internal/-bean-factory/get-bean.html
+$dokka.location:me.beresnev.dokka.debug.internal/HasThisTypePatternTriedToSneakInSomeGenericOrParameterizedTypePatternMatchingStuffAnywhereVisitor///PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug.internal/-has-this-type-pattern-tried-to-sneak-in-some-generic-or-parameterized-type-pattern-matching-stuff-anywhere-visitor/index.html
+$dokka.location:me.beresnev.dokka.debug.internal/HasThisTypePatternTriedToSneakInSomeGenericOrParameterizedTypePatternMatchingStuffAnywhereVisitor/HasThisTypePatternTriedToSneakInSomeGenericOrParameterizedTypePatternMatchingStuffAnywhereVisitor/#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug.internal/-has-this-type-pattern-tried-to-sneak-in-some-generic-or-parameterized-type-pattern-matching-stuff-anywhere-visitor/-has-this-type-pattern-tried-to-sneak-in-some-generic-or-parameterized-type-pattern-matching-stuff-anywhere-visitor.html
+$dokka.location:me.beresnev.dokka.debug////PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/index.html
+$dokka.location:me.beresnev.dokka.debug//getBean/me.beresnev.dokka.debug.internal.BeanFactory#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/get-bean.html
+$dokka.location:me.beresnev.dokka.debug//getBean/me.beresnev.dokka.debug.internal.BeanFactory#kotlin.Array[kotlin.Any]/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/get-bean.html
+$dokka.location:me.beresnev.dokka.debug//getBean/me.beresnev.dokka.debug.internal.BeanFactory#kotlin.String/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/get-bean.html
+$dokka.location:me.beresnev.dokka.debug//getBean/me.beresnev.dokka.debug.internal.BeanFactory#kotlin.collections.List[kotlin.String]/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/get-bean.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.Array[TypeParam(bounds=[kotlin.Any?])]#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.BooleanArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.ByteArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.CharArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.DoubleArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.FloatArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.IntArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.LongArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.ShortArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.UByteArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.UIntArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.ULongArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.UShortArray#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+$dokka.location:me.beresnev.dokka.debug//indices/kotlin.collections.Collection[*]#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/indices.html
+me.beresnev.dokka.debug
+me.beresnev.dokka.debug.internal
+
