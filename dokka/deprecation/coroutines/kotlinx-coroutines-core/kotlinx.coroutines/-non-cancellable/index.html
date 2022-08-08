@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>NonCancellable</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>kotlinx.coroutines</span>            </a>    </div>
+    <div>1.6.4-SNAPSHOT
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="kotlinx-coroutines-core::kotlinx.coroutines/NonCancellable///PointingToDeclaration//1975948010">
+  <div class="breadcrumbs"><a href="../../index.html">kotlinx-coroutines-core</a><span class="delimiter">/</span><a href="../index.html">kotlinx.coroutines</a><span class="delimiter">/</span><span class="current">NonCancellable</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Non</span><wbr><span><span>Cancellable</span></span></h1>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">NonCancellable</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-abstract-coroutine-context-element/index.html">AbstractCoroutineContextElement</a>, <a href="../-job/index.html">Job</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/kotlin/kotlinx.coroutines/tree/master/kotlinx-coroutines-core/common/src/NonCancellable.kt#L11">source</a>)</span></span></div><p class="paragraph">A non-cancelable job that is always <a href="../-job/is-active.html">active</a>. It is designed for <a href="../with-context.html">withContext</a> function to prevent cancellation of code blocks that need to be executed without cancellation.</p><p class="paragraph">Use it like this:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">withContext(NonCancellable) {<br>    // this code will not be cancelled<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph"><strong>WARNING</strong>: This object is not designed to be used with <a href="../launch.html">launch</a>, <a href="../async.html">async</a>, and other coroutine builders. if you write <code class="lang-kotlin">launch(NonCancellable) { ... }</code> then not only the newly launched job will not be cancelled when the parent is cancelled, the whole parent-child relation between parent and child is severed. The parent will not wait for the child's completion, nor will be cancelled when the child crashed.</p></div>    </div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-98186420%2FFunctions%2F1975948010" anchor-label="attachChild" id="-98186420%2FFunctions%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="attach-child.html"><span>attach</span><wbr><span><span>Child</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-98186420%2FFunctions%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="attach-child.html"><span class="token function">attachChild</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">child<span class="token operator">: </span><a href="../-child-job/index.html">ChildJob</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-child-handle/index.html">ChildHandle</a></div><div class="brief "><p class="paragraph">Always returns <a href="../-non-disposable-handle/index.html">NonDisposableHandle</a> and does not do anything. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1819235517%2FFunctions%2F1975948010" anchor-label="cancel" id="-1819235517%2FFunctions%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="cancel.html"><span><span>cancel</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1819235517%2FFunctions%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="cancel.html"><span class="token function">cancel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">cause<span class="token operator">: </span><a href="../-cancellation-exception/index.html">CancellationException</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Does nothing. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1127196332%2FFunctions%2F1975948010" anchor-label="getCancellationException" id="-1127196332%2FFunctions%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get-cancellation-exception.html"><span>get</span><wbr><span>Cancellation</span><wbr><span><span>Exception</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1127196332%2FFunctions%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-cancellation-exception.html"><span class="token function">getCancellationException</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-cancellation-exception/index.html">CancellationException</a></div><div class="brief "><p class="paragraph">Always throws <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1596781588%2FFunctions%2F1975948010" anchor-label="invokeOnCompletion" id="1596781588%2FFunctions%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="invoke-on-completion.html"><span>invoke</span><wbr><span>On</span><wbr><span><span>Completion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1596781588%2FFunctions%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="invoke-on-completion.html"><span class="token function">invokeOnCompletion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">handler<span class="token operator">: </span><a href="../index.html#2145916192%2FClasslikes%2F1975948010">CompletionHandler</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-disposable-handle/index.html">DisposableHandle</a></div><div class="brief "><p class="paragraph">This an internal API and should not be used from general code.**</p></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="invoke-on-completion.html"><span class="token function">invokeOnCompletion</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onCancelling<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;invokeImmediately<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;handler<span class="token operator">: </span><a href="../index.html#2145916192%2FClasslikes%2F1975948010">CompletionHandler</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-disposable-handle/index.html">DisposableHandle</a></div><div class="brief "><p class="paragraph">Always returns no-op handle. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-720418816%2FFunctions%2F1975948010" anchor-label="join" id="-720418816%2FFunctions%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="join.html"><span><span>join</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-720418816%2FFunctions%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">suspend override </span><span class="token keyword">fun </span><a href="join.html"><span class="token function">join</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Always throws <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unsupported-operation-exception/index.html">UnsupportedOperationException</a>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1600895246%2FFunctions%2F1975948010" anchor-label="start" id="1600895246%2FFunctions%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="start.html"><span><span>start</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1600895246%2FFunctions%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="start.html"><span class="token function">start</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Always returns <code class="lang-kotlin">false</code>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="425394814%2FFunctions%2F1975948010" anchor-label="toString" id="425394814%2FFunctions%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="to-string.html"><span>to</span><wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="425394814%2FFunctions%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="157553227%2FProperties%2F1975948010" anchor-label="children" id="157553227%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="children.html"><span><span>children</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="157553227%2FProperties%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="157553227%2FProperties%2F1975948010" anchor-label="children" id="157553227%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="children.html">children</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-job/index.html">Job</a><span class="token operator">&gt;</span></div><div class="brief "><a data-name="157553227%2FProperties%2F1975948010" anchor-label="children" id="157553227%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Always returns <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/index.html">emptySequence</a>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1735859354%2FProperties%2F1975948010" anchor-label="isActive" id="1735859354%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-active.html"><span>is</span><wbr><span><span>Active</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1735859354%2FProperties%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="1735859354%2FProperties%2F1975948010" anchor-label="isActive" id="1735859354%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="is-active.html">isActive</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><a data-name="1735859354%2FProperties%2F1975948010" anchor-label="isActive" id="1735859354%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Always returns <code class="lang-kotlin">true</code>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1903522935%2FProperties%2F1975948010" anchor-label="isCancelled" id="-1903522935%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-cancelled.html"><span>is</span><wbr><span><span>Cancelled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1903522935%2FProperties%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="-1903522935%2FProperties%2F1975948010" anchor-label="isCancelled" id="-1903522935%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="is-cancelled.html">isCancelled</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><a data-name="-1903522935%2FProperties%2F1975948010" anchor-label="isCancelled" id="-1903522935%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Always returns <code class="lang-kotlin">false</code>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1644850127%2FProperties%2F1975948010" anchor-label="isCompleted" id="1644850127%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-completed.html"><span>is</span><wbr><span><span>Completed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1644850127%2FProperties%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="1644850127%2FProperties%2F1975948010" anchor-label="isCompleted" id="1644850127%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="is-completed.html">isCompleted</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><a data-name="1644850127%2FProperties%2F1975948010" anchor-label="isCompleted" id="1644850127%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Always returns <code class="lang-kotlin">false</code>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1956875487%2FProperties%2F1975948010" anchor-label="onJoin" id="-1956875487%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="on-join.html"><span>on</span><wbr><span><span>Join</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1956875487%2FProperties%2F1975948010"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="-1956875487%2FProperties%2F1975948010" anchor-label="onJoin" id="-1956875487%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="on-join.html">onJoin</a><span class="token operator">: </span><a href="../../kotlinx.coroutines.selects/-select-clause0/index.html">SelectClause0</a></div><div class="brief "><a data-name="-1956875487%2FProperties%2F1975948010" anchor-label="onJoin" id="-1956875487%2FProperties%2F1975948010" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a><p class="paragraph">Always throws <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unsupported-operation-exception/index.html">UnsupportedOperationException</a>. This an internal API and should not be used from general code.**</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+

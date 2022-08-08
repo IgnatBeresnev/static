@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>LockFreeLinkedListNode</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script></head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+<a href="../../../index.html">
+<span>kotlinx.coroutines</span>            </a>    </div>
+    <div>1.6.4-SNAPSHOT
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button>
+                <button class="platform-tag platform-selector js-like" data-active="" data-filter=":kotlinx-coroutines-core:dokkaHtmlPartial/jsMain">js</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageids="kotlinx-coroutines-core::kotlinx.coroutines.internal/LockFreeLinkedListNode///PointingToDeclaration//-216319544">
+  <div class="breadcrumbs"><a href="../../index.html">kotlinx-coroutines-core</a><span class="delimiter">/</span><a href="../index.html">kotlinx.coroutines.internal</a><span class="delimiter">/</span><span class="current">LockFreeLinkedListNode</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Lock</span><wbr><span>Free</span><wbr><span>Linked</span><wbr><span>List</span><wbr><span><span>Node</span></span></h1>
+    <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+      <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/jsMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/jsMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/jsMain">js</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">LockFreeLinkedListNode</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/kotlin/kotlinx.coroutines/tree/master/kotlinx-coroutines-core/common/src/internal/LockFreeLinkedList.common.kt#L11">source</a>)</span></span></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">LockFreeLinkedListNode</a></div><p class="paragraph">Doubly-linked concurrent list node with remove support. Based on paper <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.140.4693&amp;rep=rep1&amp;type=pdf">"Lock-Free and Practical Doubly Linked List-Based Deques Using Single-Word Compare-and-Swap"</a> by Sundell and Tsigas with considerable changes.</p><p class="paragraph">The core idea of the algorithm is to maintain a doubly-linked list with an ever-present sentinel node (it is never removed) that serves both as a list head and tail and to linearize all operations (both insert and remove) on the update of the next pointer. Removed nodes have their next pointer marked with <a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-removed/index.html">Removed</a> class.</p><p class="paragraph">Important notes:</p><ul><li><p class="paragraph">There are no operations to add items to left side of the list, only to the end (right side), because we cannot efficiently linearize them with atomic multi-step head-removal operations. In short, support for <a href="describe-remove-first.html">describeRemoveFirst</a> operation precludes ability to add items at the beginning.</p></li><li><p class="paragraph">Previous pointers are not marked for removal. We don't support linearizable backwards traversal.</p></li><li><p class="paragraph">Remove-helping logic is simplified and consolidated in <a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-lock-free-linked-list-node/correct-prev.html">correctPrev</a> method.</p></li></ul><p class="paragraph">This is unstable API and it is subject to change.**</p></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/jsMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">typealias </span><a href="index.html">LockFreeLinkedListNode</a><span class="token operator"> = </span><a href="../-linked-list-node/index.html">LinkedListNode</a></div></div>    </div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Inheritors">Inheritors</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="1615450788%2FConstructors%2F-1008387640" anchor-label="LockFreeLinkedListNode" id="1615450788%2FConstructors%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain :kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain :kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain :kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-lock-free-linked-list-node.html"><span>Lock</span><wbr><span>Free</span><wbr><span>Linked</span><wbr><span>List</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1615450788%2FConstructors%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="-lock-free-linked-list-node.html"><span class="token function">LockFreeLinkedListNode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-lock-free-linked-list-node.html"><span class="token function">LockFreeLinkedListNode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Types</h2>
+      <div class="table" data-togglable="Types"><a data-name="-1444655893%2FClasslikes%2F979062122" anchor-label="AbstractAtomicDesc" id="-1444655893%2FClasslikes%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-abstract-atomic-desc/index.html"><span>Abstract</span><wbr><span>Atomic</span><wbr><span><span>Desc</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1444655893%2FClasslikes%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-abstract-atomic-desc/index.html">AbstractAtomicDesc</a> : <a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-atomic-desc/index.html">AtomicDesc</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2102724113%2FClasslikes%2F979062122" anchor-label="AddLastDesc" id="2102724113%2FClasslikes%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-add-last-desc/index.html"><span>Add</span><wbr><span>Last</span><wbr><span><span>Desc</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2102724113%2FClasslikes%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-add-last-desc/index.html">AddLastDesc</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-add-last-desc/index.html">T</a><span class="token operator"> : </span><a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-node/index.html">Node</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>queue<span class="token operator">: </span><a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-node/index.html">Node</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>node<span class="token operator">: </span><a href="-add-last-desc/index.html">T</a></span></span><span class="token punctuation">)</span> : <a href="-abstract-atomic-desc/index.html">LockFreeLinkedListNode.AbstractAtomicDesc</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1937060655%2FClasslikes%2F979062122" anchor-label="PrepareOp" id="-1937060655%2FClasslikes%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-prepare-op/index.html"><span>Prepare</span><wbr><span><span>Op</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1937060655%2FClasslikes%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-prepare-op/index.html">PrepareOp</a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>affected<span class="token operator">: </span><a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-node/index.html">Node</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>next<span class="token operator">: </span><a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-node/index.html">Node</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">val </span>desc<span class="token operator">: </span><a href="-abstract-atomic-desc/index.html">LockFreeLinkedListNode.AbstractAtomicDesc</a></span></span><span class="token punctuation">)</span> : <a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-op-descriptor/index.html">OpDescriptor</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1703906180%2FClasslikes%2F979062122" anchor-label="RemoveFirstDesc" id="-1703906180%2FClasslikes%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-remove-first-desc/index.html"><span>Remove</span><wbr><span>First</span><wbr><span><span>Desc</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1703906180%2FClasslikes%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-remove-first-desc/index.html">RemoveFirstDesc</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-remove-first-desc/index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>queue<span class="token operator">: </span><a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-node/index.html">Node</a></span></span><span class="token punctuation">)</span> : <a href="-abstract-atomic-desc/index.html">LockFreeLinkedListNode.AbstractAtomicDesc</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-663107190%2FFunctions%2F-1008387640" anchor-label="addLast" id="-663107190%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-last.html"><span>add</span><wbr><span><span>Last</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-663107190%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-last.html"><span class="token function">addLast</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></span></span><span class="token punctuation">)</span></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-last.html"><span class="token function">addLast</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Adds last item to this list.</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-511586880%2FFunctions%2F-1008387640" anchor-label="addLastIf" id="-511586880%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-last-if.html"><span>add</span><wbr><span>Last</span><wbr><span><span>If</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-511586880%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="add-last-if.html"><span class="token function">addLastIf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">crossinline </span>condition<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="add-last-if.html"><span class="token function">addLastIf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">crossinline </span>condition<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Adds last item to this list atomically if the <a href="add-last-if.html">condition</a> is true.</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-745376461%2FFunctions%2F-1008387640" anchor-label="addLastIfPrev" id="-745376461%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-last-if-prev.html"><span>add</span><wbr><span>Last</span><wbr><span>If</span><wbr><span><span>Prev</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-745376461%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="add-last-if-prev.html"><span class="token function">addLastIfPrev</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">, </span></span><span class="parameter ">predicate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="add-last-if-prev.html"><span class="token function">addLastIfPrev</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">, </span></span><span class="parameter ">predicate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="275411954%2FFunctions%2F-1008387640" anchor-label="addLastIfPrevAndIf" id="275411954%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-last-if-prev-and-if.html"><span>add</span><wbr><span>Last</span><wbr><span>If</span><wbr><span>Prev</span><wbr><span>And</span><wbr><span><span>If</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="275411954%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="add-last-if-prev-and-if.html"><span class="token function">addLastIfPrevAndIf</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;predicate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">crossinline </span>condition<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="add-last-if-prev-and-if.html"><span class="token function">addLastIfPrevAndIf</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;predicate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="index.html">LockFreeLinkedListNode</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;<span class="token keyword">crossinline </span>condition<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-353049418%2FFunctions%2F-1008387640" anchor-label="addOneIfEmpty" id="-353049418%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="add-one-if-empty.html"><span>add</span><wbr><span>One</span><wbr><span>If</span><wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-353049418%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-one-if-empty.html"><span class="token function">addOneIfEmpty</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-one-if-empty.html"><span class="token function">addOneIfEmpty</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1796160033%2FFunctions%2F979062122" anchor-label="describeAddLast" id="1796160033%2FFunctions%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="describe-add-last.html"><span>describe</span><wbr><span>Add</span><wbr><span><span>Last</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1796160033%2FFunctions%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="describe-add-last.html">T</a><span class="token operator"> : </span><a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-node/index.html">Node</a><span class="token operator">&gt; </span><a href="describe-add-last.html"><span class="token function">describeAddLast</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">node<span class="token operator">: </span><a href="describe-add-last.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-add-last-desc/index.html">LockFreeLinkedListNode.AddLastDesc</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="describe-add-last.html">T</a><span class="token operator">&gt;</span></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1416122011%2FFunctions%2F979062122" anchor-label="describeRemoveFirst" id="-1416122011%2FFunctions%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="describe-remove-first.html"><span>describe</span><wbr><span>Remove</span><wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1416122011%2FFunctions%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="describe-remove-first.html"><span class="token function">describeRemoveFirst</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-remove-first-desc/index.html">LockFreeLinkedListNode.RemoveFirstDesc</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../kotlinx-coroutines-core/kotlinx.coroutines.internal/-node/index.html">Node</a><span class="token operator">&gt;</span></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-17027377%2FFunctions%2F-1008387640" anchor-label="helpRemove" id="-17027377%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="help-remove.html"><span>help</span><wbr><span><span>Remove</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-17027377%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="help-remove.html"><span class="token function">helpRemove</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Helps fully finish <a href="remove.html">remove</a> operation, must be invoked after <a href="remove.html">remove</a> if needed. Ensures that traversing the list via prev pointers sees this node as removed. No-op on JS</p></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="help-remove.html"><span class="token function">helpRemove</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="321950160%2FFunctions%2F-1008387640" anchor-label="remove" id="321950160%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="remove.html"><span><span>remove</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="321950160%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove.html"><span class="token function">remove</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove.html"><span class="token function">remove</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Removes this node from the list. Returns <code class="lang-kotlin">true</code> when removed successfully, or <code class="lang-kotlin">false</code> if the node was already removed or if it was not added to any list in the first place.</p></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1784266081%2FFunctions%2F-1008387640" anchor-label="removeFirstIfIsInstanceOfOrPeekIf" id="1784266081%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="remove-first-if-is-instance-of-or-peek-if.html"><span>remove</span><wbr><span>First</span><wbr><span>If</span><wbr><span>Is</span><wbr><span>Instance</span><wbr><span>Of</span><wbr><span>Or</span><wbr><span>Peek</span><wbr><span><span>If</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1784266081%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="remove-first-if-is-instance-of-or-peek-if.html">T</a><span class="token operator">&gt; </span><a href="remove-first-if-is-instance-of-or-peek-if.html"><span class="token function">removeFirstIfIsInstanceOfOrPeekIf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">predicate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="remove-first-if-is-instance-of-or-peek-if.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="remove-first-if-is-instance-of-or-peek-if.html">T</a><span class="token operator">?</span></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="remove-first-if-is-instance-of-or-peek-if.html">T</a><span class="token operator">&gt; </span><a href="remove-first-if-is-instance-of-or-peek-if.html"><span class="token function">removeFirstIfIsInstanceOfOrPeekIf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">predicate<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="remove-first-if-is-instance-of-or-peek-if.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="remove-first-if-is-instance-of-or-peek-if.html">T</a><span class="token operator">?</span></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1845846096%2FFunctions%2F-1008387640" anchor-label="removeFirstOrNull" id="1845846096%2FFunctions%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="remove-first-or-null.html"><span>remove</span><wbr><span>First</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1845846096%2FFunctions%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-first-or-null.html"><span class="token function">removeFirstOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token operator">?</span></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-first-or-null.html"><span class="token function">removeFirstOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a><span class="token operator">?</span></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-817593560%2FFunctions%2F979062122" anchor-label="toString" id="-817593560%2FFunctions%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="to-string.html"><span>to</span><wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-817593560%2FFunctions%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-125908176%2FProperties%2F-1008387640" anchor-label="isRemoved" id="-125908176%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-removed.html"><span>is</span><wbr><span><span>Removed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-125908176%2FProperties%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="-125908176%2FProperties%2F-1008387640" anchor-label="isRemoved" id="-125908176%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">val </span><a href="is-removed.html">isRemoved</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><a data-name="-125908176%2FProperties%2F-1008387640" anchor-label="isRemoved" id="-125908176%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">val </span><a href="is-removed.html">isRemoved</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2051335169%2FProperties%2F979062122" anchor-label="next" id="2051335169%2FProperties%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="next.html"><span><span>next</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2051335169%2FProperties%2F979062122"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><a data-name="2051335169%2FProperties%2F979062122" anchor-label="next" id="2051335169%2FProperties%2F979062122" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="next.html">next</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="616909343%2FProperties%2F-1008387640" anchor-label="nextNode" id="616909343%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="next-node.html"><span>next</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="616909343%2FProperties%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="616909343%2FProperties%2F-1008387640" anchor-label="nextNode" id="616909343%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">val </span><a href="next-node.html">nextNode</a><span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><a data-name="616909343%2FProperties%2F-1008387640" anchor-label="nextNode" id="616909343%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">val </span><a href="next-node.html">nextNode</a><span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2130344671%2FProperties%2F-1008387640" anchor-label="prevNode" id="2130344671%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="prev-node.html"><span>prev</span><wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2130344671%2FProperties%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted" data-togglable="Properties">
+                  <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain" data-active="" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-toggle=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">concurrent</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain"><a data-name="2130344671%2FProperties%2F-1008387640" anchor-label="prevNode" id="2130344671%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">val </span><a href="prev-node.html">prevNode</a><span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></div></div><div class="content sourceset-dependent-content" data-togglable=":kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"><a data-name="2130344671%2FProperties%2F-1008387640" anchor-label="prevNode" id="2130344671%2FProperties%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">val </span><a href="prev-node.html">prevNode</a><span class="token operator">: </span><a href="index.html">LockFreeLinkedListNode</a></div></div>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Inheritors</h2>
+      <div class="table" data-togglable="Inheritors"><a data-name="-1760617811%2FInheritors%2F-1008387640" anchor-label="LockFreeLinkedListHead" id="-1760617811%2FInheritors%2F-1008387640" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain"></a>
+        <div class="table-row" data-filterable-current=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain" data-filterable-set=":kotlinx-coroutines-core:dokkaHtmlPartial/commonMain :kotlinx-coroutines-core:dokkaHtmlPartial/concurrentMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../-lock-free-linked-list-head/index.html">LockFreeLinkedListHead</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1760617811%2FInheritors%2F-1008387640"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+
+</body></html>
+
