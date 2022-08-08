@@ -1,0 +1,14 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:me.beresnev.dokka.debug////PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/index.html
+$dokka.location:me.beresnev.dokka.debug//newShinyFunction/#me.beresnev.dokka.debug.SomeOldType#kotlin.String#me.beresnev.dokka.debug.SomeNewType/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/new-shiny-function.html
+$dokka.location:me.beresnev.dokka.debug//oldLegacyFunction/#me.beresnev.dokka.debug.SomeOldType#kotlin.String/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/old-legacy-function.html
+$dokka.location:me.beresnev.dokka.debug/SomeNewType///PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/-some-new-type/index.html
+$dokka.location:me.beresnev.dokka.debug/SomeNewType/SomeNewType/#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/-some-new-type/-some-new-type.html
+$dokka.location:me.beresnev.dokka.debug/SomeOldType///PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/-some-old-type/index.html
+$dokka.location:me.beresnev.dokka.debug/SomeOldType/SomeOldType/#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/-some-old-type/-some-old-type.html
+$dokka.location:me.beresnev.some.other.code////PointingToDeclaration/dokka-debug-kts/me.beresnev.some.other.code/index.html
+$dokka.location:me.beresnev.some.other.code//haha/#/PointingToDeclaration/dokka-debug-kts/me.beresnev.some.other.code/haha.html
+me.beresnev.dokka.debug
+me.beresnev.some.other.code
+
