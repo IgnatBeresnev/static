@@ -765,17 +765,9 @@ small {
     margin-bottom: 5px;
 }
 
-.deprecation-details .indented {
-    padding-left: 17px;
-}
-
-.deprecation-details > ul {
-    padding-left: 34px;
-}
-
-.deprecation-details code {
-    box-sizing: border-box;
+.deprecation-details code.block {
     padding: 5px 10px;
+    display: inline-block;
 }
 
 .platform-tag {

@@ -745,7 +745,7 @@ small {
 
 .deprecation-details {
     margin: 25px 10px;
-    border:1px solid #5f5f5f;
+    border:1px solid var(--border-color);
     padding: 20px 20px;
 }
 
@@ -765,17 +765,9 @@ small {
     margin-bottom: 5px;
 }
 
-.deprecation-details .indented {
-    padding-left: 17px;
-}
-
-.deprecation-details > ul {
-    padding-left: 34px;
-}
-
-.deprecation-details code {
-    box-sizing: border-box;
+.deprecation-details code.block {
     padding: 5px 10px;
+    display: inline-block;
 }
 
 .platform-tag {
