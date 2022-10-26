@@ -1,0 +1,128 @@
+{
+  "topLevelIds": [
+    "overview",
+    "5d0",
+    "5d8",
+    "5e0"
+  ],
+  "entities": {
+    "pages": {
+      "overview": {
+        "id": "overview",
+        "title": "Overview",
+        "disqus_id": "",
+        "url": "overview.html",
+        "level": 0,
+        "parentId": "dokka",
+        "tabIndex": 0
+      },
+      "5d0": {
+        "id": "5d0",
+        "title": "Runners",
+        "level": 0,
+        "parentId": "dokka",
+        "pages": [
+          "gradle",
+          "maven",
+          "cli"
+        ],
+        "tabIndex": 1
+      },
+      "gradle": {
+        "id": "gradle",
+        "title": "Gradle plugin",
+        "disqus_id": "",
+        "url": "gradle.html",
+        "level": 1,
+        "parentId": "5d0",
+        "tabIndex": 0
+      },
+      "maven": {
+        "id": "maven",
+        "title": "Maven plugin",
+        "disqus_id": "",
+        "url": "maven.html",
+        "level": 1,
+        "parentId": "5d0",
+        "tabIndex": 1
+      },
+      "cli": {
+        "id": "cli",
+        "title": "CLI runner",
+        "disqus_id": "",
+        "url": "cli.html",
+        "level": 1,
+        "parentId": "5d0",
+        "tabIndex": 2
+      },
+      "5d8": {
+        "id": "5d8",
+        "title": "Output formats",
+        "level": 0,
+        "parentId": "dokka",
+        "pages": [
+          "html",
+          "markdown",
+          "javadoc"
+        ],
+        "tabIndex": 2
+      },
+      "html": {
+        "id": "html",
+        "title": "HTML",
+        "disqus_id": "",
+        "url": "html.html",
+        "level": 1,
+        "parentId": "5d8",
+        "tabIndex": 0
+      },
+      "markdown": {
+        "id": "markdown",
+        "title": "Markdown",
+        "disqus_id": "",
+        "url": "markdown.html",
+        "level": 1,
+        "parentId": "5d8",
+        "tabIndex": 1
+      },
+      "javadoc": {
+        "id": "javadoc",
+        "title": "Javadoc",
+        "disqus_id": "",
+        "url": "javadoc.html",
+        "level": 1,
+        "parentId": "5d8",
+        "tabIndex": 2
+      },
+      "5e0": {
+        "id": "5e0",
+        "title": "Plugins",
+        "level": 0,
+        "parentId": "dokka",
+        "pages": [
+          "plugins_introduction",
+          "versioning"
+        ],
+        "tabIndex": 3
+      },
+      "plugins_introduction": {
+        "id": "plugins_introduction",
+        "title": "Dokka plugins",
+        "disqus_id": "",
+        "url": "plugins_introduction.html",
+        "level": 1,
+        "parentId": "5e0",
+        "tabIndex": 0
+      },
+      "versioning": {
+        "id": "versioning",
+        "title": "Versioning plugin",
+        "disqus_id": "",
+        "url": "versioning.html",
+        "level": 1,
+        "parentId": "5e0",
+        "tabIndex": 1
+      }
+    }
+  }
+}
