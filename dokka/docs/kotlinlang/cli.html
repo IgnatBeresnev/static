@@ -1,0 +1,163 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat"><html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  <meta charset="UTF-8">   <meta name="built-on" content="${builtOn}">   <title>CLI runner—Dokka</title><script id="virtual-toc-data" type="application/json">[{"id":"pre-requisites","level":0,"title":"Pre-requisites","anchor":"#pre-requisites"},{"id":"running-with-command-line-arguments","level":0,"title":"Running with command line arguments","anchor":"#running-with-command-line-arguments"},{"id":"running-with-json-configuration","level":0,"title":"Running with JSON configuration","anchor":"#running-with-json-configuration"},{"id":"other-output-formats","level":0,"title":"Other output formats","anchor":"#other-output-formats"}]</script>     <link href="/dokka/preview/docs/app/app.css?_ijt=i1hunujervi12bfeajh51pshav" rel="stylesheet">   <link rel="shortcut icon" href="https://resources.jetbrains.com/storage/ui/favicons/favicon.ico" type="image/x-icon" sizes="16x16 32x32"/><link rel="apple-touch-icon" sizes="57x57" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="https://resources.jetbrains.com/storage/ui/favicons/apple-touch-icon-180x180.png"/><link rel="mask-icon" href="https://resources.jetbrains.com/storage/ui/favicons/apple-mask-icon.svg" color="black"/><meta name="msapplication-TileColor" content="#000000"/><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"/><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"/><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"/><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"/><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"/>  <meta name="image" content="${ogMetaImage}"><!-- Open Graph --><meta property="og:title" content="CLI runner - Help | Dokka"/><meta property="og:description" content=""/><meta property="og:image" content="${ogMetaImage}"/><meta property="og:site_name" content="Dokka Help"/><meta property="og:type" content="website"/><meta property="og:locale" content="en_US"/><meta property="og:url" content="${ogUrl}"/><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="${ogTwitter}"><meta name="twitter:title" content="CLI runner - Help | Dokka"><meta name="twitter:description" content=""><meta name="twitter:creator" content="${ogTwitter}"><meta name="twitter:image:src" content="${ogMetaImage}"><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json"> { "@context": "http://schema.org", "@type": "WebPage", "@id": "${ogUrl}#webpage", "url": "${ogUrl}", "name": "CLI runner - Help | Dokka", "description": "", "image": "${ogMetaImage}", "inLanguage":"en-US" }</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json"> { "@type": "WebSite", "@id": "${ogUrlRoot}#website", "url": "${ogUrlRoot}", "name": "Dokka Help" }</script><!-- End Schema.org --></head>    <body data-id="cli" data-main-title="CLI runner" data-article-props="{&quot;microFormat&quot;:[],&quot;seeAlsoStyle&quot;:&quot;links&quot;}"  data-template="article"  data-breadcrumbs=""  >  <div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Dokka 1.7.20 Help</h3><div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select class="select _shortcuts" height="1" id="switch-shortcuts">      </select></div><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="cli" id="cli.md"  >CLI runner</h1><p id="c0d1" >If for some reason you cannot use <a href="gradle.html" id="c0d9"  >Gradle</a> or <a href="maven.html" id="c0e3"  >Maven</a> plugin, Dokka has a command line runner for generating documentation without any build tools.</p> <p id="c0ed" >In comparison, it has the same, if not more, capabilities as the Gradle plugin, although it is considerably more difficult to set up as there is no autoconfiguration, especially in multiplatform and multimodule environments.</p> <p id="c0f5" >CLI runner is published as a separate artifact to Maven Central under <code class="code " id="c0fd"  >org.jetbrains.dokka:dokka-cli</code>, so you can find it on <a href="https://mvnrepository.com/artifact/org.jetbrains.dokka/dokka-cli" data-external="true" id="c105" rel="noopener noreferrer" >mvnrepository</a> or by browsing <a href="https://repo1.maven.org/maven2/org/jetbrains/dokka/dokka-cli/" data-external="true" id="c10f" rel="noopener noreferrer" >maven central repository directories</a> directly.</p> <h2 id="getting-started" data-toc="cli#getting-started"  >Getting started</h2> <p id="c122" >With <code class="code " id="c12a"  >dokka-cli-1.7.20.jar</code> file on your computer, you can run it with <code class="code " id="c132"  >-help</code> to see available arguments and their description:</p> <div class="code-block" data-lang="bash" id="c142"       >  java -jar dokka-cli-%dokkaVersion%.jar -help
+  </div> <p id="c14b" >It also works for some nested arguments, such as <code class="code " id="c153"  >-sourceSet</code>:</p> <div class="code-block" data-lang="bash" id="c163"       >  java -jar dokka-cli-%dokkaVersion%.jar -sourceSet -help
+  </div> <h2 id="generating-documentation" data-toc="cli#generating-documentation"  >Generating documentation</h2> <section class="chapter" >  <h2 id="pre-requisites" data-toc="cli#pre-requisites" >Pre-requisites</h2><p id="c17e" >Since there is no build tool to manage dependencies, you will have to provide dependency <code class="code " id="c186"  >.jar</code> files yourself.</p> <p id="c18e" >Dependencies you will need for any format:</p> <div class="table-wrapper">      <table class=" wide" id="c196" >  <thead>  <tr class="ijRowHead" id="c1a6" >      <th id="c1ae"    ><b id="c1b6" class=""  >Group</b></th>      <th id="c1be"    ><b id="c1c6" class=""  >Artifact</b></th>      <th id="c1ce"    ><b id="c1d6" class=""  >Version</b></th>      <th id="c1de"    ><b id="c1e6" class=""  >Link</b></th></tr></thead>  <tbody>  <tr class="" id="c1f6" >      <td id="c1fe"    ><code class="code " id="c206"  >org.jetbrains.dokka</code></td>      <td id="c20e"    ><code class="code " id="c216"  >dokka-base</code></td>      <td id="c21e"    >1.7.20</td>      <td id="c226"    ><a href="https://mvnrepository.com/artifact/org.jetbrains.dokka/dokka-base/1.7.20" data-external="true" id="c22e" rel="noopener noreferrer" >mvnrepository</a></td></tr> <tr class="" id="c238" >      <td id="c240"    ><code class="code " id="c248"  >org.jetbrains.dokka</code></td>      <td id="c250"    ><code class="code " id="c258"  >dokka-analysis</code></td>      <td id="c260"    >1.7.20</td>      <td id="c268"    ><a href="https://mvnrepository.com/artifact/org.jetbrains.dokka/dokka-analysis/1.7.20" data-external="true" id="c270" rel="noopener noreferrer" >mvnrepository</a></td></tr> <tr class="" id="c27a" >      <td id="c282"    ><code class="code " id="c28a"  >org.jetbrains.dokka</code></td>      <td id="c292"    ><code class="code " id="c29a"  >kotlin-analysis-compiler</code></td>      <td id="c2a2"    >1.7.20</td>      <td id="c2aa"    ><a href="https://mvnrepository.com/artifact/org.jetbrains.dokka/kotlin-analysis-compiler/1.7.20" data-external="true" id="c2b2" rel="noopener noreferrer" >mvnrepository</a></td></tr> <tr class="" id="c2bc" >      <td id="c2c4"    ><code class="code " id="c2cc"  >org.jetbrains.dokka</code></td>      <td id="c2d4"    ><code class="code " id="c2dc"  >kotlin-analysis-intellij</code></td>      <td id="c2e4"    >1.7.20</td>      <td id="c2ec"    ><a href="https://mvnrepository.com/artifact/org.jetbrains.dokka/kotlin-analysis-intellij/1.7.20" data-external="true" id="c2f4" rel="noopener noreferrer" >mvnrepository</a></td></tr></tbody></table></div> <p id="c2fe" >Additional dependencies for <a href="html.html" id="c306"  >HTML</a> format:</p> <div class="table-wrapper">      <table class=" wide" id="c310" >  <thead>  <tr class="ijRowHead" id="c320" >      <th id="c328"    ><b id="c330" class=""  >Group</b></th>      <th id="c338"    ><b id="c340" class=""  >Artifact</b></th>      <th id="c348"    ><b id="c350" class=""  >Version</b></th>      <th id="c358"    ><b id="c360" class=""  >Link</b></th></tr></thead>  <tbody>  <tr class="" id="c370" >      <td id="c378"    ><code class="code " id="c380"  >org.jetbrains.kotlinx</code></td>      <td id="c388"    ><code class="code " id="c390"  >kotlinx-html-jvm</code></td>      <td id="c398"    >0.8.0</td>      <td id="c3a0"    ><a href="https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-html-jvm/0.8.0" data-external="true" id="c3a8" rel="noopener noreferrer" >mvnrepository</a></td></tr> <tr class="" id="c3b2" >      <td id="c3ba"    ><code class="code " id="c3c2"  >org.freemarker</code></td>      <td id="c3ca"    ><code class="code " id="c3d2"  >freemarker</code></td>      <td id="c3da"    >2.3.31</td>      <td id="c3e2"    ><a href="https://mvnrepository.com/artifact/org.freemarker/freemarker/2.3.31" data-external="true" id="c3ea" rel="noopener noreferrer" >mvnrepository</a></td></tr></tbody></table></div>  </section><section class="chapter" >  <h2 id="running-with-command-line-arguments" data-toc="cli#running-with-command-line-arguments" >Running with command line arguments</h2><p id="c3fd" >You can pass command line arguments to configure the CLI runner.</p> <p id="c405" >At the very least you would need to provide the following arguments:</p> <ul class="list _ul" id="c40d"   ><li class="list__item" id="c415" ><p><code class="code " id="c41d"  >-pluginsClasspath</code> - a list of absolute/relative paths to downloaded dependencies, separated by semi-colons <code class="code " id="c425"  >;</code></p></li> <li class="list__item" id="c42d" ><p><code class="code " id="c435"  >-sourceSet</code> - an absolute path to code sources for which to generate documentation</p></li> <li class="list__item" id="c43d" ><p><code class="code " id="c445"  >-outputDir</code> - an absolute/relative path of documentation output directory</p></li></ul> <div class="code-block" data-lang="bash" id="c455"       >  java -jar dokka-cli-%dokkaVersion%.jar \
+     -pluginsClasspath &quot;./dokka-base-%dokkaVersion%.jar;./dokka-analysis-%dokkaVersion%.jar;./kotlin-analysis-intellij-%dokkaVersion%.jar;./kotlin-analysis-compiler-%dokkaVersion%.jar;./kotlinx-html-jvm-0.8.0.jar;./freemarker-2.3.31.jar&quot; \
+     -sourceSet &quot;-src /home/myCoolProject/src/main/kotlin&quot; \
+     -outputDir &quot;./dokka/html&quot;
+  </div> <aside data-type="note" class="prompt" data-title="" id="c45e" ><p id="c467" >Due to an internal class conflict, first pass <code class="code " id="c46f"  >kotlin-analysis-intellij</code> and only then <code class="code " id="c477"  >kotlin-analysis-compiler</code> artifact, otherwise it can lead to obscure exceptions such as <code class="code " id="c47f"  >NoSuchFieldError</code>.</p></aside> <p id="c487" >Executing the given example should generate documentation in <a href="html.html" id="c48f"  >HTML</a> format.</p> <p id="c499" >See <a href="#all-command-line-arguments" id="c4a1"  >all command line arguments</a> for more details.</p>  </section><section class="chapter" >  <h2 id="running-with-json-configuration" data-toc="cli#running-with-json-configuration" >Running with JSON configuration</h2><p id="c4b4" >It is possible to configure the CLI runner with JSON. In this case, you will need to provide an absolute/relative path to the JSON configuration file,and  all the other configuration options will be parsed from it.</p> <div class="code-block" data-lang="bash" id="c4c4"       >  java -jar dokka-cli-%dokkaVersion%.jar dokka-configuration.json
+  </div> <p id="c4cd" >At the very least, you would need the following configuration:</p> <div class="code-block" data-lang="json" id="c4dd"       >  {
+  &quot;outputDir&quot;: &quot;./dokka/html&quot;,
+  &quot;sourceSets&quot;: [
+    {
+      &quot;sourceSetID&quot;: {
+        &quot;scopeId&quot;: &quot;html&quot;,
+        &quot;sourceSetName&quot;: &quot;main&quot;
+      },
+      &quot;sourceRoots&quot;: [
+        &quot;/home/myCoolProject/src/main/kotlin&quot;
+      ]
+    }
+  ],
+  &quot;pluginsClasspath&quot;: [
+    &quot;./dokka-base-%dokkaVersion%.jar&quot;,
+    &quot;./kotlinx-html-jvm-0.8.0.jar&quot;,
+    &quot;./dokka-analysis-%dokkaVersion%.jar&quot;,
+    &quot;./kotlin-analysis-intellij-%dokkaVersion%.jar&quot;,
+    &quot;./kotlin-analysis-compiler-%dokkaVersion%.jar&quot;,
+    &quot;./freemarker-2.3.31.jar&quot;
+  ]
+}
+  </div> <aside data-type="note" class="prompt" data-title="" id="c4e6" ><p id="c4ef" >Due to an internal class conflict, first pass <code class="code " id="c4f7"  >kotlin-analysis-intellij</code> and only then <code class="code " id="c4ff"  >kotlin-analysis-compiler</code>, otherwise it can lead to obscure exceptions such as <code class="code " id="c507"  >NoSuchFieldError</code>.</p></aside> <p id="c50f" >See <a href="#json-configuration-options" id="c517"  >JSON configuration options</a> for more details.</p>  </section><section class="chapter" >  <h2 id="other-output-formats" data-toc="cli#other-output-formats" >Other output formats</h2><p id="c52a" >By default, <code class="code " id="c532"  >dokka-base</code> artifact contains <a href="html.html" id="c53a"  >HTML</a> format only.</p> <p id="c544" >All other output formats come as <a href="plugins_introduction.html" id="c54c"  >Dokka plugins</a>. In order to use them, you have to put it on plugins classpath.</p> <p id="c556" >For example, if you want to generate documentation in <a href="markdown.html#gfm" id="c55e"  >GFM</a> format, you have to download and pass <a href="https://mvnrepository.com/artifact/org.jetbrains.dokka/gfm-plugin/1.7.20" data-external="true" id="c568" rel="noopener noreferrer" >gfm-plugin's jar</a> into <code class="code " id="c572"  >pluginsClasspath</code> configuration option.</p> <p id="c57a" >Via command line arguments:</p> <div class="code-block" data-lang="bash" id="c58a"       >  java -jar dokka-cli-%dokkaVersion%.jar \
+     -pluginsClasspath &quot;./dokka-base-%dokkaVersion%.jar;...;./gfm-plugin-%dokkaVersion%.jar&quot; \
+     ...
+  </div> <p id="c593" >Via JSON configuration:</p> <div class="code-block" data-lang="json" id="c5a3"       >  {
+  ...
+  &quot;pluginsClasspath&quot;: [
+    &quot;./dokka-base-%dokkaVersion%.jar&quot;,
+    &quot;...&quot;,
+    &quot;./gfm-plugin-%dokkaVersion%.jar&quot;
+  ],
+  ...
+}
+  </div> <p id="c5ac" >With GFM plugin on classpath, CLI runner should generate documentation in GFM format, no extra actions needed.</p> <p id="c5b4" >For more information, see <a href="markdown.html" id="c5bc"  >Markdown</a> and <a href="javadoc.html#geneatring-javadoc-documentation" id="c5c6"  >Javadoc</a> topics.</p> <h2 id="all-command-line-arguments" data-toc="cli#all-command-line-arguments"  >All command line arguments</h2> <p id="c5d9" >TODO paste output of <code class="code " id="c5e1"  >-help</code> after correcting in-code descriptions.</p> <h2 id="json-configuration-options" data-toc="cli#json-configuration-options"  >JSON configuration options</h2> <p id="c5f2" >TODO add descriptions for each setting as a separate entry in a table TODO add a link to Dokka's api reference, to DokkaConfiguration class</p> <div class="code-block" data-lang="json" id="c602"       >  {
+  &quot;moduleName&quot;: &quot;Dokka Example&quot;,
+  &quot;moduleVersion&quot;: null,
+  &quot;outputDir&quot;: &quot;./build/dokka/html&quot;,
+  &quot;failOnWarning&quot;: false,
+  &quot;suppressObviousFunctions&quot;: true,
+  &quot;suppressInheritedMembers&quot;: false,
+  &quot;offlineMode&quot;: false,
+  &quot;sourceLinks&quot;: [
+    {
+      &quot;localDirectory&quot;: &quot;src/main/kotlin&quot;,
+      &quot;remoteUrl&quot;: &quot;https://github.com/Kotlin/dokka/tree/master/src/main/kotlin&quot;,
+      &quot;remoteLineSuffix&quot;: &quot;#L&quot;
+    }
+  ],
+  &quot;externalDocumentationLinks&quot;: [
+    {
+      &quot;url&quot;: &quot;https://docs.oracle.com/javase/8/docs/api/&quot;,
+      &quot;packageListUrl&quot;: &quot;https://docs.oracle.com/javase/8/docs/api/package-list&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://kotlinlang.org/api/latest/jvm/stdlib/&quot;,
+      &quot;packageListUrl&quot;: &quot;https://kotlinlang.org/api/latest/jvm/stdlib/package-list&quot;
+    }
+  ],
+  &quot;perPackageOptions&quot;: [
+    {
+      &quot;matchingRegex&quot;: &quot;.*internal.*&quot;,
+      &quot;suppress&quot;: false,
+      &quot;reportUndocumented&quot;: false,
+      &quot;skipDeprecated&quot;: false,
+      &quot;documentedVisibilities&quot;: [&quot;PUBLIC&quot;, &quot;PRIVATE&quot;, &quot;PROTECTED&quot;, &quot;INTERNAL&quot;, &quot;PACKAGE&quot;]
+    }
+  ],
+  &quot;sourceSets&quot;: [
+    {
+      &quot;displayName&quot;: &quot;jvm&quot;,
+      &quot;sourceSetID&quot;: {
+        &quot;scopeId&quot;: &quot;html&quot;,
+        &quot;sourceSetName&quot;: &quot;main&quot;
+      },
+      &quot;dependentSourceSets&quot;: [
+        {
+          &quot;scopeId&quot;: &quot;dependentSourceSetScopeId&quot;,
+          &quot;sourceSetName&quot;: &quot;dependentSourceSetName&quot;
+        }
+      ],
+      &quot;documentedVisibilities&quot;: [&quot;PUBLIC&quot;, &quot;PRIVATE&quot;, &quot;PROTECTED&quot;, &quot;INTERNAL&quot;, &quot;PACKAGE&quot;],
+      &quot;reportUndocumented&quot;: false,
+      &quot;skipEmptyPackages&quot;: true,
+      &quot;skipDeprecated&quot;: false,
+      &quot;jdkVersion&quot;: 8,
+      &quot;languageVersion&quot;: &quot;1.7&quot;,
+      &quot;apiVersion&quot;: &quot;1.7&quot;,
+      &quot;noStdlibLink&quot;: false,
+      &quot;noJdkLink&quot;: false,
+      &quot;includes&quot;: [
+        &quot;module.md&quot;
+      ],
+      &quot;analysisPlatform&quot;: &quot;jvm&quot;,
+      &quot;sourceRoots&quot;: [
+        &quot;/home/ignat/IdeaProjects/dokka-debug-mvn/src/main/kotlin&quot;
+      ],
+      &quot;classpath&quot;: [
+        &quot;libs/kotlin-stdlib-%kotlinVersion%.jar&quot;,
+        &quot;libs/kotlin-stdlib-common-%kotlinVersion%.jar&quot;
+      ],
+      &quot;samples&quot;: [
+        &quot;samples/basic.kt&quot;
+      ],
+      &quot;suppressedFiles&quot;: [
+        &quot;src/main/kotlin/org/jetbrains/dokka/Suppressed.kt&quot;
+      ],
+      &quot;sourceLinks&quot;: [
+        {
+          &quot;localDirectory&quot;: &quot;src/main/kotlin&quot;,
+          &quot;remoteUrl&quot;: &quot;https://github.com/Kotlin/dokka/tree/master/src/main/kotlin&quot;,
+          &quot;remoteLineSuffix&quot;: &quot;#L&quot;
+        }
+      ],
+      &quot;externalDocumentationLinks&quot;: [
+        {
+          &quot;url&quot;: &quot;https://docs.oracle.com/javase/8/docs/api/&quot;,
+          &quot;packageListUrl&quot;: &quot;https://docs.oracle.com/javase/8/docs/api/package-list&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://kotlinlang.org/api/latest/jvm/stdlib/&quot;,
+          &quot;packageListUrl&quot;: &quot;https://kotlinlang.org/api/latest/jvm/stdlib/package-list&quot;
+        }
+      ],
+      &quot;perPackageOptions&quot;: [
+        {
+          &quot;matchingRegex&quot;: &quot;.*internal.*&quot;,
+          &quot;suppress&quot;: false,
+          &quot;reportUndocumented&quot;: false,
+          &quot;skipDeprecated&quot;: false,
+          &quot;documentedVisibilities&quot;: [&quot;PUBLIC&quot;, &quot;PRIVATE&quot;, &quot;PROTECTED&quot;, &quot;INTERNAL&quot;, &quot;PACKAGE&quot;]
+        }
+      ]
+    }
+  ],
+  &quot;pluginsClasspath&quot;: [
+    &quot;./dokka-base-%dokkaVersion%.jar&quot;,
+    &quot;./kotlinx-html-jvm-0.8.0.jar&quot;,
+    &quot;./dokka-analysis-%dokkaVersion%.jar&quot;,
+    &quot;./kotlin-analysis-intellij-%dokkaVersion%.jar&quot;,
+    &quot;./kotlin-analysis-compiler-%dokkaVersion%.jar&quot;,
+    &quot;./freemarker-2.3.31.jar&quot;
+  ],
+  &quot;pluginsConfiguration&quot;: [
+    {
+      &quot;fqPluginName&quot;: &quot;org.jetbrains.dokka.base.DokkaBase&quot;,
+      &quot;serializationFormat&quot;: &quot;JSON&quot;,
+      &quot;values&quot;: &quot;{\&quot;separateInheritedMembers\&quot;:false,\&quot;footerMessage\&quot;:\&quot;&copy; 2021 pretty good Copyright\&quot;}&quot;
+    }
+  ],
+  &quot;includes&quot;: [
+    &quot;module.md&quot;
+  ],
+  &quot;finalizeCoroutines&quot;: true
+}
+  </div>  </section><div class="last-modified"> Last modified: 26 October 2022</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom">   </div></article><div id="disqus_thread"></div></div></section></main></div>  <script src="/dokka/preview/docs/app/app.js?_ijt=i1hunujervi12bfeajh51pshav"></script></body></html>
