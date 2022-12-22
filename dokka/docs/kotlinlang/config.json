@@ -2,7 +2,7 @@
   "showDownloadButton": false,
   "productVersion": "1.7.20",
   "fallbackUrl": "https://www.jetbrains.com/help//",
-  "productName": "Dokka",
+  "productName": "dokka",
   "downloadPage": "https://www.jetbrains.com//download/",
   "searchScope": "documentation-help",
   "stage": "release",
