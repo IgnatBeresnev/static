@@ -1,18 +1,18 @@
 {
   "topLevelIds": [
-    "introduction",
+    "overview",
     "get_started",
-    "15",
-    "1d",
+    "4e47f7",
+    "4e47fa",
     "dokka_plugins"
   ],
   "entities": {
     "pages": {
-      "introduction": {
-        "id": "introduction",
-        "title": "Introduction",
+      "overview": {
+        "id": "overview",
+        "title": "Overview",
         "disqus_id": "",
-        "url": "introduction.html",
+        "url": "overview.html",
         "level": 0,
         "parentId": "kl",
         "tabIndex": 0
@@ -26,8 +26,8 @@
         "parentId": "kl",
         "tabIndex": 1
       },
-      "15": {
-        "id": "15",
+      "4e47f7": {
+        "id": "4e47f7",
         "title": "Running Dokka",
         "level": 0,
         "parentId": "kl",
@@ -44,7 +44,7 @@
         "disqus_id": "",
         "url": "gradle.html",
         "level": 1,
-        "parentId": "15",
+        "parentId": "4e47f7",
         "tabIndex": 0
       },
       "maven": {
@@ -53,7 +53,7 @@
         "disqus_id": "",
         "url": "maven.html",
         "level": 1,
-        "parentId": "15",
+        "parentId": "4e47f7",
         "tabIndex": 1
       },
       "cli": {
@@ -62,11 +62,11 @@
         "disqus_id": "",
         "url": "cli.html",
         "level": 1,
-        "parentId": "15",
+        "parentId": "4e47f7",
         "tabIndex": 2
       },
-      "1d": {
-        "id": "1d",
+      "4e47fa": {
+        "id": "4e47fa",
         "title": "Output formats",
         "level": 0,
         "parentId": "kl",
@@ -83,7 +83,7 @@
         "disqus_id": "",
         "url": "html.html",
         "level": 1,
-        "parentId": "1d",
+        "parentId": "4e47fa",
         "tabIndex": 0
       },
       "markdown": {
@@ -92,7 +92,7 @@
         "disqus_id": "",
         "url": "markdown.html",
         "level": 1,
-        "parentId": "1d",
+        "parentId": "4e47fa",
         "tabIndex": 1
       },
       "javadoc": {
@@ -101,7 +101,7 @@
         "disqus_id": "",
         "url": "javadoc.html",
         "level": 1,
-        "parentId": "1d",
+        "parentId": "4e47fa",
         "tabIndex": 2
       },
       "dokka_plugins": {
