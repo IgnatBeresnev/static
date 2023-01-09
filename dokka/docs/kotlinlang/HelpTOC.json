@@ -1,114 +1,114 @@
 {
   "topLevelIds": [
-    "introduction",
-    "get_started",
-    "15",
-    "1d",
-    "dokka_plugins"
+    "dokka-introduction",
+    "dokka-get-started",
+    "809",
+    "811",
+    "dokka-plugins"
   ],
   "entities": {
     "pages": {
-      "introduction": {
-        "id": "introduction",
+      "dokka-introduction": {
+        "id": "dokka-introduction",
         "title": "Introduction",
         "disqus_id": "",
-        "url": "introduction.html",
+        "url": "dokka-introduction.html",
         "level": 0,
         "parentId": "kl",
         "tabIndex": 0
       },
-      "get_started": {
-        "id": "get_started",
+      "dokka-get-started": {
+        "id": "dokka-get-started",
         "title": "Get started",
         "disqus_id": "",
-        "url": "get_started.html",
+        "url": "dokka-get-started.html",
         "level": 0,
         "parentId": "kl",
         "tabIndex": 1
       },
-      "15": {
-        "id": "15",
+      "809": {
+        "id": "809",
         "title": "Running Dokka",
         "level": 0,
         "parentId": "kl",
         "pages": [
-          "gradle",
-          "maven",
-          "cli"
+          "dokka-gradle",
+          "dokka-maven",
+          "dokka-cli"
         ],
         "tabIndex": 2
       },
-      "gradle": {
-        "id": "gradle",
+      "dokka-gradle": {
+        "id": "dokka-gradle",
         "title": "Gradle",
         "disqus_id": "",
-        "url": "gradle.html",
+        "url": "dokka-gradle.html",
         "level": 1,
-        "parentId": "15",
+        "parentId": "809",
         "tabIndex": 0
       },
-      "maven": {
-        "id": "maven",
+      "dokka-maven": {
+        "id": "dokka-maven",
         "title": "Maven",
         "disqus_id": "",
-        "url": "maven.html",
+        "url": "dokka-maven.html",
         "level": 1,
-        "parentId": "15",
+        "parentId": "809",
         "tabIndex": 1
       },
-      "cli": {
-        "id": "cli",
+      "dokka-cli": {
+        "id": "dokka-cli",
         "title": "CLI",
         "disqus_id": "",
-        "url": "cli.html",
+        "url": "dokka-cli.html",
         "level": 1,
-        "parentId": "15",
+        "parentId": "809",
         "tabIndex": 2
       },
-      "1d": {
-        "id": "1d",
+      "811": {
+        "id": "811",
         "title": "Output formats",
         "level": 0,
         "parentId": "kl",
         "pages": [
-          "html",
-          "markdown",
-          "javadoc"
+          "dokka-html",
+          "dokka-markdown",
+          "dokka-javadoc"
         ],
         "tabIndex": 3
       },
-      "html": {
-        "id": "html",
+      "dokka-html": {
+        "id": "dokka-html",
         "title": "HTML",
         "disqus_id": "",
-        "url": "html.html",
+        "url": "dokka-html.html",
         "level": 1,
-        "parentId": "1d",
+        "parentId": "811",
         "tabIndex": 0
       },
-      "markdown": {
-        "id": "markdown",
+      "dokka-markdown": {
+        "id": "dokka-markdown",
         "title": "Markdown",
         "disqus_id": "",
-        "url": "markdown.html",
+        "url": "dokka-markdown.html",
         "level": 1,
-        "parentId": "1d",
+        "parentId": "811",
         "tabIndex": 1
       },
-      "javadoc": {
-        "id": "javadoc",
+      "dokka-javadoc": {
+        "id": "dokka-javadoc",
         "title": "Javadoc",
         "disqus_id": "",
-        "url": "javadoc.html",
+        "url": "dokka-javadoc.html",
         "level": 1,
-        "parentId": "1d",
+        "parentId": "811",
         "tabIndex": 2
       },
-      "dokka_plugins": {
-        "id": "dokka_plugins",
+      "dokka-plugins": {
+        "id": "dokka-plugins",
         "title": "Dokka plugins",
         "disqus_id": "",
-        "url": "dokka_plugins.html",
+        "url": "dokka-plugins.html",
         "level": 0,
         "parentId": "kl",
         "tabIndex": 4
