@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Calls</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Calls///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Calls</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Calls</h1>
+      <p class="paragraph">The HTTP client’s job is to accept your request and produce its response. This is simple in theory but it gets tricky in practice.</p>
+      <h2 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-request/">Requests</a></h2>
+      <p class="paragraph">Each HTTP request contains a URL, a method (like <code class="lang-kotlin">GET</code> or <code class="lang-kotlin">POST</code>), and a list of headers. Requests may also contain a body: a data stream of a specific content type.</p>
+      <h2 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-response/">Responses</a></h2>
+      <p class="paragraph">The response answers the request with a code (like 200 for success or 404 for not found), headers, and its own optional body.</p>
+      <h2 class=""> Rewriting Requests</h2>
+      <p class="paragraph">When you provide OkHttp with an HTTP request, you’re describing the request at a high-level: <i>“fetch me this URL with these headers.”</i> For correctness and efficiency, OkHttp rewrites your request before transmitting it.</p>
+      <p class="paragraph">OkHttp may add headers that are absent from the original request, including <code class="lang-kotlin">Content-Length</code>, <code class="lang-kotlin">Transfer-Encoding</code>, <code class="lang-kotlin">User-Agent</code>, <code class="lang-kotlin">Host</code>, <code class="lang-kotlin">Connection</code>, and <code class="lang-kotlin">Content-Type</code>. It will add an <code class="lang-kotlin">Accept-Encoding</code> header for transparent response compression unless the header is already present. If you’ve got cookies, OkHttp will add a <code class="lang-kotlin">Cookie</code> header with them.</p>
+      <p class="paragraph">Some requests will have a cached response. When this cached response isn’t fresh, OkHttp can do a <i>conditional GET</i> to download an updated response if it’s newer than what’s cached. This requires headers like <code class="lang-kotlin">If-Modified-Since</code> and <code class="lang-kotlin">If-None-Match</code> to be added.</p>
+      <h2 class=""> Rewriting Responses</h2>
+      <p class="paragraph">If transparent compression was used, OkHttp will drop the corresponding response headers <code class="lang-kotlin">Content-Encoding</code> and <code class="lang-kotlin">Content-Length</code> because they don’t apply to the decompressed response body.</p>
+      <p class="paragraph">If a conditional GET was successful, responses from the network and cache are merged as directed by the spec.</p>
+      <h2 class=""> Follow-up Requests</h2>
+      <p class="paragraph">When your requested URL has moved, the webserver will return a response code like <code class="lang-kotlin">302</code> to indicate the document’s new URL. OkHttp will follow the redirect to retrieve a final response.</p>
+      <p class="paragraph">If the response issues an authorization challenge, OkHttp will ask the <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-authenticator/"><code class="lang-kotlin">Authenticator</code></a> (if one is configured) to satisfy the challenge. If the authenticator supplies a credential, the request is retried with that credential included.</p>
+      <h2 class=""> Retrying Requests</h2>
+      <p class="paragraph">Sometimes connections fail: either a pooled connection was stale and disconnected, or the webserver itself couldn’t be reached. OkHttp will retry the request with a different route if one is available.</p>
+      <h2 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-call/">Calls</a></h2>
+      <p class="paragraph">With rewrites, redirects, follow-ups and retries, your simple request may yield many requests and responses. OkHttp uses <code class="lang-kotlin">Call</code> to model the task of satisfying your request through however many intermediate requests and responses are necessary. Typically this isn’t many! But it’s comforting to know that your code will continue to work if your URLs are redirected or if you failover to an alternate IP address.</p>
+      <p class="paragraph">Calls are executed in one of two ways:</p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Synchronous:</strong> your thread blocks until the response is readable.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Asynchronous:</strong> you enqueue the request on any thread, and get <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-callback/">called back</a> on another thread when the response is readable.</p>
+        </li>
+      </ul>
+      <p class="paragraph">Calls can be canceled from any thread. This will fail the call if it hasn’t yet completed! Code that is writing the request body or reading the response body will suffer an <code class="lang-kotlin">IOException</code> when its call is canceled.</p>
+      <h2 class=""> Dispatch</h2>
+      <p class="paragraph">For synchronous calls, you bring your own thread and are responsible for managing how many simultaneous requests you make. Too many simultaneous connections wastes resources; too few harms latency.</p>
+      <p class="paragraph">For asynchronous calls, <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-dispatcher/"><code class="lang-kotlin">Dispatcher</code></a> implements policy for maximum simultaneous requests. You can set maximums per-webserver (default is 5), and overall (default is 64).</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

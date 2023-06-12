@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Caching</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Caching///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Caching</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Caching</h1>
+      <p class="paragraph">OkHttp implements an optional, off by default, Cache. OkHttp aims for RFC correct and pragmatic caching behaviour, following common real-world browser like Firefox/Chrome and  server behaviour when ambiguous.</p>
+      <h1 class=""> Basic Usage</h1>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client: OkHttpClient = OkHttpClient.Builder()<br>      .cache(Cache(<br>          directory = File(application.cacheDir, &quot;http_cache&quot;),<br>          // $0.05 worth of phone storage in 2020<br>          maxSize = 50L * 1024L * 1024L // 50 MiB<br>      ))<br>      .build()</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h2 class=""> EventListener events </h2>
+      <p class="paragraph">Cache Events are exposed via the EventListener API.  Typical scenarios are below.</p>
+      <h3 class=""> Cache Hit</h3>
+      <p class="paragraph">In the ideal scenario the cache can fulfill the request without any conditional call to the network. This will skip the normal events such as DNS, connecting to the network, and downloading the response body.</p>
+      <p class="paragraph">As recommended by the HTTP RFC the max age of a document is defaulted to 10% of the  document's age at the time it was served based on &quot;Last-Modified&quot;. Default expiration dates aren't used for URIs  containing a query.</p>
+      <ul>
+        <li>
+          <p class="paragraph">CallStart</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>CacheHit</strong></p>
+        </li>
+        <li>
+          <p class="paragraph">CallEnd</p>
+        </li>
+      </ul>
+      <h3 class=""> Cache Miss</h3>
+      <p class="paragraph">Under a cache miss the normal request events are seen but an additional event shows the presence of the cache. Cache Miss will be typical if the item has not been read from the network, is uncacheable, or is past it's  lifetime based on Response cache headers.</p>
+      <ul>
+        <li>
+          <p class="paragraph">CallStart </p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>CacheMiss</strong></p>
+        </li>
+        <li>
+          <p class="paragraph">ProxySelectStart</p>
+        </li>
+        <li>
+          <p class="paragraph">... Standard Events ...</p>
+        </li>
+        <li>
+          <p class="paragraph">CallEnd</p>
+        </li>
+      </ul>
+      <h3 class=""> Conditional Cache Hit</h3>
+      <p class="paragraph">When cache flags require checking the cache results are still valid an early cacheConditionalHit event is received followed by a cache hit or miss.  Critically in the cache hit scenario the server won’t send the response body.</p>
+      <p class="paragraph">The response will have non-null <code class="lang-kotlin">cacheResponse</code> and <code class="lang-kotlin">networkResponse</code>. The cacheResponse will be used as the top level response only if the response code is HTTP/1.1 304 Not Modified.</p>
+      <ul>
+        <li>
+          <p class="paragraph">CallStart</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>CacheConditionalHit</strong></p>
+        </li>
+        <li>
+          <p class="paragraph">ConnectionAcquired</p>
+        </li>
+        <li>
+          <p class="paragraph">... Standard Events...</p>
+        </li>
+        <li>
+          <p class="paragraph">ResponseBodyEnd <i>(0 bytes)</i></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>CacheHit</strong></p>
+        </li>
+        <li>
+          <p class="paragraph">ConnectionReleased</p>
+        </li>
+        <li>
+          <p class="paragraph">CallEnd</p>
+        </li>
+      </ul>
+      <h2 class=""> Cache directory</h2>
+      <p class="paragraph">The cache directory must be exclusively owned by a single instance.</p>
+      <p class="paragraph">Deleting the cache when it is no longer needed can be done.  However this may delete the purpose of the cache which is designed to persist between app restarts.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">cache.delete()</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h2 class=""> Pruning the Cache</h2>
+      <p class="paragraph">Pruning the entire Cache to clear space temporarily can be done using evictAll.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">cache.evictAll()</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Removing individual items can be done using the urls iterator. This would be typical after a user initiates a force refresh by a pull to refresh type action.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">    val urlIterator = cache.urls()<br>    while (urlIterator.hasNext()) {<br>      if (urlIterator.next().startsWith(&quot;https://www.google.com/&quot;)) {<br>        urlIterator.remove()<br>      }<br>    }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Troubleshooting</h3>
+      <ol>
+        <li>
+          <p class="paragraph">Valid cacheable responses are not being cached</p>
+        </li>
+      </ol>
+      <p class="paragraph">Make sure you are reading responses fully as unless they are read fully, cancelled or stalled Responses will not be cached.</p>
+      <h3 class=""> Overriding normal cache behaviour</h3>
+      <p class="paragraph">See Cache documentation. https://square.github.io/okhttp/4.x/okhttp/okhttp3/-cache/</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

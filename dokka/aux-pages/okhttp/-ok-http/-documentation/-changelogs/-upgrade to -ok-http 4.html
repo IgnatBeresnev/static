@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Upgrade to OkHttp 4</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Upgrade to OkHttp 4///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Upgrade to OkHttp 4</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Upgrading to OkHttp 4</h1>
+      <p class="paragraph">OkHttp 4.x upgrades our implementation language from Java to Kotlin and keeps everything else the same. We’ve chosen Kotlin because it gives us powerful new capabilities while integrating closely with Java.</p>
+      <p class="paragraph">We spent a lot of time and energy on retaining strict compatibility with OkHttp 3.x. We’re even keeping the package name the same: <code class="lang-kotlin">okhttp3</code>!</p>
+      <p class="paragraph">There are three kinds of compatibility we’re tracking:</p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Binary compatibility</strong> is the ability to compile a program against OkHttp 3.x, and then to run    it against OkHttp 4.x. We’re using the excellent <span data-unresolved-link=".aux_doc/japicmp///PointingToDeclaration/">japicmp</span> library via its    <span data-unresolved-link=".aux_doc/japicmp_gradle///PointingToDeclaration/">Gradle plugin</span> to enforce binary compatibility.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Java source compatibility</strong> is the ability to upgrade Java uses of OkHttp 3.x to 4.x without    changing <code class="lang-kotlin">.java</code> files.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Kotlin source compatibility</strong> is the ability to upgrade Kotlin uses of OkHttp 3.x to 4.x    without changing <code class="lang-kotlin">.kt</code> files.</p>
+        </li>
+      </ul>
+      <p class="paragraph">With a few small exceptions (below), OkHttp 4.x is both binary- and Java source-compatible with OkHttp 3.x. You can use an OkHttp 4.x .jar file with applications or libraries built for OkHttp 3.x.</p>
+      <p class="paragraph">OkHttp is <strong>not</strong> source-compatible for Kotlin callers, but upgrading should be automatic thanks to Kotlin’s powerful deprecation features. Most developers should be able to use IntelliJ’s <i>Code Cleanup</i> for a safe and fast upgrade.</p>
+      <h1 class=""> Backwards-Incompatible Changes</h1>
+      <h4 class=""> OkHttpClient final methods</h4>
+      <p class="paragraph"><code class="lang-kotlin">OkHttpClient</code> has 26 accessors like <code class="lang-kotlin">interceptors()</code> and <code class="lang-kotlin">writeTimeoutMillis()</code> that were non-final in OkHttp 3.x and are final in 4.x. These were made non-final for use with mocking frameworks like <span data-unresolved-link=".aux_doc/mockito///PointingToDeclaration/">Mockito</span>. We believe subtyping <code class="lang-kotlin">OkHttpClient</code> is the wrong way to test with OkHttp. If you must, mock <code class="lang-kotlin">Call.Factory</code> which is the interface that <code class="lang-kotlin">OkHttpClient</code> implements.</p>
+      <h4 class=""> Internal API changes</h4>
+      <p class="paragraph">The <code class="lang-kotlin">okhttp3.internal</code> package is not a published API and we change it frequently without warning. Depending on code in this package is bad and will cause you problems with any upgrade! But the 4.x will be particularly painful to naughty developers that import from this package! We changed a lot to take advantage of sweet Kotlin features.</p>
+      <h4 class=""> Credentials.basic()</h4>
+      <p class="paragraph">The username and password parameters to <code class="lang-kotlin">Credentials.basic()</code> are now non-null strings. In OkHttp 3.x, null would yield a username or password of &quot;null&quot;.</p>
+      <h4 class=""> HttpUrl.queryParameterValues()</h4>
+      <p class="paragraph">The return type of <code class="lang-kotlin">HttpUrl.queryParameterValues()</code> is <code class="lang-kotlin">List&lt;String?&gt;</code>. Lists that may contain null are uncommon and Kotlin callers may have incorrectly assigned the result to <code class="lang-kotlin">List&lt;String&gt;</code>.</p>
+      <h1 class=""> Code Cleanup</h1>
+      <p class="paragraph">IntelliJ and Android Studio offer a <strong>Code Cleanup</strong> feature that will automatically update deprecated APIs with their replacements. Access this feature from the <i>Search Anywhere</i> dialog (double-press shift) or under the <i>Analyze</i> menu.</p>
+      <p class="paragraph">We’ve included deprecated APIs in OkHttp 4.0 because they make migration easy. We will remove them in a future release! If you’re skipping releases, it’ll be much easier if you upgrade to OkHttp 4.0 as an intermediate step.</p>
+      <h4 class=""> Vars and Vals</h4>
+      <p class="paragraph">Java doesn’t have language support for properties so developers make do with getters and setters. Kotlin does have properties and we take advantage of them in OkHttp.</p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Address</strong>: certificatePinner, connectionSpecs, dns, hostnameVerifier, protocols, proxy,    proxyAuthenticator, proxySelector, socketFactory, sslSocketFactory, url</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Cache</strong>: directory</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>CacheControl</strong>: immutable, maxAgeSeconds, maxStaleSeconds, minFreshSeconds, mustRevalidate,    noCache, noStore, noTransform, onlyIfCached, sMaxAgeSeconds</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Challenge</strong>: authParams, charset, realm, scheme</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>CipherSuite</strong>: javaName</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>ConnectionSpec</strong>: cipherSuites, supportsTlsExtensions, tlsVersions</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Cookie</strong>: domain, expiresAt, hostOnly, httpOnly, name, path, persistent, value</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Dispatcher</strong>: executorService</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>FormBody</strong>: size</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Handshake</strong>: cipherSuite, localCertificates, localPrincipal, peerCertificates, peerPrincipal,    tlsVersion</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>HandshakeCertificates</strong>: keyManager, trustManager</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Headers</strong>: size</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>HeldCertificate</strong>: certificate, keyPair</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>HttpLoggingInterceptor</strong>: level</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>HttpUrl</strong>: encodedFragment, encodedPassword, encodedPath, encodedPathSegments, encodedQuery,    encodedUsername, fragment, host, password, pathSegments, pathSize, port, query,    queryParameterNames, querySize, scheme, username</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>MockResponse</strong>: headers, http2ErrorCode, socketPolicy, status, trailers</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>MockWebServer</strong>: bodyLimit, port, protocolNegotiationEnabled, protocols, requestCount,    serverSocketFactory</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>MultipartBody.Part</strong>: body, headers</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>MultipartBody.</strong>: boundary, parts, size, type</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttpClient</strong>: authenticator, cache, callTimeoutMillis, certificatePinner,    connectTimeoutMillis, connectionPool, connectionSpecs, cookieJar, dispatcher, dns,    eventListenerFactory, followRedirects, followSslRedirects, hostnameVerifier, interceptors,    networkInterceptors, pingIntervalMillis, protocols, proxy, proxyAuthenticator, proxySelector,    readTimeoutMillis, retryOnConnectionFailure, socketFactory, sslSocketFactory, writeTimeoutMillis</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>PushPromise</strong>: headers, method, path, response</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Request</strong>: body, cacheControl, headers, method, url</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Response</strong>: body, cacheControl, cacheResponse, code, handshake, headers, message,    networkResponse, priorResponse, protocol, receivedResponseAtMillis, request, sentRequestAtMillis</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Route</strong>: address, proxy, socketAddress</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>TlsVersion</strong>: javaName</p>
+        </li>
+      </ul>
+      <h4 class=""> Renamed Functions</h4>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Headers.of()</strong>: for symmetry with <code class="lang-kotlin">listOf()</code>, <code class="lang-kotlin">setOf()</code>, etc., we’ve replaced   <code class="lang-kotlin">Headers.of(String...)</code> with <code class="lang-kotlin">headersOf(vararg String)</code>.</p>
+        </li>
+      </ul>
+      <h4 class=""> Extension Functions</h4>
+      <p class="paragraph">We’ve migrated from static functions to extension functions where we think they fit.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Java</th>
+            <th>Kotlin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Handshake.get(SSLSession)</td>
+            <td>SSLSession.handshake()</td>
+          </tr>
+          <tr>
+            <td>Headers.of(Map<String, String>)</td>
+            <td>Map<String, String>.toHeaders()</td>
+          </tr>
+          <tr>
+            <td>HttpUrl.get(String)</td>
+            <td>String.toHttpUrl()</td>
+          </tr>
+          <tr>
+            <td>HttpUrl.get(URI)</td>
+            <td>URI.toHttpUrlOrNull()</td>
+          </tr>
+          <tr>
+            <td>HttpUrl.get(URL)</td>
+            <td>URL.toHttpUrlOrNull()</td>
+          </tr>
+          <tr>
+            <td>HttpUrl.parse(String)</td>
+            <td>String.toHttpUrlOrNull()</td>
+          </tr>
+          <tr>
+            <td>HttpUrl.uri()</td>
+            <td>HttpUrl.toUri()</td>
+          </tr>
+          <tr>
+            <td>HttpUrl.url()</td>
+            <td>HttpUrl.toUrl()</td>
+          </tr>
+          <tr>
+            <td>MediaType.get(String)</td>
+            <td>String.toMediaType()</td>
+          </tr>
+          <tr>
+            <td>MediaType.parse(String)</td>
+            <td>String.toMediaTypeOrNull()</td>
+          </tr>
+          <tr>
+            <td>RequestBody.create(ByteArray)</td>
+            <td>ByteArray.toRequestBody()</td>
+          </tr>
+          <tr>
+            <td>RequestBody.create(ByteString)</td>
+            <td>ByteString.toRequestBody()</td>
+          </tr>
+          <tr>
+            <td>RequestBody.create(File)</td>
+            <td>File.asRequestBody()</td>
+          </tr>
+          <tr>
+            <td>RequestBody.create(String)</td>
+            <td>String.toRequestBody()</td>
+          </tr>
+          <tr>
+            <td>ResponseBody.create(BufferedSource)</td>
+            <td>BufferedSource.asResponseBody()</td>
+          </tr>
+          <tr>
+            <td>ResponseBody.create(ByteArray)</td>
+            <td>ByteArray.toResponseBody()</td>
+          </tr>
+          <tr>
+            <td>ResponseBody.create(ByteString)</td>
+            <td>ByteString.toResponseBody()</td>
+          </tr>
+          <tr>
+            <td>ResponseBody.create(String)</td>
+            <td>String.toResponseBody()</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 class=""> SAM Conversions</h1>
+      <p class="paragraph">When you use Java APIs from Kotlin you can operate on Java interfaces as if they were Kotlin lambdas. The <span data-unresolved-link=".aux_doc/java_sams///PointingToDeclaration/">feature</span> is available for interfaces that define a Single Abstract Method (SAM).</p>
+      <p class="paragraph">But when you use Kotlin APIs from Kotlin there’s no automatic conversion. Code that used SAM lambdas with OkHttp 3.x: must use <code class="lang-kotlin">object :</code> with OkHttp 4.x:</p>
+      <p class="paragraph">Kotlin calling OkHttp 3.x:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">val client = OkHttpClient.Builder()<br>    .dns { hostname -&gt; InetAddress.getAllByName(hostname).toList() }<br>    .build()</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Kotlin calling OkHttp 4.x:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">val client = OkHttpClient.Builder()<br>    .dns(object : Dns {<br>      override fun lookup(hostname: String) =<br>          InetAddress.getAllByName(hostname).toList()<br>    })<br>    .build()</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">SAM conversion impacts these APIs:</p>
+      <ul>
+        <li>
+          <p class="paragraph">Authenticator</p>
+        </li>
+        <li>
+          <p class="paragraph">Dispatcher.setIdleCallback(Runnable)</p>
+        </li>
+        <li>
+          <p class="paragraph">Dns</p>
+        </li>
+        <li>
+          <p class="paragraph">EventListener.Factory</p>
+        </li>
+        <li>
+          <p class="paragraph">HttpLoggingInterceptor.Logger</p>
+        </li>
+        <li>
+          <p class="paragraph">LoggingEventListener.Factory</p>
+        </li>
+        <li>
+          <p class="paragraph">OkHttpClient.Builder.hostnameVerifier(HostnameVerifier)</p>
+        </li>
+      </ul>
+      <p class="paragraph">JetBrains <span data-unresolved-link=".aux_doc/kotlin_sams///PointingToDeclaration/">is working on</span> SAM conversions of Kotlin interfaces. Expect it in a future release of the Kotlin language.</p>
+      <h1 class=""> Companion Imports</h1>
+      <p class="paragraph">The equivalent of static methods in Java is companion object functions in Kotlin. The bytecode is the same but <code class="lang-kotlin">.kt</code> files now need <code class="lang-kotlin">Companion</code> in the import.</p>
+      <p class="paragraph">This works with OkHttp 3.x:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import okhttp3.CipherSuite.forJavaName</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">But OkHttp 4.x needs a <code class="lang-kotlin">Companion</code>:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">import okhttp3.CipherSuite.Companion.forJavaName</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">In the unlikely event that you have a lot of these, run this:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-bash" theme="idea">sed -i &quot;&quot; \<br>  's/^\(import okhttp3\.[^.]*\)\.\([a-z][a-zA-Z]*\)$/\1.Companion.\2/g' \<br>  `find . -name &quot;*.kt&quot;`</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h1 class=""> Advanced Profiling</h1>
+      <p class="paragraph">Android Studio’s Advanced Profiling feature rewrites OkHttp bytecode for instrumentation. Unfortunately it crashes on OkHttp 4.x’s bytecode. Until <span data-unresolved-link=".aux_doc/advanced_profiling_bug///PointingToDeclaration/">Google’s bug</span> is fixed you must disable advanced profiling in Android Studio.</p>
+      <p class="paragraph"><img alt="Disable Advanced Profiling" src="../assets/images/disable_advanced_profiling@2x.png"></p>
+      <h1 class=""> R8 / ProGuard</h1>
+      <p class="paragraph">R8 and ProGuard are both code optimizers for <code class="lang-kotlin">.class</code> files.</p>
+      <p class="paragraph">R8 is the <span data-unresolved-link=".aux_doc/r8///PointingToDeclaration/">default optimizer</span> in Android Studio 3.4 and newer. It works well with all releases of OkHttp.</p>
+      <p class="paragraph">ProGuard was the previous default. We’re <span data-unresolved-link=".aux_doc/proguard_problems///PointingToDeclaration/">tracking problems</span> with interactions between ProGuard, OkHttp 4.x, and Kotlin-originated <code class="lang-kotlin">.class</code> files. Make sure you’re on the latest release if you’re using ProGuard,</p>
+      <h1 class=""> Gradle</h1>
+      <p class="paragraph">OkHttp 4’s minimum requirements are Java 8+ and Android 5+. These requirements were <span data-unresolved-link=".aux_doc/require_android_5///PointingToDeclaration/">first introduced</span> with OkHttp 3.13.</p>
+      <p class="paragraph">Here’s what you need in <code class="lang-kotlin">build.gradle</code> to target Java 8 byte code for Kotlin, Java, and Android plugins respectively.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-groovy" theme="idea">compileKotlin {<br>  kotlinOptions {<br>    jvmTarget = &quot;1.8&quot;<br>  }<br>}<br>compileTestKotlin {<br>  kotlinOptions {<br>    jvmTarget = &quot;1.8&quot;<br>  }<br>}<br><br>compileJava {<br>  sourceCompatibility = JavaVersion.VERSION_1_8<br>  targetCompatibility = JavaVersion.VERSION_1_8<br>}<br><br>android {<br>  compileOptions {<br>    sourceCompatibility JavaVersion.VERSION_1_8<br>    targetCompatibility JavaVersion.VERSION_1_8<br>  }<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

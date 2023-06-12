@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>HTTPS</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/HTTPS///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">HTTPS</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> HTTPS</h1>
+      <p class="paragraph">OkHttp attempts to balance two competing concerns:</p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Connectivity</strong> to as many hosts as possible. That includes advanced hosts that run the latest versions of <a href="https://boringssl.googlesource.com/boringssl/">boringssl</a> and less out of date hosts running older versions of <a href="https://www.openssl.org/">OpenSSL</a>.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Security</strong> of the connection. This includes verification of the remote webserver with certificates and the privacy of data exchanged with strong ciphers.</p>
+        </li>
+      </ul>
+      <p class="paragraph">When negotiating a connection to an HTTPS server, OkHttp needs to know which <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-tls-version/">TLS versions</a> and <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-cipher-suite/">cipher suites</a> to offer. A client that wants to maximize connectivity would include obsolete TLS versions and weak-by-design cipher suites. A strict client that wants to maximize security would be limited to only the latest TLS version and strongest cipher suites.</p>
+      <p class="paragraph">Specific security vs. connectivity decisions are implemented by <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-connection-spec/">ConnectionSpec</a>. OkHttp includes four built-in connection specs:</p>
+      <ul>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">RESTRICTED_TLS</code> is a secure configuration, intended to meet stricter compliance requirements.</p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">MODERN_TLS</code> is a secure configuration that connects to modern HTTPS servers.</p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">COMPATIBLE_TLS</code> is a secure configuration that connects to secure–but not current–HTTPS servers.</p>
+        </li>
+        <li>
+          <p class="paragraph"><code class="lang-kotlin">CLEARTEXT</code> is an insecure configuration that is used for <code class="lang-kotlin">http://</code> URLs.</p>
+        </li>
+      </ul>
+      <p class="paragraph">These loosely follow the model set in <a href="https://cloud.google.com/load-balancing/docs/ssl-policies-concepts">Google Cloud Policies</a>. We <span data-unresolved-link=".aux_doc/../security/tls_configuration_history.md///PointingToDeclaration/">track changes</span> to this policy.</p>
+      <p class="paragraph">By default, OkHttp will attempt a <code class="lang-kotlin">MODERN_TLS</code> connection.  However by configuring the client connectionSpecs you can allow a fall back to <code class="lang-kotlin">COMPATIBLE_TLS</code> connection if the modern configuration fails.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">OkHttpClient client = new OkHttpClient.Builder()<br>    .connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS, ConnectionSpec.COMPATIBLE_TLS))<br>    .build();</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">The TLS versions and cipher suites in each spec can change with each release. For example, in OkHttp 2.2 we dropped support for SSL 3.0 in response to the <a href="https://googleonlinesecurity.blogspot.ca/2014/10/this-poodle-bites-exploiting-ssl-30.html">POODLE</a> attack. And in OkHttp 2.3 we dropped support for <a href="https://en.wikipedia.org/wiki/RC4#Security">RC4</a>. As with your desktop web browser, staying up-to-date with OkHttp is the best way to stay secure.</p>
+      <p class="paragraph">You can build your own connection spec with a custom set of TLS versions and cipher suites. For example, this configuration is limited to three highly-regarded cipher suites. Its drawback is that it requires Android 5.0+ and a similarly current webserver.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">ConnectionSpec spec = new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)<br>    .tlsVersions(TlsVersion.TLS_1_2)<br>    .cipherSuites(<br>          CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,<br>          CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,<br>          CipherSuite.TLS_DHE_RSA_WITH_AES_128_GCM_SHA256)<br>    .build();<br><br>OkHttpClient client = new OkHttpClient.Builder()<br>    .connectionSpecs(Collections.singletonList(spec))<br>    .build();</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Debugging TLS Handshake Failures</h3>
+      <p class="paragraph">The TLS handshake requires clients and servers to share a common TLS version and cipher suite. This depends on the JVM or Android version, OkHttp version, and web server configuration. If there is no common cipher suite and TLS version, your call will fail like this:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">Caused by: javax.net.ssl.SSLProtocolException: SSL handshake aborted: ssl=0x7f2719a89e80:<br>    Failure in SSL library, usually a protocol error<br>        error:14077410:SSL routines:SSL23_GET_SERVER_HELLO:sslv3 alert handshake<br>        failure (external/openssl/ssl/s23_clnt.c:770 0x7f2728a53ea0:0x00000000)<br>    at com.android.org.conscrypt.NativeCrypto.SSL_do_handshake(Native Method)</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">You can check a web server's configuration using <span data-unresolved-link=".aux_doc/qualys///PointingToDeclaration/">Qualys SSL Labs</span>. OkHttp's TLS configuration history is <span data-unresolved-link=".aux_doc/../security/tls_configuration_history.md///PointingToDeclaration/">tracked here</span>.</p>
+      <p class="paragraph">Applications expected to be installed on older Android devices should consider adopting the <span data-unresolved-link=".aux_doc/provider_installer///PointingToDeclaration/">Google Play Services’ ProviderInstaller</span>. This will increase security for users and increase connectivity with web servers.</p>
+      <h3 class=""> Certificate Pinning (<span data-unresolved-link=".aux_doc/CertificatePinningKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/CertificatePinningJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">By default, OkHttp trusts the certificate authorities of the host platform. This strategy maximizes connectivity, but it is subject to certificate authority attacks such as the <a href="https://www.computerworld.com/article/2510951/cybercrime-hacking/hackers-spied-on-300-000-iranians-using-fake-google-certificate.html">2011 DigiNotar attack</a>. It also assumes your HTTPS servers’ certificates are signed by a certificate authority.</p>
+      <p class="paragraph">Use <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-certificate-pinner/">CertificatePinner</a> to restrict which certificates and certificate authorities are trusted. Certificate pinning increases security, but limits your server team’s abilities to update their TLS certificates. <strong>Do not use certificate pinning without the blessing of your server’s TLS administrator!</strong></p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient.Builder()<br>      .certificatePinner(<br>          CertificatePinner.Builder()<br>              .add(&quot;publicobject.com&quot;, &quot;sha256/afwiKY3RxoMmLkuRW1l7QsPZTJPwDS2pdDROQjXw8ig=&quot;)<br>              .build())<br>      .build()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;https://publicobject.com/robots.txt&quot;)<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      for (certificate in response.handshake!!.peerCertificates) {<br>        println(CertificatePinner.pin(certificate))<br>      }<br>    }<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Customizing Trusted Certificates (<span data-unresolved-link=".aux_doc/CustomTrustKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/CustomTrustJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">The full code sample shows how to replace the host platform’s certificate authorities with your own set. As above, <strong>do not use custom certificates without the blessing of your server’s TLS administrator!</strong></p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client: OkHttpClient<br><br>  init {<br>    val trustManager = trustManagerForCertificates(trustedCertificatesInputStream())<br>    val sslContext = SSLContext.getInstance(&quot;TLS&quot;)<br>    sslContext.init(null, arrayOf&lt;TrustManager&gt;(trustManager), null)<br>    val sslSocketFactory = sslContext.socketFactory<br><br>    client = OkHttpClient.Builder()<br>        .sslSocketFactory(sslSocketFactory, trustManager)<br>        .build()<br>  }<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;https://publicobject.com/helloworld.txt&quot;)<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      for ((name, value) in response.headers) {<br>        println(&quot;$name: $value&quot;)<br>      }<br><br>      println(response.body!!.string())<br>    }<br>  }<br><br>  /**<br>   * Returns an input stream containing one or more certificate PEM files. This implementation just<br>   * embeds the PEM files in Java strings; most applications will instead read this from a resource<br>   * file that gets bundled with the application.<br>   */<br>  private fun trustedCertificatesInputStream(): InputStream {<br>    ... // Full source omitted. See sample.<br>  }<br><br>  private fun trustManagerForCertificates(inputStream: InputStream): X509TrustManager {<br>    ... // Full source omitted. See sample.<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

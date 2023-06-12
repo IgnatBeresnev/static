@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Contributing</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Contributing///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Contributing</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Contributing</h1>
+      <p class="paragraph">Keeping the project small and stable limits our ability to accept new contributors. We are not seeking new committers at this time, but some small contributions are welcome.</p>
+      <p class="paragraph">If you've found a security problem, please follow our <a href="../-security/-security.html">bug bounty</a> program.</p>
+      <p class="paragraph">If you've found a bug, please contribute a failing test case so we can study and fix it.</p>
+      <p class="paragraph">If you have a new feature idea, please build it in an external library. There are <a href="../-works with -ok-http.html">many libraries</a> that sit on top or hook in via existing APIs. If you build something that integrates with OkHttp, tell us so that we can link it!</p>
+      <p class="paragraph">Before code can be accepted all contributors must complete our <span data-unresolved-link=".aux_doc/cla///PointingToDeclaration/">Individual Contributor License Agreement (CLA)</span>.</p>
+      <h1 class=""> Code Contributions</h1>
+      <p class="paragraph">Get working code on a personal branch with tests passing before you submit a PR:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">./gradlew clean check</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Please make every effort to follow existing conventions and style in order to keep the code as readable as possible.</p>
+      <p class="paragraph">Contribute code changes through GitHub by forking the repository and sending a pull request. We squash all pull requests on merge.</p>
+      <h1 class=""> Gradle Setup</h1>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">$ cat local.properties<br>sdk.dir=PATH_TO_ANDROID_HOME/sdk<br>org.gradle.caching=true</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h1 class=""> Running Android Tests</h1>
+      <p class="paragraph">$ ANDROID_SDK_ROOT=PATH_TO_ANDROID_HOME/sdk ./gradlew :android-test:connectedCheck -PandroidBuild=true</p>
+      <h1 class=""> Committer's Guides</h1>
+      <ul>
+        <li>
+          <p class="paragraph"><a href="-concurrency.html">Concurrency</a></p>
+        </li>
+        <li>
+          <p class="paragraph"><a href="-debug -logging.html">Debug Logging</a></p>
+        </li>
+        <li>
+          <p class="paragraph"><a href="../-releasing.html">Releasing</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

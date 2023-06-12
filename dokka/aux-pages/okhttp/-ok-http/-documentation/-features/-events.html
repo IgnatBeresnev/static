@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Events</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Events///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Events</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Events</h1>
+      <p class="paragraph">Events allow you to capture metrics on your application’s HTTP calls. Use events to monitor:</p>
+      <ul>
+        <li>
+          <p class="paragraph">The size and frequency of the HTTP calls your application makes. If you’re making too many calls, or your calls are too large, you should know about it!</p>
+        </li>
+        <li>
+          <p class="paragraph">The performance of these calls on the underlying network. If the network’s performance isn’t sufficient, you need to either improve the network or use less of it.</p>
+        </li>
+      </ul>
+      <h3 class=""> EventListener</h3>
+      <p class="paragraph">Subclass <a href="https://square.github.io/okhttp/3.x/okhttp/okhttp3/EventListener.html">EventListener</a> and override methods for the events you are interested in. In a successful HTTP call with no redirects or retries the sequence of events is described by this flow.</p>
+      <p class="paragraph"><img alt="Events Diagram" src="../assets/images/events@2x.png"></p>
+      <p class="paragraph">Here’s a <a href="https://github.com/square/okhttp/blob/master/samples/guide/src/main/java/okhttp3/recipes/PrintEventsNonConcurrent.java">sample event listener</a> that prints each event with a timestamp.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">class PrintingEventListener extends EventListener {<br>  private long callStartNanos;<br><br>  private void printEvent(String name) {<br>    long nowNanos = System.nanoTime();<br>    if (name.equals(&quot;callStart&quot;)) {<br>      callStartNanos = nowNanos;<br>    }<br>    long elapsedNanos = nowNanos - callStartNanos;<br>    System.out.printf(&quot;%.3f %s%n&quot;, elapsedNanos / 1000000000d, name);<br>  }<br><br>  @Override public void callStart(Call call) {<br>    printEvent(&quot;callStart&quot;);<br>  }<br><br>  @Override public void callEnd(Call call) {<br>    printEvent(&quot;callEnd&quot;);<br>  }<br><br>  @Override public void dnsStart(Call call, String domainName) {<br>    printEvent(&quot;dnsStart&quot;);<br>  }<br><br>  @Override public void dnsEnd(Call call, String domainName, List&lt;InetAddress&gt; inetAddressList) {<br>    printEvent(&quot;dnsEnd&quot;);<br>  }<br><br>  ...<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">We make a couple calls:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">Request request = new Request.Builder()<br>    .url(&quot;https://publicobject.com/helloworld.txt&quot;)<br>    .build();<br><br>System.out.println(&quot;REQUEST 1 (new connection)&quot;);<br>try (Response response = client.newCall(request).execute()) {<br>  // Consume and discard the response body.<br>  response.body().source().readByteString();<br>}<br><br>System.out.println(&quot;REQUEST 2 (pooled connection)&quot;);<br>try (Response response = client.newCall(request).execute()) {<br>  // Consume and discard the response body.<br>  response.body().source().readByteString();<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">And the listener prints the corresponding events:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">REQUEST 1 (new connection)<br>0.000 callStart<br>0.010 dnsStart<br>0.017 dnsEnd<br>0.025 connectStart<br>0.117 secureConnectStart<br>0.586 secureConnectEnd<br>0.586 connectEnd<br>0.587 connectionAcquired<br>0.588 requestHeadersStart<br>0.590 requestHeadersEnd<br>0.591 responseHeadersStart<br>0.675 responseHeadersEnd<br>0.676 responseBodyStart<br>0.679 responseBodyEnd<br>0.679 connectionReleased<br>0.680 callEnd<br>REQUEST 2 (pooled connection)<br>0.000 callStart<br>0.001 connectionAcquired<br>0.001 requestHeadersStart<br>0.001 requestHeadersEnd<br>0.002 responseHeadersStart<br>0.082 responseHeadersEnd<br>0.082 responseBodyStart<br>0.082 responseBodyEnd<br>0.083 connectionReleased<br>0.083 callEnd</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Notice how no connect events are fired for the second call. It reused the connection from the first request for dramatically better performance.</p>
+      <h3 class=""> EventListener.Factory</h3>
+      <p class="paragraph">In the preceding example we used a field, <code class="lang-kotlin">callStartNanos</code>, to track the elapsed time of each event. This is handy, but it won’t work if multiple calls are executing concurrently. To accommodate this, use a <code class="lang-kotlin">Factory</code> to create a new <code class="lang-kotlin">EventListener</code> instance for each <code class="lang-kotlin">Call</code>. This allows each listener to keep call-specific state.</p>
+      <p class="paragraph">This <a href="https://github.com/square/okhttp/blob/master/samples/guide/src/main/java/okhttp3/recipes/PrintEvents.java">sample factory</a> creates a unique ID for each call and uses that ID to differentiate calls in log messages.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">class PrintingEventListener extends EventListener {<br>  public static final Factory FACTORY = new Factory() {<br>    final AtomicLong nextCallId = new AtomicLong(1L);<br><br>    @Override public EventListener create(Call call) {<br>      long callId = nextCallId.getAndIncrement();<br>      System.out.printf(&quot;%04d %s%n&quot;, callId, call.request().url());<br>      return new PrintingEventListener(callId, System.nanoTime());<br>    }<br>  };<br><br>  final long callId;<br>  final long callStartNanos;<br><br>  public PrintingEventListener(long callId, long callStartNanos) {<br>    this.callId = callId;<br>    this.callStartNanos = callStartNanos;<br>  }<br><br>  private void printEvent(String name) {<br>    long elapsedNanos = System.nanoTime() - callStartNanos;<br>    System.out.printf(&quot;%04d %.3f %s%n&quot;, callId, elapsedNanos / 1000000000d, name);<br>  }<br><br>  @Override public void callStart(Call call) {<br>    printEvent(&quot;callStart&quot;);<br>  }<br><br>  @Override public void callEnd(Call call) {<br>    printEvent(&quot;callEnd&quot;);<br>  }<br><br>  ...<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">We can use this listener to race a pair of concurrent HTTP requests:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">Request washingtonPostRequest = new Request.Builder()<br>    .url(&quot;https://www.washingtonpost.com/&quot;)<br>    .build();<br>client.newCall(washingtonPostRequest).enqueue(new Callback() {<br>  ...<br>});<br><br>Request newYorkTimesRequest = new Request.Builder()<br>    .url(&quot;https://www.nytimes.com/&quot;)<br>    .build();<br>client.newCall(newYorkTimesRequest).enqueue(new Callback() {<br>  ...<br>});</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Running this race over home WiFi shows the Times (<code class="lang-kotlin">0002</code>) completes just slightly sooner than the Post (<code class="lang-kotlin">0001</code>):</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">0001 https://www.washingtonpost.com/<br>0001 0.000 callStart<br>0002 https://www.nytimes.com/<br>0002 0.000 callStart<br>0002 0.010 dnsStart<br>0001 0.013 dnsStart<br>0001 0.022 dnsEnd<br>0002 0.019 dnsEnd<br>0001 0.028 connectStart<br>0002 0.025 connectStart<br>0002 0.072 secureConnectStart<br>0001 0.075 secureConnectStart<br>0001 0.386 secureConnectEnd<br>0002 0.390 secureConnectEnd<br>0002 0.400 connectEnd<br>0001 0.403 connectEnd<br>0002 0.401 connectionAcquired<br>0001 0.404 connectionAcquired<br>0001 0.406 requestHeadersStart<br>0002 0.403 requestHeadersStart<br>0001 0.414 requestHeadersEnd<br>0002 0.411 requestHeadersEnd<br>0002 0.412 responseHeadersStart<br>0001 0.415 responseHeadersStart<br>0002 0.474 responseHeadersEnd<br>0002 0.475 responseBodyStart<br>0001 0.554 responseHeadersEnd<br>0001 0.555 responseBodyStart<br>0002 0.554 responseBodyEnd<br>0002 0.554 connectionReleased<br>0002 0.554 callEnd<br>0001 0.624 responseBodyEnd<br>0001 0.624 connectionReleased<br>0001 0.624 callEnd</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">The <code class="lang-kotlin">EventListener.Factory</code> also makes it possible to limit metrics to a subset of calls. This one captures metrics on a random 10%:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">class MetricsEventListener extends EventListener {<br>  private static final Factory FACTORY = new Factory() {<br>    @Override public EventListener create(Call call) {<br>      if (Math.random() &lt; 0.10) {<br>        return new MetricsEventListener(call);<br>      } else {<br>        return EventListener.NONE;<br>      }<br>    }<br>  };<br><br>  ...<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Events with Failures</h3>
+      <p class="paragraph">When an operation fails, a failure method is called. This is <code class="lang-kotlin">connectFailed()</code> for failures while building a connection to the server, and <code class="lang-kotlin">callFailed()</code> when the HTTP call fails permanently. When a failure happens it is possible that a <code class="lang-kotlin">start</code> event won’t have a corresponding <code class="lang-kotlin">end</code> event.</p>
+      <p class="paragraph"><img alt="Events Diagram" src="../assets/images/events_with_failures@2x.png"></p>
+      <h3 class=""> Events with Retries and Follow-Ups</h3>
+      <p class="paragraph">OkHttp is resilient and can automatically recover from some connectivity failures. In this case, the <code class="lang-kotlin">connectFailed()</code> event is not terminal and not followed by <code class="lang-kotlin">callFailed()</code>. Event listeners will receive multiple events of the same type when retries are attempted.</p>
+      <p class="paragraph">A single HTTP call may require follow-up requests to be made to handle authentication challenges, redirects, and HTTP-layer timeouts. In such cases multiple connections, requests, and responses may be attempted. Follow-ups are another reason a single call may trigger multiple events of the same type.</p>
+      <p class="paragraph"><img alt="Events Diagram" src="../assets/images/events_with_failures_and_retries@2x.png"></p>
+      <h3 class=""> Availability</h3>
+      <p class="paragraph">Events is available as a public API in OkHttp 3.11. Future releases may introduce new event types; you will need to override the corresponding methods to handle them.</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

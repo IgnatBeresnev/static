@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Debug Logging</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Debug Logging///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Debug Logging</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Debug Logging</h1>
+      <p class="paragraph">OkHttp has internal APIs to enable debug logging. It uses the <code class="lang-kotlin">java.util.logging</code> API which can be tricky to configure. As a shortcut, you can paste <a href="https://github.com/square/okhttp/blob/master/okhttp-testing-support/src/main/kotlin/okhttp3/OkHttpDebugLogging.kt">OkHttpDebugLogging.kt</a>. Then enable debug logging for whichever features you need:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">OkHttpDebugLogging.enableHttp2()<br>OkHttpDebugLogging.enableTaskRunner()</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Activating on Android</h3>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">$ adb shell setprop log.tag.okhttp.Http2 DEBUG<br>$ adb shell setprop log.tag.okhttp.TaskRunner DEBUG<br>$ adb logcat '*:E' 'okhttp.Http2:D' 'okhttp.TaskRunner:D'</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> HTTP/2 Frame Logging</h3>
+      <p class="paragraph">This logs inbound (<code class="lang-kotlin">&lt;&lt;</code>) and outbound (<code class="lang-kotlin">&gt;&gt;</code>) frames for HTTP/2 connections.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">[2020-01-01 00:00:00] CONNECTION 505249202a20485454502f322e300d0a0d0a534d0d0a0d0a<br>[2020-01-01 00:00:00] 0x00000000     6 SETTINGS<br>[2020-01-01 00:00:00] 0x00000000     4 WINDOW_UPDATE<br>[2020-01-01 00:00:00] 0x00000003    47 HEADERS       END_STREAM|END_HEADERS<br>[2020-01-01 00:00:00] &lt;&lt; 0x00000000     6 SETTINGS<br>[2020-01-01 00:00:00] &lt;&lt; 0x00000000     0 SETTINGS      ACK<br>[2020-01-01 00:00:00] &lt;&lt; 0x00000000     4 WINDOW_UPDATE<br>[2020-01-01 00:00:00] 0x00000000     0 SETTINGS      ACK<br>[2020-01-01 00:00:00] &lt;&lt; 0x00000003   322 HEADERS       END_HEADERS<br>[2020-01-01 00:00:00] &lt;&lt; 0x00000003   288 DATA<br>[2020-01-01 00:00:00] &lt;&lt; 0x00000003     0 DATA          END_STREAM<br>[2020-01-01 00:00:00] &lt;&lt; 0x00000000     8 GOAWAY<br>[2020-01-01 00:00:05] &lt;&lt; 0x00000000     8 GOAWAY</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Task Runner Logging </h3>
+      <p class="paragraph">This logs task enqueues, starts, and finishes.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">[2020-01-01 00:00:00] Q10000 scheduled after   0 µs: OkHttp ConnectionPool<br>[2020-01-01 00:00:00] Q10000 starting              : OkHttp ConnectionPool<br>[2020-01-01 00:00:00] Q10000 run again after 300 s : OkHttp ConnectionPool<br>[2020-01-01 00:00:00] Q10000 finished run in   1 ms: OkHttp ConnectionPool<br>[2020-01-01 00:00:00] Q10001 scheduled after   0 µs: OkHttp squareup.com applyAndAckSettings<br>[2020-01-01 00:00:00] Q10001 starting              : OkHttp squareup.com applyAndAckSettings<br>[2020-01-01 00:00:00] Q10003 scheduled after   0 µs: OkHttp squareup.com onSettings<br>[2020-01-01 00:00:00] Q10003 starting              : OkHttp squareup.com onSettings<br>[2020-01-01 00:00:00] Q10001 finished run in   3 ms: OkHttp squareup.com applyAndAckSettings<br>[2020-01-01 00:00:00] Q10003 finished run in 528 µs: OkHttp squareup.com onSettings<br>[2020-01-01 00:00:00] Q10000 scheduled after   0 µs: OkHttp ConnectionPool<br>[2020-01-01 00:00:00] Q10000 starting              : OkHttp ConnectionPool<br>[2020-01-01 00:00:00] Q10000 run again after 300 s : OkHttp ConnectionPool<br>[2020-01-01 00:00:00] Q10000 finished run in 739 µs: OkHttp ConnectionPool</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

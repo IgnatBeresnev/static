@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Security Providers</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Security Providers///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Security Providers</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Security Providers</h1>
+      <h2 class=""> Provider Status</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>HTTP/2</th>
+            <th>TLSv1.3</th>
+            <th>Powered By</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>JVM default</td>
+            <td>Java 9+</td>
+            <td>Java 11+</td>
+            <td><a href="https://openjdk.java.net/groups/security/">OpenJDK</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Android default</td>
+            <td>✅</td>
+            <td>Android 10+</td>
+            <td><a href="https://boringssl.googlesource.com/boringssl/">BoringSSL</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.graalvm.org/">GraalVM</a></td>
+            <td>✅</td>
+            <td></td>
+            <td><a href="https://openjdk.java.net/groups/security/">OpenJDK</a></td>
+            <td>Only actively tested with JDK 11, not with 8 target</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.bouncycastle.org/java.html">Bouncy Castle</a></td>
+            <td>✅</td>
+            <td></td>
+            <td><a href="https://www.bouncycastle.org/java.html">Bouncy Castle</a></td>
+            <td><a href="https://github.com/square/okhttp/issues/5698">Tracking bug.</a></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.conscrypt.org/">Conscrypt</a></td>
+            <td>✅</td>
+            <td>✅</td>
+            <td><a href="https://boringssl.googlesource.com/boringssl/">BoringSSL</a></td>
+            <td>Activated if Conscrypt is first registered provider.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/openjsse/openjsse">OpenJSSE</a></td>
+            <td></td>
+            <td>✅</td>
+            <td><a href="https://openjdk.java.net/groups/security/">OpenJDK</a></td>
+            <td>OpenJDK backport.</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/corretto/amazon-corretto-crypto-provider">Corretto</a></td>
+            <td>✅</td>
+            <td>✅</td>
+            <td><a href="https://www.openssl.org/">OpenSSL</a></td>
+            <td>Amazon's high-performance provider. <a href="https://github.com/square/okhttp/issues/5592">Tracking bug.</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="paragraph">All providers support HTTP/1.1 and TLSv1.2.</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

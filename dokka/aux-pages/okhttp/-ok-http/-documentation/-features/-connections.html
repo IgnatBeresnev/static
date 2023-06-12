@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Connections</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Connections///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Connections</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Connections</h1>
+      <p class="paragraph">Although you provide only the URL, OkHttp plans its connection to your webserver using three types: URL, Address, and Route.</p>
+      <h3 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-http-url/">URLs</a></h3>
+      <p class="paragraph">URLs (like <code class="lang-kotlin">https://github.com/square/okhttp</code>) are fundamental to HTTP and the Internet. In addition to being a universal, decentralized naming scheme for everything on the web, they also specify how to access web resources.</p>
+      <p class="paragraph">URLs are abstract:</p>
+      <ul>
+        <li>
+          <p class="paragraph">They specify that the call may be plaintext (<code class="lang-kotlin">http</code>) or encrypted (<code class="lang-kotlin">https</code>), but not which cryptographic algorithms should be used. Nor do they specify how to verify the peer's certificates (the <a href="https://developer.android.com/reference/javax/net/ssl/HostnameVerifier.html">HostnameVerifier</a>) or which certificates can be trusted (the <a href="https://developer.android.com/reference/org/apache/http/conn/ssl/SSLSocketFactory.html">SSLSocketFactory</a>).</p>
+        </li>
+        <li>
+          <p class="paragraph">They don't specify whether a specific proxy server should be used or how to authenticate with that proxy server.</p>
+        </li>
+      </ul>
+      <p class="paragraph">They're also concrete: each URL identifies a specific path (like <code class="lang-kotlin">/square/okhttp</code>) and query (like <code class="lang-kotlin">?q=sharks&amp;lang=en</code>). Each webserver hosts many URLs.</p>
+      <h3 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-address/">Addresses</a></h3>
+      <p class="paragraph">Addresses specify a webserver (like <code class="lang-kotlin">github.com</code>) and all of the <strong>static</strong> configuration necessary to connect to that server: the port number, HTTPS settings, and preferred network protocols (like HTTP/2).</p>
+      <p class="paragraph">URLs that share the same address may also share the same underlying TCP socket connection. Sharing a connection has substantial performance benefits: lower latency, higher throughput (due to <a href="https://www.igvita.com/2011/10/20/faster-web-vs-tcp-slow-start/">TCP slow start</a>) and conserved battery. OkHttp uses a <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-connection-pool/">ConnectionPool</a> that automatically reuses HTTP/1.x connections and multiplexes HTTP/2 connections.</p>
+      <p class="paragraph">In OkHttp some fields of the address come from the URL (scheme, hostname, port) and the rest come from the <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-ok-http-client/">OkHttpClient</a>.</p>
+      <h3 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-route/">Routes</a></h3>
+      <p class="paragraph">Routes supply the <strong>dynamic</strong> information necessary to actually connect to a webserver. This is the specific IP address to attempt (as discovered by a DNS query), the exact proxy server to use (if a <a href="https://developer.android.com/reference/java/net/ProxySelector.html">ProxySelector</a> is in use), and which version of TLS to negotiate (for HTTPS connections).</p>
+      <p class="paragraph">There may be many routes for a single address. For example, a webserver that is hosted in multiple datacenters may yield multiple IP addresses in its DNS response.</p>
+      <p class="paragraph">In limited situations OkHttp will retry a route if connecting fails:</p>
+      <ul>
+        <li>
+          <p class="paragraph">When making an HTTPS connection through an HTTP proxy, the proxy may issue an authentication challenge. OkHttp will call the proxy <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-authenticator/">authenticator</a> and try again.</p>
+        </li>
+        <li>
+          <p class="paragraph">When making TLS connections with multiple <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-connection-spec/">connection specs</a>, these are attempted in sequence until the TLS handshake succeeds.</p>
+        </li>
+      </ul>
+      <h3 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-connection/">Connections</a></h3>
+      <p class="paragraph">When you request a URL with OkHttp, here's what it does:</p>
+      <ol>
+        <li>
+          <p class="paragraph">It uses the URL and configured OkHttpClient to create an <strong>address</strong>. This address specifies how we'll connect to the webserver.</p>
+        </li>
+        <li>
+          <p class="paragraph">It attempts to retrieve a connection with that address from the <strong>connection pool</strong>.</p>
+        </li>
+        <li>
+          <p class="paragraph">If it doesn't find a connection in the pool, it selects a <strong>route</strong> to attempt. This usually means making a DNS request to get the server's IP addresses. It then selects a TLS version and proxy server if necessary.</p>
+        </li>
+        <li>
+          <p class="paragraph">If it's a new route, it connects by building either a direct socket connection, a TLS tunnel (for HTTPS over an HTTP proxy), or a direct TLS connection. It does TLS handshakes as necessary. This step may be retried for tunnel challenges and TLS handshake failures.</p>
+        </li>
+        <li>
+          <p class="paragraph">It sends the HTTP request and reads the response.</p>
+        </li>
+      </ol>
+      <p class="paragraph">If there's a problem with the connection, OkHttp will select another route and try again. This allows OkHttp to recover when a subset of a server's addresses are unreachable. It's also useful when a pooled connection is stale or if the attempted TLS version is unsupported.</p>
+      <p class="paragraph">Once the response has been received, the connection will be returned to the pool so it can be reused for a future request. Connections are evicted from the pool after a period of inactivity.</p>
+      <h3 class=""> <a href="https://square.github.io/okhttp/4.x/okhttp/okhttp3/-ok-http-client/-builder/fast-fallback/">Fast Fallback</a></h3>
+      <p class="paragraph">Since version 5.0, <code class="lang-kotlin">OkHttpClient</code> supports fast fallback, which is our implementation of Happy Eyeballs <a href="https://datatracker.ietf.org/doc/html/rfc6555">RFC 6555</a>.</p>
+      <p class="paragraph">With fast fallback, OkHttp attempts to connect to multiple web servers concurrently. It keeps whichever route connects first and cancels all of the others. Its rules are:</p>
+      <ul>
+        <li>
+          <p class="paragraph">Prefer to alternate IP addresses from different address families, (IPv6 / IPv4), starting with IPv6.</p>
+        </li>
+        <li>
+          <p class="paragraph">Don't start a new attempt until 250 ms after the most recent attempt was started.</p>
+        </li>
+        <li>
+          <p class="paragraph">Keep whichever TCP connection succeeds first and cancel all the others.</p>
+        </li>
+        <li>
+          <p class="paragraph">Race TCP only. Only attempt a TLS handshake on the winning TCP connection.</p>
+        </li>
+      </ul>
+      <p class="paragraph">If the winner of the TCP handshake race fails to succeed in a TLS handshake, the process is restarted with the remaining routes.</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

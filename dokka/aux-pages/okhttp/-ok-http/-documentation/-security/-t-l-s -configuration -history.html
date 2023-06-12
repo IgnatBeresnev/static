@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>TLS Configuration History</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/TLS Configuration History///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">TLS Configuration History</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> TLS Configuration History</h1>
+      <p class="paragraph">OkHttp tracks the dynamic TLS ecosystem to balance connectivity and security. This page is a log of changes we've made over time to OkHttp's default TLS options.</p>
+      <h1 class=""> <a href="https://square.github.io/okhttp/changelog_3x/#version-310">OkHttp 3.14</a></h1>
+      <p class="paragraph"><i>2019-03-14</i></p>
+      <p class="paragraph">Remove 2 TLSv1.3 cipher suites that are neither available on OkHttp’s host platforms nor enabled in releases of Chrome and Firefox.</p>
+      <h5 class=""> RESTRICTED_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLS_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_CHACHA20_POLY1305_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_AES_128_CCM_SHA256</strike>
+<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">
+              <strike>¹</strike>
+            </span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_AES_128_CCM_8_SHA256</strike>
+<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">
+              <strike>¹</strike>
+            </span></p>
+        </li>
+      </ul>
+      <h5 class=""> MODERN_TLS / COMPATIBLE_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLS_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_CHACHA20_POLY1305_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_3DES_EDE_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_AES_128_CCM_SHA256</strike>
+<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">
+              <strike>¹</strike>
+            </span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_AES_128_CCM_8_SHA256</strike>
+<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">
+              <strike>¹</strike>
+            </span></p>
+        </li>
+      </ul>
+      <h1 class=""> <a href="https://square.github.io/okhttp/changelog_3x/#version-340">OkHttp 3.13</a></h1>
+      <p class="paragraph"><i>2019-02-04</i></p>
+      <p class="paragraph">Remove TLSv1.1 and TLSv1 from MODERN_TLS. Change COMPATIBLE_TLS to support all TLS versions.</p>
+      <h5 class=""> RESTRICTED_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLSv1.3</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1.2</p>
+        </li>
+      </ul>
+      <h5 class=""> MODERN_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLSv1.3</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1.2</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLSv1.1</strike>
+          </p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLSv1</strike>
+          </p>
+        </li>
+      </ul>
+      <h5 class=""> COMPATIBLE_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLSv1.3</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLSv1.2</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLSv1.1</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1</p>
+        </li>
+      </ul>
+      <h1 class=""> <a href="https://square.github.io/okhttp/changelog_3x/#version-330">OkHttp 3.12</a></h1>
+      <p class="paragraph"><i>2018-11-16</i></p>
+      <p class="paragraph">Added support for TLSv1.3.</p>
+      <h5 class=""> RESTRICTED_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_CHACHA20_POLY1305_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_128_CCM_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_128_CCM_8_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+      </ul>
+      <h5 class=""> MODERN_TLS / COMPATIBLE_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_CHACHA20_POLY1305_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_128_CCM_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_AES_128_CCM_8_SHA256<span data-unresolved-link=".aux_doc/#tlsv13_only///PointingToDeclaration/">¹</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_3DES_EDE_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+      </ul>
+      <h5 class=""> RESTRICTED_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLSv1.3</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1.2</p>
+        </li>
+      </ul>
+      <h5 class=""> MODERN_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLSv1.3</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1.2</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1.1</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1</p>
+        </li>
+      </ul>
+      <h5 class=""> COMPATIBLE_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLSv1</p>
+        </li>
+      </ul>
+      <h1 class=""> <a href="https://square.github.io/okhttp/changelog_3x/#version-320">OkHttp 3.11</a></h1>
+      <p class="paragraph"><i>2018-07-12</i></p>
+      <p class="paragraph">Added a new extra strict RESTRICTED_TLS configuration inspired by <a href="https://cloud.google.com/load-balancing/docs/ssl-policies-concepts">Google Cloud’s similar policy</a>. It is appropriate when both the host platform (JVM/Conscrypt/Android) and target webserver are current.</p>
+      <h5 class=""> RESTRICTED_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+      </ul>
+      <h5 class=""> RESTRICTED_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLSv1.2</p>
+        </li>
+      </ul>
+      <h1 class=""> <a href="https://square.github.io/okhttp/changelog_3x/#version-310">OkHttp 3.10</a></h1>
+      <p class="paragraph"><i>2018-02-24</i></p>
+      <p class="paragraph">Remove two rarely-used cipher suites from the default set. This tracks a <a href="https://developers.google.com/web/updates/2016/12/chrome-56-deprecations#remove_cbc-mode_ecdsa_ciphers_in_tls">Chromium change</a> to remove these cipher suites because they are fragile and rarely-used.</p>
+      <h5 class=""> MODERN_TLS / COMPATIBLE_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_3DES_EDE_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</strike>
+          </p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</strike>
+          </p>
+        </li>
+      </ul>
+      <h1 class=""> <a href="https://square.github.io/okhttp/changelog_3x/#version-350">OkHttp 3.5</a></h1>
+      <p class="paragraph"><i>2016-11-30</i></p>
+      <p class="paragraph">Remove three old cipher suites and add five new ones. This tracks changes in what's available on Android and Java, and also what cipher suites recent releases of Chrome and Firefox support by default.</p>
+      <h5 class=""> MODERN_TLS / COMPATIBLE_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>NEW:</strong> TLS_RSA_WITH_AES_256_GCM_SHA384<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_3DES_EDE_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_DHE_RSA_WITH_AES_128_CBC_SHA</strike>
+          </p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_DHE_RSA_WITH_AES_128_GCM_SHA256</strike>
+          </p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>REMOVED:</strong> 
+            <strike>TLS_DHE_RSA_WITH_AES_256_CBC_SHA</strike>
+          </p>
+        </li>
+      </ul>
+      <h1 class=""> <a href="https://square.github.io/okhttp/changelog_3x/#version-300">OkHttp 3.0</a></h1>
+      <p class="paragraph"><i>2016-01-13</i></p>
+      <h5 class=""> MODERN_TLS / COMPATIBLE_TLS cipher suites</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_DHE_RSA_WITH_AES_128_GCM_SHA256</p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_DHE_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_DHE_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_GCM_SHA256<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_128_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_AES_256_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+        <li>
+          <p class="paragraph">TLS_RSA_WITH_3DES_EDE_CBC_SHA<span data-unresolved-link=".aux_doc/#http2_naughty///PointingToDeclaration/">²</span></p>
+        </li>
+      </ul>
+      <h5 class=""> MODERN_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLSv1.2</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1.1</p>
+        </li>
+        <li>
+          <p class="paragraph">TLSv1</p>
+        </li>
+      </ul>
+      <h5 class=""> COMPATIBLE_TLS versions</h5>
+      <ul>
+        <li>
+          <p class="paragraph">TLSv1</p>
+        </li>
+      </ul>
+
+      <p class="paragraph"><a name="tlsv13_only"></a></p>
+      <h4 class=""> ¹ TLSv1.3 Only</h4>
+      <p class="paragraph">Cipher suites that are only available with TLSv1.3.</p>
+      <p class="paragraph"><a name="http2_naughty"></a></p>
+      <h4 class=""> ² HTTP/2 Cipher Suite Denylist</h4>
+      <p class="paragraph">Cipher suites that are <a href="https://tools.ietf.org/html/rfc7540#appendix-A">discouraged for use</a> with HTTP/2. OkHttp includes them because better suites are not commonly available. For example, none of the better cipher suites listed above shipped with Android 4.4 or Java 7.</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

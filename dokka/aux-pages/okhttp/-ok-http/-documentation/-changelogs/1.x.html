@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>1.x</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/1.x///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">1.x</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> OkHttp 1.x Change Log</h1>
+      <h2 class=""> Version 1.6.0</h2>
+      <p class="paragraph"><i>2014-05-23</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Offer bridges to make it easier to migrate from OkHttp 1.x to OkHttp 2.0.    This adds <code class="lang-kotlin">OkUrlFactory</code>, <code class="lang-kotlin">Cache</code>, and <code class="lang-kotlin">@Deprecated</code> annotations for APIs    dropped in 2.0.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.5.4</h2>
+      <p class="paragraph"><i>2014-04-14</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Drop ALPN support in Android. There's a concurrency bug in all    currently-shipping versions.</p>
+        </li>
+        <li>
+          <p class="paragraph">Support asynchronous disconnects by breaking the socket only. This should    prevent flakiness from multiple threads concurrently accessing a stream.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.5.3</h2>
+      <p class="paragraph"><i>2014-03-29</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix bug where the Content-Length header was not always dropped when    following a redirect from a POST to a GET.</p>
+        </li>
+        <li>
+          <p class="paragraph">Implement basic support for <code class="lang-kotlin">Thread.interrupt()</code>. OkHttp now checks    for an interruption before doing a blocking call. If it is interrupted,    it throws an <code class="lang-kotlin">InterruptedIOException</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.5.2</h2>
+      <p class="paragraph"><i>2014-03-17</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix bug where deleting a file that was absent from the <code class="lang-kotlin">HttpResponseCache</code>    caused an IOException.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix bug in HTTP/2 where our HPACK decoder wasn't emitting entries in    certain eviction scenarios, leading to dropped response headers.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.5.1</h2>
+      <p class="paragraph"><i>2014-03-11</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix 1.5.0 regression where connections should not have been recycled.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix 1.5.0 regression where transparent Gzip was broken by attempting to    recover from another I/O failure.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix problems where spdy/3.1 headers may not have been compressed properly.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix problems with spdy/3.1 and http/2 where the wrong window size was being    used.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix 1.5.0 regression where conditional cache responses could corrupt the    connection pool.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.5.0</h2>
+      <p class="paragraph"><i>2014-03-07</i></p>
+      <h5 class=""> OkHttp no longer uses the default SSL context.</h5>
+      <p class="paragraph">Applications that want to use the global SSL context with OkHttp should configure their OkHttpClient instances with the following:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">okHttpClient.setSslSocketFactory(HttpsURLConnection.getDefaultSSLSocketFactory());</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">A simpler solution is to avoid the shared default SSL socket factory. Instead, if you need to customize SSL, do so for your specific OkHttpClient instance only.</p>
+      <h5 class=""> Synthetic headers have changed</h5>
+      <p class="paragraph">Previously OkHttp added a synthetic response header, <code class="lang-kotlin">OkHttp-Selected-Transport</code>. It has been replaced with a new synthetic header, <code class="lang-kotlin">OkHttp-Selected-Protocol</code>.</p>
+      <h5 class=""> Changes</h5>
+      <ul>
+        <li>
+          <p class="paragraph">New: Support for <code class="lang-kotlin">HTTP-draft-09/2.0</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Support for <code class="lang-kotlin">spdy/3.1</code>. Dropped support for <code class="lang-kotlin">spdy/3</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Use ALPN on Android platforms that support it (4.4+)</p>
+        </li>
+        <li>
+          <p class="paragraph">New: CacheControl model and parser.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Protocol selection in MockWebServer.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Route selection shouldn't use TLS modes that we know will fail.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Cache SPDY responses even if the response body is closed prematurely.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Use strict timeouts when aborting a download.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Support Shoutcast HTTP responses like <code class="lang-kotlin">ICY 200 OK</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't unzip if there isn't a response body.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't leak gzip streams on redirects.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't do DNS lookups on invalid hosts.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Exhaust the underlying stream when reading gzip streams.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Support the <code class="lang-kotlin">PATCH</code> method.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Support request bodies on <code class="lang-kotlin">DELETE</code> method.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Drop the <code class="lang-kotlin">okhttp-protocols</code> module.</p>
+        </li>
+        <li>
+          <p class="paragraph">Internal: Replaced internal byte array buffers with pooled buffers (&quot;OkBuffer&quot;).</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.3.0</h2>
+      <p class="paragraph"><i>2014-01-11</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">New: Support for &quot;PATCH&quot; HTTP method in client and MockWebServer.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Drop <code class="lang-kotlin">Content-Length</code> header when redirected from POST to GET.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Correctly read cached header entries with malformed header names.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Do not directly support any authentication schemes other than &quot;Basic&quot;.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Respect read timeouts on recycled connections.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Transmit multiple cookie values as a single header with delimiter.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Ensure <code class="lang-kotlin">null</code> is never returned from a connection's <code class="lang-kotlin">getHeaderFields()</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Persist proper <code class="lang-kotlin">Content-Encoding</code> header to cache for GZip responses.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Eliminate rare race condition in SPDY streams that would prevent connection reuse.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Change HTTP date formats to UTC to conform to RFC2616 section 3.3.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Support SPDY header blocks with trailing bytes.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Allow <code class="lang-kotlin">;</code> as separator for <code class="lang-kotlin">Cache-Control</code> header.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Correct bug where HTTPS POST requests were always automatically buffered.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Honor read timeout when parsing SPDY headers.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.2.1</h2>
+      <p class="paragraph"><i>2013-08-23</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Resolve issue with 'jar-with-dependencies' artifact creation.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Support empty SPDY header values.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.2.0</h2>
+      <p class="paragraph"><i>2013-08-11</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">New APIs on OkHttpClient to set default timeouts for connect and read.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix bug when caching SPDY responses.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix a bug with SPDY plus half-closed streams. (thanks kwuollett)</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix a bug in <code class="lang-kotlin">Content-Length</code> reporting for gzipped streams in the Apache     HTTP client adapter. (thanks kwuollett)</p>
+        </li>
+        <li>
+          <p class="paragraph">Work around the Alcatel <code class="lang-kotlin">getByInetAddress</code> bug (thanks k.kocel)</p>
+        </li>
+        <li>
+          <p class="paragraph">Be more aggressive about testing pooled sockets before reuse. (thanks     warpspin)</p>
+        </li>
+        <li>
+          <p class="paragraph">Include <code class="lang-kotlin">Content-Type</code> and <code class="lang-kotlin">Content-Encoding</code> in the Apache HTTP client     adapter. (thanks kwuollett)</p>
+        </li>
+        <li>
+          <p class="paragraph">Add a media type class to OkHttp.</p>
+        </li>
+        <li>
+          <p class="paragraph">Change custom header prefix:</p>
+          <div class="sample-container">
+            <pre><code class="block lang-kotlin" theme="idea">X-Android-Sent-Millis is now OkHttp-Sent-Millis<br>X-Android-Received-Millis is now OkHttp-Received-Millis<br>X-Android-Response-Source is now OkHttp-Response-Source<br>X-Android-Selected-Transport is now OkHttp-Selected-Transport</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">Improve cache invalidation for POST-like requests.</p>
+        </li>
+        <li>
+          <p class="paragraph">Bring MockWebServer into OkHttp and teach it SPDY.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.1.1</h2>
+      <p class="paragraph"><i>2013-06-23</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: ClassCastException when caching responses that were redirected from    HTTP to HTTPS.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.1.0</h2>
+      <p class="paragraph"><i>2013-06-15</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Connection reuse was broken for most HTTPS connections due to a bug in    the way the hostname verifier was selected.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Locking bug in SpdyConnection.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Ignore null header values (for compatibility with HttpURLConnection).</p>
+        </li>
+        <li>
+          <p class="paragraph">Add URLStreamHandlerFactory support so that <code class="lang-kotlin">URL.openConnection()</code> uses    OkHttp.</p>
+        </li>
+        <li>
+          <p class="paragraph">Expose the transport (&quot;http/1.1&quot;, &quot;spdy/3&quot;, etc.) via magic request headers.    Use <code class="lang-kotlin">X-Android-Transports</code> to write the preferred transports and    <code class="lang-kotlin">X-Android-Selected-Transport</code> to read the negotiated transport.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.0.2</h2>
+      <p class="paragraph"><i>2013-05-11</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Remove use of Java 6-only APIs.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Properly handle exceptions from <code class="lang-kotlin">NetworkInterface</code> when querying MTU.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Ensure MTU has a reasonable default and upper-bound.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.0.1</h2>
+      <p class="paragraph"><i>2013-05-06</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Correct casing of SSL in method names (<code class="lang-kotlin">getSslSocketFactory</code>/<code class="lang-kotlin">setSslSocketFactory</code>).</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 1.0.0</h2>
+      <p class="paragraph"><i>2013-05-06</i></p>
+      <p class="paragraph">Initial release.</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

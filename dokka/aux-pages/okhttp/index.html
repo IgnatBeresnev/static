@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>OkHttp</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::////PointingToDeclaration//0">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> OkHttp</h1>
+      <p class="paragraph">HTTP is the way modern applications network. It’s how we exchange data & media. Doing HTTP efficiently makes your stuff load faster and saves bandwidth.</p>
+      <p class="paragraph">OkHttp is an HTTP client that’s efficient by default:</p>
+      <ul>
+        <li>
+          <p class="paragraph">HTTP/2 support allows all requests to the same host to share a socket.</p>
+        </li>
+        <li>
+          <p class="paragraph">Connection pooling reduces request latency (if HTTP/2 isn’t available).</p>
+        </li>
+        <li>
+          <p class="paragraph">Transparent GZIP shrinks download sizes.</p>
+        </li>
+        <li>
+          <p class="paragraph">Response caching avoids the network completely for repeat requests.</p>
+        </li>
+      </ul>
+      <p class="paragraph">OkHttp perseveres when the network is troublesome: it will silently recover from common connection problems. If your service has multiple IP addresses, OkHttp will attempt alternate addresses if the first connect fails. This is necessary for IPv4+IPv6 and services hosted in redundant data centers. OkHttp supports modern TLS features (TLS 1.3, ALPN, certificate pinning). It can be configured to fall back for broad connectivity.</p>
+      <p class="paragraph">Using OkHttp is easy. Its request/response API is designed with fluent builders and immutability. It supports both synchronous blocking calls and async calls with callbacks.</p>
+      <h2 class=""> Get a URL</h2>
+      <p class="paragraph">This program downloads a URL and prints its contents as a string. <a href="https://raw.github.com/square/okhttp/master/samples/guide/src/main/java/okhttp3/guide/GetExample.java">Full source</a>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">OkHttpClient client = new OkHttpClient();<br><br>String run(String url) throws IOException {<br>  Request request = new Request.Builder()<br>      .url(url)<br>      .build();<br><br>  try (Response response = client.newCall(request).execute()) {<br>    return response.body().string();<br>  }<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h2 class=""> Post to a Server</h2>
+      <p class="paragraph">This program posts data to a service. <a href="https://raw.github.com/square/okhttp/master/samples/guide/src/main/java/okhttp3/guide/PostExample.java">Full source</a>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">public static final MediaType JSON = MediaType.get(&quot;application/json&quot;);<br><br>OkHttpClient client = new OkHttpClient();<br><br>String post(String url, String json) throws IOException {<br>  RequestBody body = RequestBody.create(json, JSON);<br>  Request request = new Request.Builder()<br>      .url(url)<br>      .post(body)<br>      .build();<br>  try (Response response = client.newCall(request).execute()) {<br>    return response.body().string();<br>  }<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Further examples are on the <a href="https://square.github.io/okhttp/recipes/">OkHttp Recipes page</a>.</p>
+      <h2 class=""> Requirements</h2>
+      <p class="paragraph">OkHttp works on Android 5.0+ (API level 21+) and Java 8+.</p>
+      <p class="paragraph">OkHttp depends on <a href="https://github.com/square/okio">Okio</a> for high-performance I/O and the <a href="https://kotlinlang.org/">Kotlin standard library</a>. Both are small libraries with strong backward-compatibility.</p>
+      <p class="paragraph">We highly recommend you keep OkHttp up-to-date. As with auto-updating web browsers, staying current with HTTPS clients is an important defense against potential security problems. <a href="https://square.github.io/okhttp/tls_configuration_history/">We track</a> the dynamic TLS ecosystem and adjust OkHttp to improve connectivity and security.</p>
+      <p class="paragraph">OkHttp uses your platform's built-in TLS implementation. On Java platforms OkHttp also supports <a href="https://github.com/google/conscrypt/">Conscrypt</a>, which integrates <a href="https://github.com/google/boringssl">BoringSSL</a> with Java. OkHttp will use Conscrypt if it is the first security provider:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">Security.insertProviderAt(Conscrypt.newProvider(), 1);</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">The OkHttp <code class="lang-kotlin">3.12.x</code> branch supports Android 2.3+ (API level 9+) and Java 7+. These platforms lack support for TLS 1.2 and should not be used.</p>
+      <h2 class=""> Releases</h2>
+      <p class="paragraph">Our <a href="https://square.github.io/okhttp/changelog/">change log</a> has release history.</p>
+      <p class="paragraph">The latest release is available on <a href="https://search.maven.org/artifact/com.squareup.okhttp3/okhttp/4.11.0/jar">Maven Central</a>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">implementation(&quot;com.squareup.okhttp3:okhttp:4.11.0&quot;)</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Snapshot builds are <a href="https://s01.oss.sonatype.org/content/repositories/snapshots/">available</a>. <a href="https://square.github.io/okhttp/features/r8_proguard/">R8 and ProGuard</a> rules are available.</p>
+      <p class="paragraph">Also, we have a <a href="https://docs.gradle.org/6.2/userguide/platforms.html#sub:bom_import">bill of materials (BOM)</a> available to help you keep OkHttp artifacts up to date and be sure about version compatibility.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">    dependencies {<br>       // define a BOM and its version<br>       implementation(platform(&quot;com.squareup.okhttp3:okhttp-bom:4.11.0&quot;))<br><br>       // define any required OkHttp artifacts without version<br>       implementation(&quot;com.squareup.okhttp3:okhttp&quot;)<br>       implementation(&quot;com.squareup.okhttp3:logging-interceptor&quot;)<br>    }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h2 class=""> MockWebServer</h2>
+      <p class="paragraph">OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.</p>
+      <p class="paragraph">The latest release is available on <a href="https://search.maven.org/artifact/com.squareup.okhttp3/mockwebserver/4.11.0/jar">Maven Central</a>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">testImplementation(&quot;com.squareup.okhttp3:mockwebserver:4.11.0&quot;)</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h2 class=""> GraalVM Native Image</h2>
+      <p class="paragraph">Building your native images with Graal https://www.graalvm.org/ should work automatically. This is not currently in a final released version, so <code class="lang-kotlin">5.0.0-alpha.2</code> should be used. Please report any bugs or workarounds you find.</p>
+      <p class="paragraph">See the okcurl module for an example build.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-shell" theme="idea">$ ./gradlew okcurl:nativeImage<br>$ ./okcurl/build/graal/okcurl https://httpbin.org/get</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h2 class=""> License</h2>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">Copyright 2019 Square, Inc.<br><br>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);<br>you may not use this file except in compliance with the License.<br>You may obtain a copy of the License at<br><br>   http://www.apache.org/licenses/LICENSE-2.0<br><br>Unless required by applicable law or agreed to in writing, software<br>distributed under the License is distributed on an &quot;AS IS&quot; BASIS,<br>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>See the License for the specific language governing permissions and<br>limitations under the License.</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Recipes</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Recipes///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Recipes</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Recipes</h1>
+      <p class="paragraph">We've written some recipes that demonstrate how to solve common problems with OkHttp. Read through them to learn about how everything works together. Cut-and-paste these examples freely; that's what they're for.</p>
+      <h3 class=""> Synchronous Get (<span data-unresolved-link=".aux_doc/SynchronousGetKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/SynchronousGetJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Download a file, print its headers, and print its response body as a string.</p>
+      <p class="paragraph">The <code class="lang-kotlin">string()</code> method on response body is convenient and efficient for small documents. But if the response body is large (greater than 1 MiB), avoid <code class="lang-kotlin">string()</code> because it will load the entire document into memory. In that case, prefer to process the body as a stream.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;https://publicobject.com/helloworld.txt&quot;)<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      for ((name, value) in response.headers) {<br>        println(&quot;$name: $value&quot;)<br>      }<br><br>      println(response.body!!.string())<br>    }<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Asynchronous Get (<span data-unresolved-link=".aux_doc/AsynchronousGetKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/AsynchronousGetJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Download a file on a worker thread, and get called back when the response is readable. The callback is made after the response headers are ready. Reading the response body may still block. OkHttp doesn't currently offer asynchronous APIs to receive a response body in parts.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;http://publicobject.com/helloworld.txt&quot;)<br>        .build()<br><br>    client.newCall(request).enqueue(object : Callback {<br>      override fun onFailure(call: Call, e: IOException) {<br>        e.printStackTrace()<br>      }<br><br>      override fun onResponse(call: Call, response: Response) {<br>        response.use {<br>          if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>          for ((name, value) in response.headers) {<br>            println(&quot;$name: $value&quot;)<br>          }<br><br>          println(response.body!!.string())<br>        }<br>      }<br>    })<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Accessing Headers (<span data-unresolved-link=".aux_doc/AccessHeadersKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/AccessHeadersJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Typically HTTP headers work like a <code class="lang-kotlin">Map&lt;String, String&gt;</code>: each field has one value or none. But some headers permit multiple values, like Guava's <a href="https://guava.dev/releases/23.0/api/docs/com/google/common/collect/Multimap.html">Multimap</a>. For example, it's legal and common for an HTTP response to supply multiple <code class="lang-kotlin">Vary</code> headers. OkHttp's APIs attempt to make both cases comfortable.</p>
+      <p class="paragraph">When writing request headers, use <code class="lang-kotlin">header(name, value)</code> to set the only occurrence of <code class="lang-kotlin">name</code> to <code class="lang-kotlin">value</code>. If there are existing values, they will be removed before the new value is added. Use <code class="lang-kotlin">addHeader(name, value)</code> to add a header without removing the headers already present.</p>
+      <p class="paragraph">When reading response a header, use <code class="lang-kotlin">header(name)</code> to return the <i>last</i> occurrence of the named value. Usually this is also the only occurrence! If no value is present, <code class="lang-kotlin">header(name)</code> will return null. To read all of a field's values as a list, use <code class="lang-kotlin">headers(name)</code>.</p>
+      <p class="paragraph">To visit all headers, use the <code class="lang-kotlin">Headers</code> class which supports access by index.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;https://api.github.com/repos/square/okhttp/issues&quot;)<br>        .header(&quot;User-Agent&quot;, &quot;OkHttp Headers.java&quot;)<br>        .addHeader(&quot;Accept&quot;, &quot;application/json; q=0.5&quot;)<br>        .addHeader(&quot;Accept&quot;, &quot;application/vnd.github.v3+json&quot;)<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      println(&quot;Server: ${response.header(&quot;Server&quot;)}&quot;)<br>      println(&quot;Date: ${response.header(&quot;Date&quot;)}&quot;)<br>      println(&quot;Vary: ${response.headers(&quot;Vary&quot;)}&quot;)<br>    }<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Posting a String (<span data-unresolved-link=".aux_doc/PostStringKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/PostStringJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Use an HTTP POST to send a request body to a service. This example posts a markdown document to a web service that renders markdown as HTML. Because the entire request body is in memory simultaneously, avoid posting large (greater than 1 MiB) documents using this API.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val postBody = &quot;&quot;&quot;<br>        |Releases<br>        |--------<br>        |<br>        | * _1.0_ May 6, 2013<br>        | * _1.1_ June 15, 2013<br>        | * _1.2_ August 11, 2013<br>        |&quot;&quot;&quot;.trimMargin()<br><br>    val request = Request.Builder()<br>        .url(&quot;https://api.github.com/markdown/raw&quot;)<br>        .post(postBody.toRequestBody(MEDIA_TYPE_MARKDOWN))<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      println(response.body!!.string())<br>    }<br>  }<br><br>  companion object {<br>    val MEDIA_TYPE_MARKDOWN = &quot;text/x-markdown; charset=utf-8&quot;.toMediaType()<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Post Streaming (<span data-unresolved-link=".aux_doc/PostStreamingKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/PostStreamingJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Here we <code class="lang-kotlin">POST</code> a request body as a stream. The content of this request body is being generated as it's being written. This example streams directly into the <a href="https://github.com/square/okio">Okio</a> buffered sink. Your programs may prefer an <code class="lang-kotlin">OutputStream</code>, which you can get from <code class="lang-kotlin">BufferedSink.outputStream()</code>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val requestBody = object : RequestBody() {<br>      override fun contentType() = MEDIA_TYPE_MARKDOWN<br><br>      override fun writeTo(sink: BufferedSink) {<br>        sink.writeUtf8(&quot;Numbers\n&quot;)<br>        sink.writeUtf8(&quot;-------\n&quot;)<br>        for (i in 2..997) {<br>          sink.writeUtf8(String.format(&quot; * $i = ${factor(i)}\n&quot;))<br>        }<br>      }<br><br>      private fun factor(n: Int): String {<br>        for (i in 2 until n) {<br>          val x = n / i<br>          if (x * i == n) return &quot;${factor(x)} × $i&quot;<br>        }<br>        return n.toString()<br>      }<br>    }<br><br>    val request = Request.Builder()<br>        .url(&quot;https://api.github.com/markdown/raw&quot;)<br>        .post(requestBody)<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      println(response.body!!.string())<br>    }<br>  }<br><br>  companion object {<br>    val MEDIA_TYPE_MARKDOWN = &quot;text/x-markdown; charset=utf-8&quot;.toMediaType()<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Posting a File (<span data-unresolved-link=".aux_doc/PostFileKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/PostFileJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">It's easy to use a file as a request body.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val file = File(&quot;README.md&quot;)<br><br>    val request = Request.Builder()<br>        .url(&quot;https://api.github.com/markdown/raw&quot;)<br>        .post(file.asRequestBody(MEDIA_TYPE_MARKDOWN))<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      println(response.body!!.string())<br>    }<br>  }<br><br>  companion object {<br>    val MEDIA_TYPE_MARKDOWN = &quot;text/x-markdown; charset=utf-8&quot;.toMediaType()<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Posting form parameters (<span data-unresolved-link=".aux_doc/PostFormKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/PostFormJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Use <code class="lang-kotlin">FormBody.Builder</code> to build a request body that works like an HTML <code class="lang-kotlin">&lt;form&gt;</code> tag. Names and values will be encoded using an HTML-compatible form URL encoding.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val formBody = FormBody.Builder()<br>        .add(&quot;search&quot;, &quot;Jurassic Park&quot;)<br>        .build()<br>    val request = Request.Builder()<br>        .url(&quot;https://en.wikipedia.org/w/index.php&quot;)<br>        .post(formBody)<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      println(response.body!!.string())<br>    }<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Posting a multipart request (<span data-unresolved-link=".aux_doc/PostMultipartKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/PostMultipartJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph"><code class="lang-kotlin">MultipartBody.Builder</code> can build sophisticated request bodies compatible with HTML file upload forms. Each part of a multipart request body is itself a request body, and can define its own headers. If present, these headers should describe the part body, such as its <code class="lang-kotlin">Content-Disposition</code>. The <code class="lang-kotlin">Content-Length</code> and <code class="lang-kotlin">Content-Type</code> headers are added automatically if they're available.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    // Use the imgur image upload API as documented at https://api.imgur.com/endpoints/image<br>    val requestBody = MultipartBody.Builder()<br>        .setType(MultipartBody.FORM)<br>        .addFormDataPart(&quot;title&quot;, &quot;Square Logo&quot;)<br>        .addFormDataPart(&quot;image&quot;, &quot;logo-square.png&quot;,<br>            File(&quot;docs/images/logo-square.png&quot;).asRequestBody(MEDIA_TYPE_PNG))<br>        .build()<br><br>    val request = Request.Builder()<br>        .header(&quot;Authorization&quot;, &quot;Client-ID $IMGUR_CLIENT_ID&quot;)<br>        .url(&quot;https://api.imgur.com/3/image&quot;)<br>        .post(requestBody)<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      println(response.body!!.string())<br>    }<br>  }<br><br>  companion object {<br>    /**<br>     * The imgur client ID for OkHttp recipes. If you're using imgur for anything other than running<br>     * these examples, please request your own client ID! https://api.imgur.com/oauth2<br>     */<br>    private val IMGUR_CLIENT_ID = &quot;9199fdef135c122&quot;<br>    private val MEDIA_TYPE_PNG = &quot;image/png&quot;.toMediaType()<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Parse a JSON Response With Moshi (<span data-unresolved-link=".aux_doc/ParseResponseWithMoshiKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/ParseResponseWithMoshiJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph"><a href="https://github.com/square/moshi">Moshi</a> is a handy API for converting between JSON and Java objects. Here we're using it to decode a JSON response from a GitHub API.</p>
+      <p class="paragraph">Note that <code class="lang-kotlin">ResponseBody.charStream()</code> uses the <code class="lang-kotlin">Content-Type</code> response header to select which charset to use when decoding the response body. It defaults to <code class="lang-kotlin">UTF-8</code> if no charset is specified.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br>  private val moshi = Moshi.Builder().build()<br>  private val gistJsonAdapter = moshi.adapter(Gist::class.java)<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;https://api.github.com/gists/c2a7c39532239ff261be&quot;)<br>        .build()<br>    client.newCall(request).execute().use { response -&gt;<br>      if (!response.isSuccessful) throw IOException(&quot;Unexpected code $response&quot;)<br><br>      val gist = gistJsonAdapter.fromJson(response.body!!.source())<br><br>      for ((key, value) in gist!!.files!!) {<br>        println(key)<br>        println(value.content)<br>      }<br>    }<br>  }<br><br>  @JsonClass(generateAdapter = true)<br>  data class Gist(var files: Map&lt;String, GistFile&gt;?)<br><br>  @JsonClass(generateAdapter = true)<br>  data class GistFile(var content: String?)</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Response Caching (<span data-unresolved-link=".aux_doc/CacheResponseKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/CacheResponseJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">To cache responses, you'll need a cache directory that you can read and write to, and a limit on the cache's size. The cache directory should be private, and untrusted applications should not be able to read its contents!</p>
+      <p class="paragraph">It is an error to have multiple caches accessing the same cache directory simultaneously. Most applications should call <code class="lang-kotlin">new OkHttpClient()</code> exactly once, configure it with their cache, and use that same instance everywhere. Otherwise the two cache instances will stomp on each other, corrupt the response cache, and possibly crash your program.</p>
+      <p class="paragraph">Response caching uses HTTP headers for all configuration. You can add request headers like <code class="lang-kotlin">Cache-Control: max-stale=3600</code> and OkHttp's cache will honor them. Your webserver configures how long responses are cached with its own response headers, like <code class="lang-kotlin">Cache-Control: max-age=9600</code>. There are cache headers to force a cached response, force a network response, or force the network response to be validated with a conditional GET.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client: OkHttpClient = OkHttpClient.Builder()<br>      .cache(Cache(<br>          directory = cacheDirectory,<br>          maxSize = 10L * 1024L * 1024L // 10 MiB<br>      ))<br>      .build()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;http://publicobject.com/helloworld.txt&quot;)<br>        .build()<br><br>    val response1Body = client.newCall(request).execute().use {<br>      if (!it.isSuccessful) throw IOException(&quot;Unexpected code $it&quot;)<br><br>      println(&quot;Response 1 response:          $it&quot;)<br>      println(&quot;Response 1 cache response:    ${it.cacheResponse}&quot;)<br>      println(&quot;Response 1 network response:  ${it.networkResponse}&quot;)<br>      return@use it.body!!.string()<br>    }<br><br>    val response2Body = client.newCall(request).execute().use {<br>      if (!it.isSuccessful) throw IOException(&quot;Unexpected code $it&quot;)<br><br>      println(&quot;Response 2 response:          $it&quot;)<br>      println(&quot;Response 2 cache response:    ${it.cacheResponse}&quot;)<br>      println(&quot;Response 2 network response:  ${it.networkResponse}&quot;)<br>      return@use it.body!!.string()<br>    }<br><br>    println(&quot;Response 2 equals Response 1? &quot; + (response1Body == response2Body))<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">To prevent a response from using the cache, use <a href="http://square.github.io/okhttp/4.x/okhttp/okhttp3/-cache-control/-f-o-r-c-e_-n-e-t-w-o-r-k/"><code class="lang-kotlin">CacheControl.FORCE_NETWORK</code></a>. To prevent it from using the network, use <a href="http://square.github.io/okhttp/4.x/okhttp/okhttp3/-cache-control/-f-o-r-c-e_-c-a-c-h-e/"><code class="lang-kotlin">CacheControl.FORCE_CACHE</code></a>. Be warned: if you use <code class="lang-kotlin">FORCE_CACHE</code> and the response requires the network, OkHttp will return a <code class="lang-kotlin">504 Unsatisfiable Request</code> response.</p>
+      <h3 class=""> Canceling a Call (<span data-unresolved-link=".aux_doc/CancelCallKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/CancelCallJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Use <code class="lang-kotlin">Call.cancel()</code> to stop an ongoing call immediately. If a thread is currently writing a request or reading a response, it will receive an <code class="lang-kotlin">IOException</code>. Use this to conserve the network when a call is no longer necessary; for example when your user navigates away from an application. Both synchronous and asynchronous calls can be canceled.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val executor = Executors.newScheduledThreadPool(1)<br>  private val client = OkHttpClient()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;http://httpbin.org/delay/2&quot;) // This URL is served with a 2 second delay.<br>        .build()<br><br>    val startNanos = System.nanoTime()<br>    val call = client.newCall(request)<br><br>    // Schedule a job to cancel the call in 1 second.<br>    executor.schedule({<br>      System.out.printf(&quot;%.2f Canceling call.%n&quot;, (System.nanoTime() - startNanos) / 1e9f)<br>      call.cancel()<br>      System.out.printf(&quot;%.2f Canceled call.%n&quot;, (System.nanoTime() - startNanos) / 1e9f)<br>    }, 1, TimeUnit.SECONDS)<br><br>    System.out.printf(&quot;%.2f Executing call.%n&quot;, (System.nanoTime() - startNanos) / 1e9f)<br>    try {<br>      call.execute().use { response -&gt;<br>        System.out.printf(&quot;%.2f Call was expected to fail, but completed: %s%n&quot;,<br>            (System.nanoTime() - startNanos) / 1e9f, response)<br>      }<br>    } catch (e: IOException) {<br>      System.out.printf(&quot;%.2f Call failed as expected: %s%n&quot;,<br>          (System.nanoTime() - startNanos) / 1e9f, e)<br>    }<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Timeouts (<span data-unresolved-link=".aux_doc/ConfigureTimeoutsKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/ConfigureTimeoutsJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">Use timeouts to fail a call when its peer is unreachable. Network partitions can be due to client connectivity problems, server availability problems, or anything between. OkHttp supports connect, write, read, and full call timeouts.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client: OkHttpClient = OkHttpClient.Builder()<br>      .connectTimeout(5, TimeUnit.SECONDS)<br>      .writeTimeout(5, TimeUnit.SECONDS)<br>      .readTimeout(5, TimeUnit.SECONDS)<br>      .callTimeout(10, TimeUnit.SECONDS)<br>      .build()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;http://httpbin.org/delay/2&quot;) // This URL is served with a 2 second delay.<br>        .build()<br><br>    client.newCall(request).execute().use { response -&gt;<br>      println(&quot;Response completed: $response&quot;)<br>    }<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Per-call Configuration (<span data-unresolved-link=".aux_doc/PerCallSettingsKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/PerCallSettingsJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">All the HTTP client configuration lives in <code class="lang-kotlin">OkHttpClient</code> including proxy settings, timeouts, and caches. When you need to change the configuration of a single call, call <code class="lang-kotlin">OkHttpClient.newBuilder()</code>. This returns a builder that shares the same connection pool, dispatcher, and configuration with the original client. In the example below, we make one request with a 500 ms timeout and another with a 3000 ms timeout.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;http://httpbin.org/delay/1&quot;) // This URL is served with a 1 second delay.<br>        .build()<br><br>    // Copy to customize OkHttp for this request.<br>    val client1 = client.newBuilder()<br>        .readTimeout(500, TimeUnit.MILLISECONDS)<br>        .build()<br>    try {<br>      client1.newCall(request).execute().use { response -&gt;<br>        println(&quot;Response 1 succeeded: $response&quot;)<br>      }<br>    } catch (e: IOException) {<br>      println(&quot;Response 1 failed: $e&quot;)<br>    }<br><br>    // Copy to customize OkHttp for this request.<br>    val client2 = client.newBuilder()<br>        .readTimeout(3000, TimeUnit.MILLISECONDS)<br>        .build()<br>    try {<br>      client2.newCall(request).execute().use { response -&gt;<br>        println(&quot;Response 2 succeeded: $response&quot;)<br>      }<br>    } catch (e: IOException) {<br>      println(&quot;Response 2 failed: $e&quot;)<br>    }<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Handling authentication (<span data-unresolved-link=".aux_doc/AuthenticateKotlin///PointingToDeclaration/">.kt</span>, <span data-unresolved-link=".aux_doc/AuthenticateJava///PointingToDeclaration/">.java</span>)</h3>
+      <p class="paragraph">OkHttp can automatically retry unauthenticated requests. When a response is <code class="lang-kotlin">401 Not Authorized</code>, an <code class="lang-kotlin">Authenticator</code> is asked to supply credentials. Implementations should build a new request that includes the missing credentials. If no credentials are available, return null to skip the retry.</p>
+      <p class="paragraph">Use <code class="lang-kotlin">Response.challenges()</code> to get the schemes and realms of any authentication challenges. When fulfilling a <code class="lang-kotlin">Basic</code> challenge, use <code class="lang-kotlin">Credentials.basic(username, password)</code> to encode the request header.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">  private val client = OkHttpClient.Builder()<br>      .authenticator(object : Authenticator {<br>        @Throws(IOException::class)<br>        override fun authenticate(route: Route?, response: Response): Request? {<br>          if (response.request.header(&quot;Authorization&quot;) != null) {<br>            return null // Give up, we've already attempted to authenticate.<br>          }<br><br>          println(&quot;Authenticating for response: $response&quot;)<br>          println(&quot;Challenges: ${response.challenges()}&quot;)<br>          val credential = Credentials.basic(&quot;jesse&quot;, &quot;password1&quot;)<br>          return response.request.newBuilder()<br>              .header(&quot;Authorization&quot;, credential)<br>              .build()<br>        }<br>      })<br>      .build()<br><br>  fun run() {<br>    val request = Request.Builder()<br>        .url(&quot;http://publicobject.com/secrets/hellosecret.txt&quot;)<br>        .build()<br>  }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">To avoid making many retries when authentication isn't working, you can return null to give up. For example, you may want to skip the retry when these exact credentials have already been attempted:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">if (credential == response.request.header(&quot;Authorization&quot;)) {<br>  return null // If we already failed with these credentials, don't retry.<br> }</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">You may also skip the retry when you’ve hit an application-defined attempt limit:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">if (response.responseCount &gt;= 3) {<br>  return null // If we've failed 3 times, give up.<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">This above code relies on this <code class="lang-kotlin">responseCount</code> extension val:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">val Response.responseCount: Int<br>  get() = generateSequence(this) { it.priorResponse }.count()</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

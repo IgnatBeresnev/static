@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Interceptors</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/Interceptors///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">Interceptors</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> Interceptors</h1>
+      <p class="paragraph">Interceptors are a powerful mechanism that can monitor, rewrite, and retry calls. Here's a simple interceptor that logs the outgoing request and the incoming response.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">class LoggingInterceptor implements Interceptor {<br>  @Override public Response intercept(Interceptor.Chain chain) throws IOException {<br>    Request request = chain.request();<br><br>    long t1 = System.nanoTime();<br>    logger.info(String.format(&quot;Sending request %s on %s%n%s&quot;,<br>        request.url(), chain.connection(), request.headers()));<br><br>    Response response = chain.proceed(request);<br><br>    long t2 = System.nanoTime();<br>    logger.info(String.format(&quot;Received response for %s in %.1fms%n%s&quot;,<br>        response.request().url(), (t2 - t1) / 1e6d, response.headers()));<br><br>    return response;<br>  }<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">A call to <code class="lang-kotlin">chain.proceed(request)</code> is a critical part of each interceptor’s implementation. This simple-looking method is where all the HTTP work happens, producing a response to satisfy the request. If <code class="lang-kotlin">chain.proceed(request)</code> is being called more than once previous response bodies must be closed.</p>
+      <p class="paragraph">Interceptors can be chained. Suppose you have both a compressing interceptor and a checksumming interceptor: you'll need to decide whether data is compressed and then checksummed, or checksummed and then compressed. OkHttp uses lists to track interceptors, and interceptors are called in order.</p>
+      <p class="paragraph"><img alt="Interceptors Diagram" src="../assets/images/interceptors@2x.png"></p>
+      <h3 class=""> Application Interceptors</h3>
+      <p class="paragraph">Interceptors are registered as either <i>application</i> or <i>network</i> interceptors. We'll use the <code class="lang-kotlin">LoggingInterceptor</code> defined above to show the difference.</p>
+      <p class="paragraph">Register an <i>application</i> interceptor by calling <code class="lang-kotlin">addInterceptor()</code> on <code class="lang-kotlin">OkHttpClient.Builder</code>:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">OkHttpClient client = new OkHttpClient.Builder()<br>    .addInterceptor(new LoggingInterceptor())<br>    .build();<br><br>Request request = new Request.Builder()<br>    .url(&quot;http://www.publicobject.com/helloworld.txt&quot;)<br>    .header(&quot;User-Agent&quot;, &quot;OkHttp Example&quot;)<br>    .build();<br><br>Response response = client.newCall(request).execute();<br>response.body().close();</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">The URL <code class="lang-kotlin">http://www.publicobject.com/helloworld.txt</code> redirects to <code class="lang-kotlin">https://publicobject.com/helloworld.txt</code>, and OkHttp follows this redirect automatically. Our application interceptor is called <strong>once</strong> and the response returned from <code class="lang-kotlin">chain.proceed()</code> has the redirected response:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">INFO: Sending request http://www.publicobject.com/helloworld.txt on null<br>User-Agent: OkHttp Example<br><br>INFO: Received response for https://publicobject.com/helloworld.txt in 1179.7ms<br>Server: nginx/1.4.6 (Ubuntu)<br>Content-Type: text/plain<br>Content-Length: 1759<br>Connection: keep-alive</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">We can see that we were redirected because <code class="lang-kotlin">response.request().url()</code> is different from <code class="lang-kotlin">request.url()</code>. The two log statements log two different URLs.</p>
+      <h3 class=""> Network Interceptors</h3>
+      <p class="paragraph">Registering a network interceptor is quite similar. Call <code class="lang-kotlin">addNetworkInterceptor()</code> instead of <code class="lang-kotlin">addInterceptor()</code>:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">OkHttpClient client = new OkHttpClient.Builder()<br>    .addNetworkInterceptor(new LoggingInterceptor())<br>    .build();<br><br>Request request = new Request.Builder()<br>    .url(&quot;http://www.publicobject.com/helloworld.txt&quot;)<br>    .header(&quot;User-Agent&quot;, &quot;OkHttp Example&quot;)<br>    .build();<br><br>Response response = client.newCall(request).execute();<br>response.body().close();</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">When we run this code, the interceptor runs twice. Once for the initial request to <code class="lang-kotlin">http://www.publicobject.com/helloworld.txt</code>, and another for the redirect to <code class="lang-kotlin">https://publicobject.com/helloworld.txt</code>.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">INFO: Sending request http://www.publicobject.com/helloworld.txt on Connection{www.publicobject.com:80, proxy=DIRECT hostAddress=54.187.32.157 cipherSuite=none protocol=http/1.1}<br>User-Agent: OkHttp Example<br>Host: www.publicobject.com<br>Connection: Keep-Alive<br>Accept-Encoding: gzip<br><br>INFO: Received response for http://www.publicobject.com/helloworld.txt in 115.6ms<br>Server: nginx/1.4.6 (Ubuntu)<br>Content-Type: text/html<br>Content-Length: 193<br>Connection: keep-alive<br>Location: https://publicobject.com/helloworld.txt<br><br>INFO: Sending request https://publicobject.com/helloworld.txt on Connection{publicobject.com:443, proxy=DIRECT hostAddress=54.187.32.157 cipherSuite=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA protocol=http/1.1}<br>User-Agent: OkHttp Example<br>Host: publicobject.com<br>Connection: Keep-Alive<br>Accept-Encoding: gzip<br><br>INFO: Received response for https://publicobject.com/helloworld.txt in 80.9ms<br>Server: nginx/1.4.6 (Ubuntu)<br>Content-Type: text/plain<br>Content-Length: 1759<br>Connection: keep-alive</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">The network requests also contain more data, such as the <code class="lang-kotlin">Accept-Encoding: gzip</code> header added by OkHttp to advertise support for response compression. The network interceptor's <code class="lang-kotlin">Chain</code> has a non-null <code class="lang-kotlin">Connection</code> that can be used to interrogate the IP address and TLS configuration that were used to connect to the webserver.</p>
+      <h3 class=""> Choosing between application and network interceptors</h3>
+      <p class="paragraph">Each interceptor chain has relative merits.</p>
+      <p class="paragraph"><strong>Application interceptors</strong></p>
+      <ul>
+        <li>
+          <p class="paragraph">Don't need to worry about intermediate responses like redirects and retries.</p>
+        </li>
+        <li>
+          <p class="paragraph">Are always invoked once, even if the HTTP response is served from the cache.</p>
+        </li>
+        <li>
+          <p class="paragraph">Observe the application's original intent. Unconcerned with OkHttp-injected headers like <code class="lang-kotlin">If-None-Match</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Permitted to short-circuit and not call <code class="lang-kotlin">Chain.proceed()</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Permitted to retry and make multiple calls to <code class="lang-kotlin">Chain.proceed()</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Can adjust Call timeouts using withConnectTimeout, withReadTimeout, withWriteTimeout.</p>
+        </li>
+      </ul>
+      <p class="paragraph"><strong>Network Interceptors</strong></p>
+      <ul>
+        <li>
+          <p class="paragraph">Able to operate on intermediate responses like redirects and retries.</p>
+        </li>
+        <li>
+          <p class="paragraph">Not invoked for cached responses that short-circuit the network.</p>
+        </li>
+        <li>
+          <p class="paragraph">Observe the data just as it will be transmitted over the network.</p>
+        </li>
+        <li>
+          <p class="paragraph">Access to the <code class="lang-kotlin">Connection</code> that carries the request.</p>
+        </li>
+      </ul>
+      <h3 class=""> Rewriting Requests</h3>
+      <p class="paragraph">Interceptors can add, remove, or replace request headers. They can also transform the body of those requests that have one. For example, you can use an application interceptor to add request body compression if you're connecting to a webserver known to support it.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">/** This interceptor compresses the HTTP request body. Many webservers can't handle this! */<br>final class GzipRequestInterceptor implements Interceptor {<br>  @Override public Response intercept(Interceptor.Chain chain) throws IOException {<br>    Request originalRequest = chain.request();<br>    if (originalRequest.body() == null || originalRequest.header(&quot;Content-Encoding&quot;) != null) {<br>      return chain.proceed(originalRequest);<br>    }<br><br>    Request compressedRequest = originalRequest.newBuilder()<br>        .header(&quot;Content-Encoding&quot;, &quot;gzip&quot;)<br>        .method(originalRequest.method(), gzip(originalRequest.body()))<br>        .build();<br>    return chain.proceed(compressedRequest);<br>  }<br><br>  private RequestBody gzip(final RequestBody body) {<br>    return new RequestBody() {<br>      @Override public MediaType contentType() {<br>        return body.contentType();<br>      }<br><br>      @Override public long contentLength() {<br>        return -1; // We don't know the compressed length in advance!<br>      }<br><br>      @Override public void writeTo(BufferedSink sink) throws IOException {<br>        BufferedSink gzipSink = Okio.buffer(new GzipSink(sink));<br>        body.writeTo(gzipSink);<br>        gzipSink.close();<br>      }<br>    };<br>  }<br>}</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <h3 class=""> Rewriting Responses</h3>
+      <p class="paragraph">Symmetrically, interceptors can rewrite response headers and transform the response body. This is generally more dangerous than rewriting request headers because it may violate the webserver's expectations!</p>
+      <p class="paragraph">If you're in a tricky situation and prepared to deal with the consequences, rewriting response headers is a powerful way to work around problems. For example, you can fix a server's misconfigured <code class="lang-kotlin">Cache-Control</code> response header to enable better response caching:</p>
+      <div class="sample-container">
+        <pre><code class="block lang-java" theme="idea">/** Dangerous interceptor that rewrites the server's cache-control header. */<br>private static final Interceptor REWRITE_CACHE_CONTROL_INTERCEPTOR = new Interceptor() {<br>  @Override public Response intercept(Interceptor.Chain chain) throws IOException {<br>    Response originalResponse = chain.proceed(chain.request());<br>    return originalResponse.newBuilder()<br>        .header(&quot;Cache-Control&quot;, &quot;max-age=60&quot;)<br>        .build();<br>  }<br>};</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+        </span></div>
+      <p class="paragraph">Typically this approach works best when it complements a corresponding fix on the webserver!</p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

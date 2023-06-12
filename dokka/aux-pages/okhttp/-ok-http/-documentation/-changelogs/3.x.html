@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>3.x</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>OkHttp</span>
+            </a>
+    </div>
+    <div>
+4.X    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="OkHttp::.aux_doc/3.x///PointingToDeclaration//0">
+  <div class="breadcrumbs"><a href="../../../index.html">OkHttp</a><span class="delimiter">/</span><span class="current">3.x</span></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class=""> OkHttp 3.x Change Log</h1>
+      <h2 class=""> Version 3.14.9</h2>
+      <p class="paragraph"><i>2020-05-17</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash when running as a plugin in Android Studio Canary 4.1. To enable     platform-specific TLS features OkHttp must detect whether it's running in a JVM or in Android.     The upcoming Android Studio runs in a JVM but has classes from Android and that confused OkHttp!</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.8</h2>
+      <p class="paragraph"><i>2020-04-28</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash on Java 8u252 which introduces an API previously found only on Java 9 and     above. See <span data-unresolved-link=".aux_doc/jetty_8_252///PointingToDeclaration/">Jetty's overview</span> of the API change and its consequences.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.7</h2>
+      <p class="paragraph"><i>2020-02-24</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash on Android 11 due to use of restricted methods. This prevents a crash with the     exception, &quot;Expected Android API level 21+ but was 29&quot;.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.6</h2>
+      <p class="paragraph"><i>2020-01-11</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash if the connection is closed when sending a degraded ping. This fixes a     regression that was introduced in OkHttp 3.14.5.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.5</h2>
+      <p class="paragraph"><i>2020-01-03</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Degrade HTTP/2 connections after a timeout. When an HTTP/2 stream times out it may impact     the stream only or the entire connection. With this fix OkHttp will now send HTTP/2 pings after     a stream timeout to determine whether the connection should remain eligible for pooling.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.4</h2>
+      <p class="paragraph"><i>2019-09-29</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Cancel calls that fail due to unexpected exceptions. We had a bug where an enqueued call     would never call back if it crashed with an unchecked throwable, such as a     <code class="lang-kotlin">NullPointerException</code> or <code class="lang-kotlin">OutOfMemoryError</code>. We now call <code class="lang-kotlin">Callback.onFailure()</code> with an     <code class="lang-kotlin">IOException</code> that reports the call as canceled. The triggering exception is still delivered to     the thread's <code class="lang-kotlin">UncaughtExceptionHandler</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't evict incomplete entries when iterating the cache. We had a bug where iterating     <code class="lang-kotlin">Cache.urls()</code> would prevent in-flight entries from being written.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.3</h2>
+      <p class="paragraph"><i>2019-09-10</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't lose HTTP/2 flow control bytes when incoming data races with a stream close. If this     happened enough then eventually the connection would stall.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Acknowledge and apply inbound HTTP/2 settings atomically. Previously we had a race where we     could use new flow control capacity before acknowledging it, causing strict HTTP/2 servers to     fail the call.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Recover gracefully when a coalesced connection immediately goes unhealthy.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.2</h2>
+      <p class="paragraph"><i>2019-05-19</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Lock in a route when recovering from an HTTP/2 connection error. We had a bug where two     calls that failed at the same time could cause OkHttp to crash with a <code class="lang-kotlin">NoSuchElementException</code>     instead of the expected <code class="lang-kotlin">IOException</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash with a <code class="lang-kotlin">NullPointerException</code> when formatting an error message describing a     truncated response from an HTTPS proxy.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.1</h2>
+      <p class="paragraph"><i>2019-04-10</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash when an interceptor retries when there are no more routes. This was an     edge-case regression introduced with the events cleanup in 3.14.0.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Provide actionable advice when the exchange is non-null. Prior to 3.14, OkHttp would     silently leak connections when an interceptor retries without closing the response body. With     3.14 we detect this problem but the exception was not helpful.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.14.0</h2>
+      <p class="paragraph"><i>2019-03-14</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>This release deletes the long-deprecated </strong><code class="strong lang-kotlin"><strong>OkUrlFactory</strong></code><strong> and </strong><code class="strong lang-kotlin"><strong>OkApacheClient</strong></code><strong> APIs.</strong> These     facades hide OkHttp's implementation behind another client's API. If you still need this please     copy and paste <span data-unresolved-link=".aux_doc/obsolete_url_factory///PointingToDeclaration/">ObsoleteUrlFactory.java</span> or     <span data-unresolved-link=".aux_doc/obsolete_apache_client///PointingToDeclaration/">ObsoleteApacheClient.java</span> into your project.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp now supports duplex calls over HTTP/2.</strong> With normal HTTP calls the request must finish     before the response starts. With duplex, request and response bodies are transmitted     simultaneously. This can be used to implement interactive conversations within a single HTTP     call.</p>
+          <p class="paragraph">Create duplex calls by overriding the new <code class="lang-kotlin">RequestBody.isDuplex()</code> method to return true.     This simple option dramatically changes the behavior of the request body and of the entire     call.</p>
+          <p class="paragraph">The <code class="lang-kotlin">RequestBody.writeTo()</code> method may now retain a reference to the provided sink and     hand it off to another thread to write to it after <code class="lang-kotlin">writeTo</code> returns.</p>
+          <p class="paragraph">The <code class="lang-kotlin">EventListener</code> may now see requests and responses interleaved in ways not previously     permitted. For example, a listener may receive <code class="lang-kotlin">responseHeadersStart()</code> followed by     <code class="lang-kotlin">requestBodyEnd()</code>, both on the same call. Such events may be triggered by different threads     even for a single call.</p>
+          <p class="paragraph">Interceptors that rewrite or replace the request body may now inadvertently interfere with     duplex request bodies. Such interceptors should check <code class="lang-kotlin">RequestBody.isDuplex()</code> and avoid     accessing the request body when it is.</p>
+          <p class="paragraph">Duplex calls require HTTP/2. If HTTP/1 is established instead the duplex call will fail. The     most common use of duplex calls is <span data-unresolved-link=".aux_doc/grpc_http2///PointingToDeclaration/">gRPC</span>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Prevent OkHttp from retransmitting a request body by overriding <code class="lang-kotlin">RequestBody.isOneShot()</code>.     This is most useful when writing the request body is destructive.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: We've added <code class="lang-kotlin">requestFailed()</code> and <code class="lang-kotlin">responseFailed()</code> methods to <code class="lang-kotlin">EventListener</code>. These     are called instead of <code class="lang-kotlin">requestBodyEnd()</code> and <code class="lang-kotlin">responseBodyEnd()</code> in some failure situations.     They may also be fired in cases where no event was published previously. In this release we did     an internal rewrite of our event code to fix problems where events were lost or unbalanced.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't leak a connection when a call is canceled immediately preceding the <code class="lang-kotlin">onFailure()</code>     callback.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Apply call timeouts when connecting duplex calls, web sockets, and server-sent events.     Once the streams are established no further timeout is enforced.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Retain the <code class="lang-kotlin">Route</code> when a connection is reused on a redirect or other follow-up. This was     causing some <code class="lang-kotlin">Authenticator</code> calls to see a null route when non-null was expected.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Use the correct key size in the name of <code class="lang-kotlin">TLS_AES_128_CCM_8_SHA256</code> which is a TLS 1.3     cipher suite. We accidentally specified a key size of 256, preventing that cipher suite from     being selected for any TLS handshakes. We didn't notice because this cipher suite isn't     supported on Android, Java, or Conscrypt.</p>
+          <p class="paragraph">We removed this cipher suite and <code class="lang-kotlin">TLS_AES_128_CCM_SHA256</code> from the restricted, modern, and     compatible sets of cipher suites. These two cipher suites aren't enabled by default in either     Firefox or Chrome.</p>
+          <p class="paragraph">See our <span data-unresolved-link=".aux_doc/tls_configuration_history///PointingToDeclaration/">TLS Configuration History</span> tracker for a log of all changes     to OkHttp's default TLS options.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Conscrypt 2.0.0. OkHttp works with other versions of Conscrypt but this is the     version we're testing against.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-kotlin" theme="idea">implementation(&quot;org.conscrypt:conscrypt-openjdk-uber:2.0.0&quot;)</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">New: Update the embedded public suffixes list.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.13.1</h2>
+      <p class="paragraph"><i>2019-02-05</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash when using a custom <code class="lang-kotlin">X509TrustManager</code> or <code class="lang-kotlin">SSLSocket</code> on Android. When we     removed obsolete code for Android 4.4 we inadvertently also removed support for custom     subclasses. We've restored that support!</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.13.0</h2>
+      <p class="paragraph"><i>2019-02-04</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>This release bumps our minimum requirements to Java 8+ or Android 5+.</strong> Cutting off old     devices is a serious change and we don't do it lightly! <span data-unresolved-link=".aux_doc/require_android_5///PointingToDeclaration/">This post</span> explains     why we're doing this and how to upgrade.</p>
+          <p class="paragraph">The OkHttp 3.12.x branch will be our long-term branch for Android 2.3+ (API level 9+) and Java     7+. These platforms lack support for TLS 1.2 and should not be used. But because upgrading is     difficult we will backport critical fixes to the 3.12.x branch through December 31, 2021. (This     commitment was originally through December 31, 2020; we have since extended it.)</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>TLSv1 and TLSv1.1 are no longer enabled by default.</strong> Major web browsers are working towards     removing these versions altogether in early 2020. If your servers aren't ready yet you can     configure OkHttp 3.13 to allow TLSv1 and TLSv1.1 connections:</p>
+          <div class="sample-container">
+            <pre><code class="block lang-kotlin" theme="idea">OkHttpClient client = new OkHttpClient.Builder()<br>    .connectionSpecs(Arrays.asList(ConnectionSpec.COMPATIBLE_TLS))<br>    .build();</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">New: You can now access HTTP trailers with <code class="lang-kotlin">Response.trailers()</code>. This method may only be called     after the entire HTTP response body has been read.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Okio 1.17.3. If you're on Kotlin-friendly Okio 2.x this release requires 2.2.2     or newer.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-kotlin" theme="idea">implementation(&quot;com.squareup.okio:okio:1.17.3&quot;)</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't miss cancels when sending HTTP/2 request headers.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't miss whole operation timeouts when calls redirect.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't leak connections if web sockets have malformed responses or if <code class="lang-kotlin">onOpen()</code> throws.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't retry when request bodies fail due to <code class="lang-kotlin">FileNotFoundException</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash when URLs have IPv4-mapped IPv6 addresses.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash when building <code class="lang-kotlin">HandshakeCertificates</code> on Android API 28.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Permit multipart file names to contain non-ASCII characters.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: API to get MockWebServer's dispatcher.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: API to access headers as <code class="lang-kotlin">java.time.Instant</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Fail fast if a <code class="lang-kotlin">SSLSocketFactory</code> is used as a <code class="lang-kotlin">SocketFactory</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Log the TLS handshake in <code class="lang-kotlin">LoggingEventListener</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.13</h2>
+      <p class="paragraph"><i>2021-01-30</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Work around a crash in Android 10 and 11 that may be triggered when two threads     concurrently close an SSL socket. This would have appeared in crash logs as     <code class="lang-kotlin">NullPointerException: bio == null</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.12</h2>
+      <p class="paragraph"><i>2020-05-17</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash when running as a plugin in Android Studio Canary 4.1. To enable     platform-specific TLS features OkHttp must detect whether it's running in a JVM or in Android.     The upcoming Android Studio runs in a JVM but has classes from Android and that confused OkHttp!</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.11</h2>
+      <p class="paragraph"><i>2020-04-28</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash on Java 8u252 which introduces an API previously found only on Java 9 and     above. See <span data-unresolved-link=".aux_doc/jetty_8_252///PointingToDeclaration/">Jetty's overview</span> of the API change and its consequences.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.10</h2>
+      <p class="paragraph"><i>2020-02-29</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash on Android 4.1 when detecting methods that became restricted in Android 11.     Supporting a full decade of Android releases on our 3.12.x branch is tricky!</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.9</h2>
+      <p class="paragraph"><i>2020-02-24</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash on Android 11 due to use of restricted methods. This prevents a crash with the     exception, &quot;Expected Android API level 21+ but was 29&quot;.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.8</h2>
+      <p class="paragraph"><i>2020-01-11</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash if the connection is closed when sending a degraded ping. This fixes a     regression that was introduced in OkHttp 3.12.7.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.7</h2>
+      <p class="paragraph"><i>2020-01-03</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Degrade HTTP/2 connections after a timeout. When an HTTP/2 stream times out it may impact     the stream only or the entire connection. With this fix OkHttp will now send HTTP/2 pings after     a stream timeout to determine whether the connection should remain eligible for pooling.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.6</h2>
+      <p class="paragraph"><i>2019-09-29</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Cancel calls that fail due to unexpected exceptions. We had a bug where an enqueued call     would never call back if it crashed with an unchecked throwable, such as a     <code class="lang-kotlin">NullPointerException</code> or <code class="lang-kotlin">OutOfMemoryError</code>. We now call <code class="lang-kotlin">Callback.onFailure()</code> with an     <code class="lang-kotlin">IOException</code> that reports the call as canceled. The triggering exception is still delivered to     the thread's <code class="lang-kotlin">UncaughtExceptionHandler</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't evict incomplete entries when iterating the cache. We had a bug where iterating     <code class="lang-kotlin">Cache.urls()</code> would prevent in-flight entries from being written.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.5</h2>
+      <p class="paragraph"><i>2019-09-10</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't lose HTTP/2 flow control bytes when incoming data races with a stream close. If this     happened enough then eventually the connection would stall.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Acknowledge and apply inbound HTTP/2 settings atomically. Previously we had a race where we     could use new flow control capacity before acknowledging it, causing strict HTTP/2 servers to     fail the call.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.4</h2>
+      <p class="paragraph"><i>2019-09-04</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash looking up an absent class on certain buggy Android 4.x devices.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.3</h2>
+      <p class="paragraph"><i>2019-05-07</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Permit multipart file names to contain non-ASCII characters.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Retain the <code class="lang-kotlin">Route</code> when a connection is reused on a redirect or other follow-up. This was     causing some <code class="lang-kotlin">Authenticator</code> calls to see a null route when non-null was expected.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.2</h2>
+      <p class="paragraph"><i>2019-03-14</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash if the HTTPS server returns no certificates in the TLS handshake.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't leak a connection when a call is canceled immediately preceding the <code class="lang-kotlin">onFailure()</code>     callback.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.1</h2>
+      <p class="paragraph"><i>2018-12-23</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Remove overlapping <code class="lang-kotlin">package-info.java</code>. This caused issues with some build tools.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.12.0</h2>
+      <p class="paragraph"><i>2018-11-16</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>OkHttp now supports TLS 1.3.</strong> This requires either Conscrypt or Java 11+.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Proxy authenticators are now asked for preemptive authentication.</strong> OkHttp will now request     authentication credentials before creating TLS tunnels through HTTP proxies (HTTP <code class="lang-kotlin">CONNECT</code>).     Authenticators should identify preemptive authentications by the presence of a challenge whose     scheme is &quot;OkHttp-Preemptive&quot;.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp now offers full-operation timeouts.</strong> This sets a limit on how long the entire call may     take and covers resolving DNS, connecting, writing the request body, server processing, and     reading the full response body. If a call requires redirects or retries all must complete within     one timeout period.</p>
+          <p class="paragraph">Use <code class="lang-kotlin">OkHttpClient.Builder.callTimeout()</code> to specify the default duration and <code class="lang-kotlin">Call.timeout()</code> to     specify the timeout of an individual call.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Return values and fields are now non-null unless otherwise annotated.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">LoggingEventListener</code> makes it easy to get basic visibility into a call's performance.     This class is in the <code class="lang-kotlin">logging-interceptor</code> artifact.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Headers.Builder.addUnsafeNonAscii()</code> allows non-ASCII values to be added without an     immediate exception.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Headers can be redacted in <code class="lang-kotlin">HttpLoggingInterceptor</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Headers.Builder</code> now accepts dates.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: OkHttp now accepts <code class="lang-kotlin">java.time.Duration</code> for timeouts on Java 8+ and Android 26+.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Challenge</code> includes all authentication parameters.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to BouncyCastle 1.60, Conscrypt 1.4.0, and Okio 1.15.0. We don't yet require     Kotlin-friendly Okio 2.x but OkHttp works fine with that series.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-kotlin" theme="idea">implementation(&quot;org.bouncycastle:bcprov-jdk15on:1.60&quot;)<br>implementation(&quot;org.conscrypt:conscrypt-openjdk-uber:1.4.0&quot;)<br>implementation(&quot;com.squareup.okio:okio:1.15.0&quot;)</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Handle dispatcher executor shutdowns gracefully. When there aren't any threads to carry a     call its callback now gets a <code class="lang-kotlin">RejectedExecutionException</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't permanently cache responses with <code class="lang-kotlin">Cache-Control: immutable</code>. We misunderstood the     original <code class="lang-kotlin">immutable</code> proposal!</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Change <code class="lang-kotlin">Authenticator</code>'s <code class="lang-kotlin">Route</code> parameter to be nullable. This was marked as non-null but     could be called with null in some cases.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't create malformed URLs when <code class="lang-kotlin">MockWebServer</code> is reached via an IPv6 address.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash if the system default authenticator is null.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash generating elliptic curve certificates on Android.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash doing platform detection on RoboVM.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't leak socket connections when web socket upgrades fail.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.11.0</h2>
+      <p class="paragraph"><i>2018-07-12</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>OkHttp's new okhttp-tls submodule tames HTTPS and TLS.</strong></p>
+          <p class="paragraph"><code class="lang-kotlin">HeldCertificate</code> is a TLS certificate and its private key. Generate a certificate with its     builder then use it to sign another certificate or perform a TLS handshake. The     <code class="lang-kotlin">certificatePem()</code> method encodes the certificate in the familiar PEM format     (<code class="lang-kotlin">--- BEGIN CERTIFICATE ---</code>); the <code class="lang-kotlin">privateKeyPkcs8Pem()</code> does likewise for the private key.</p>
+          <p class="paragraph"><code class="lang-kotlin">HandshakeCertificates</code> holds the TLS certificates required for a TLS handshake. On the server     it keeps your <code class="lang-kotlin">HeldCertificate</code> and its chain. On the client it keeps the root certificates     that are trusted to sign a server's certificate chain. <code class="lang-kotlin">HandshakeCertificates</code> also works with     mutual TLS where these roles are reversed.</p>
+          <p class="paragraph">These classes make it possible to enable HTTPS in MockWebServer in <span data-unresolved-link=".aux_doc/https_server_sample///PointingToDeclaration/">just a few lines of     code</span>.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp now supports prior knowledge cleartext HTTP/2.</strong> Enable this by setting     <code class="lang-kotlin">Protocol.H2_PRIOR_KNOWLEDGE</code> as the lone protocol on an <code class="lang-kotlin">OkHttpClient.Builder</code>. This mode     only supports <code class="lang-kotlin">http:</code> URLs and is best suited in closed environments where HTTPS is     inappropriate.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">HttpUrl.get(String)</code> is an alternative to <code class="lang-kotlin">HttpUrl.parse(String)</code> that throws an exception     when the URL is malformed instead of returning null. Use this to avoid checking for null in     situations where the input is known to be well-formed. We've also added <code class="lang-kotlin">MediaType.get(String)</code>     which is an exception-throwing alternative to <code class="lang-kotlin">MediaType.parse(String)</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: The <code class="lang-kotlin">EventListener</code> API previewed in OkHttp 3.9 has graduated to a stable API. Use this     interface to track metrics and monitor HTTP requests' size and duration.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">okhttp-dnsoverhttps</code> is an experimental API for doing DNS queries over HTTPS. Using HTTPS     for DNS offers better security and potentially better performance. This feature is a preview:     the API is subject to change.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">okhttp-sse</code> is an early preview of Server-Sent Events (SSE). This feature is incomplete     and is only suitable for experimental use.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: MockWebServer now supports client authentication (mutual TLS). Call <code class="lang-kotlin">requestClientAuth()</code>     to permit an optional client certificate or <code class="lang-kotlin">requireClientAuth()</code> to require one.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">RecordedRequest.getHandshake()</code> returns the HTTPS handshake of a request sent to     <code class="lang-kotlin">MockWebServer</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Honor the <code class="lang-kotlin">MockResponse</code> header delay in MockWebServer.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't release HTTP/2 connections that have multiple canceled calls. We had a bug where     canceling calls would cause the shared HTTP/2 connection to be unnecessarily released. This     harmed connection reuse.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Ensure canceled and discarded HTTP/2 data is not permanently counted against the limited     flow control window. We had a few bugs where window size accounting was broken when streams     were canceled or reset.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Recover gracefully if the TLS session returns an unexpected version (<code class="lang-kotlin">NONE</code>) or cipher     suite (<code class="lang-kotlin">SSL_NULL_WITH_NULL_NULL</code>).</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't change Conscrypt configuration globally. We migrated from a process-wide setting to     configuring only OkHttp's TLS sockets.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Prefer TLSv1.2 where it is available. On certain older platforms it is necessary to opt-in     to TLSv1.2.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Request.tag()</code> permits multiple tags. Use a <code class="lang-kotlin">Class&lt;?&gt;</code> as a key to identify tags. Note     that <code class="lang-kotlin">tag()</code> now returns null if the request has no tag. Previously this would return the     request itself.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Headers.Builder.addAll(Headers)</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">ResponseBody.create(MediaType, ByteString)</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Embed R8/ProGuard rules in the jar. These will be applied automatically by R8.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Release the connection if <code class="lang-kotlin">Authenticator</code> throws an exception.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Change the declaration of <code class="lang-kotlin">OkHttpClient.cache()</code> to return a <code class="lang-kotlin">@Nullable Cache</code>. The return     value has always been nullable but it wasn't declared properly.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Reverse suppression of connect exceptions. When both a call and its retry fail, we now     throw the initial exception which is most likely to be actionable.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Retain interrupted state when throwing <code class="lang-kotlin">InterruptedIOException</code>. A single interrupt should     now be sufficient to break out an in-flight OkHttp call.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't drop a call to <code class="lang-kotlin">EventListener.callEnd()</code> when the response body is consumed inside an     interceptor.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.10.0</h2>
+      <p class="paragraph"><i>2018-02-24</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>The pingInterval() feature now aggressively checks connectivity for web     sockets and HTTP/2 connections.</strong></p>
+          <p class="paragraph">Previously if you configured a ping interval that would cause OkHttp to send     pings, but it did not track whether the reply pongs were received. With this     update OkHttp requires that every ping receive a response: if it does not     the connection will be closed and the listener's <code class="lang-kotlin">onFailure()</code> method will     be called.</p>
+          <p class="paragraph">Web sockets have always been had pings, but pings on HTTP/2 connections is     new in this release. Pings are used for connections that are busy carrying     calls and for idle connections in the connection pool. (Pings do not impact     when pooled connections are evicted).</p>
+          <p class="paragraph">If you have a configured ping interval, you should confirm that it is long     enough for a roundtrip from client to server. If your ping interval is too     short, slow connections may be misinterpreted as failed connections. A ping     interval of 30 seconds is reasonable for most use cases.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp now supports </strong><span data-unresolved-link=".aux_doc/conscrypt///PointingToDeclaration/"><strong>Conscrypt</strong></span><strong>.</strong> Conscrypt is a Java Security     Provider that integrates BoringSSL into the Java platform. Conscrypt     supports more cipher suites than the JVM’s default provider and may also     execute more efficiently.</p>
+          <p class="paragraph">To use it, first register a <span data-unresolved-link=".aux_doc/conscrypt_dependency///PointingToDeclaration/">Conscrypt dependency</span> in     your build system.</p>
+          <p class="paragraph">OkHttp will use Conscrypt if you set the <code class="lang-kotlin">okhttp.platform</code> system property     to <code class="lang-kotlin">conscrypt</code>.</p>
+          <p class="paragraph">Alternatively, OkHttp will also use Conscrypt if you install it as your     preferred security provider. To do so, add the following code to execute     before you create your <code class="lang-kotlin">OkHttpClient</code>.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-kotlin" theme="idea">Security.insertProviderAt(<br>    new org.conscrypt.OpenSSLProvider(), 1);</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+          <p class="paragraph">Conscrypt is the bundled security provider on Android so it is not necessary     to configure it on that platform.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">HttpUrl.addQueryParameter()</code> percent-escapes more characters.     Previously several ASCII punctuation characters were not percent-escaped     when used with this method. This does not impact already-encoded query     parameters in APIs like <code class="lang-kotlin">HttpUrl.parse()</code> and     <code class="lang-kotlin">HttpUrl.Builder.addEncodedQueryParameter()</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: CBC-mode ECDSA cipher suites have been removed from OkHttp's default     configuration: <code class="lang-kotlin">TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA</code> and     <code class="lang-kotlin">TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA</code>. This tracks a <span data-unresolved-link=".aux_doc/remove_cbc_ecdsa///PointingToDeclaration/">Chromium     change</span> to remove these cipher suites because they are     fragile and rarely-used.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Don't fall back to common name (CN) verification for hostnames. This     behavior was deprecated with RFC 2818 in May 2000 and was recently dropped     from major web browsers.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Honor the <code class="lang-kotlin">Retry-After</code> response header. HTTP 503 (Unavailable)     responses are retried automatically if this header is present and its delay     is 0 seconds. HTTP 408 (Client Timeout) responses are retried automatically     if the header is absent or its delay is 0 seconds.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Allow request bodies for all HTTP methods except GET and HEAD.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Automatic module name of <code class="lang-kotlin">okhttp3</code> for use with the Java Platform     Module System.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Log gzipped bodies when <code class="lang-kotlin">HttpLoggingInterceptor</code> is used as a network     interceptor.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Protocol.QUIC</code> constant. This protocol is not supported but this     constant is included for completeness.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Okio 1.14.0.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-xml" theme="idea"> &lt;dependency&gt;<br>   &lt;groupId&gt;com.squareup.okio&lt;/groupId&gt;<br>   &lt;artifactId&gt;okio&lt;/artifactId&gt;<br>   &lt;version&gt;1.14.0&lt;/version&gt;<br> &lt;/dependency&gt;<br><br> com.squareup.okio:okio:1.14.0</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Handle <code class="lang-kotlin">HTTP/1.1 100 Continue</code> status lines, even on requests that did     not send the <code class="lang-kotlin">Expect: continue</code> request header.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Do not count web sockets toward the dispatcher's per-host connection     limit.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Avoid using invalid HTTPS sessions. This prevents OkHttp from crashing     with the error, <code class="lang-kotlin">Unexpected TLS version: NONE</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't corrupt the response cache when a 304 (Not Modified) response     overrides the stored &quot;Content-Encoding&quot; header.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Gracefully shut down the HTTP/2 connection before it exhausts the     namespace of stream IDs (~536 million streams).</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Never pass a null <code class="lang-kotlin">Route</code> to <code class="lang-kotlin">Authenticator</code>. There was a bug where     routes were omitted for eagerly-closed connections.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.9.1</h2>
+      <p class="paragraph"><i>2017-11-18</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">New: Recover gracefully when Android's DNS crashes with an unexpected     <code class="lang-kotlin">NullPointerException</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Recover gracefully when Android's socket connections crash with an     unexpected <code class="lang-kotlin">ClassCastException</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't include the URL's fragment in <code class="lang-kotlin">encodedQuery()</code> when the query     itself is empty.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.9.0</h2>
+      <p class="paragraph"><i>2017-09-03</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Interceptors are more capable.</strong> The <code class="lang-kotlin">Chain</code> interface now offers access     to the call and can adjust all call timeouts. Note that this change is     source-incompatible for code that implements the <code class="lang-kotlin">Chain</code> interface.     We don't expect this to be a problem in practice!</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp has an experimental new API for tracking metrics.</strong> The new     <code class="lang-kotlin">EventListener</code> API is designed to help developers monitor HTTP requests'     size and duration. This feature is an unstable preview: the API is subject     to change, and the implementation is incomplete. This is a big new API we     are eager for feedback.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Support ALPN via Google Play Services' Dynamic Security Provider. This     expands HTTP/2 support to older Android devices that have Google Play     Services.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Consider all routes when looking for candidate coalesced connections.     This increases the likelihood that HTTP/2 connections will be shared.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Authentication challenges and credentials now use a charset. Use this in     your authenticator to support user names and passwords with non-ASCII     characters.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Accept a charset in <code class="lang-kotlin">FormBody.Builder</code>. Previously form bodies were     always UTF-8.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Support the <code class="lang-kotlin">immutable</code> cache-control directive.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash when an HTTP/2 call is redirected while the connection is     being shut down.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't drop headers of healthy streams that raced with <code class="lang-kotlin">GOAWAY</code> frames.     This bug would cause HTTP/2 streams to occasional hang when the connection     was shutting down.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Honor <code class="lang-kotlin">OkHttpClient.retryOnConnectionFailure()</code> when the response is a     HTTP 408 Request Timeout. If retries are enabled, OkHttp will retry exactly     once in response to a 408.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash when reading the empty <code class="lang-kotlin">HEAD</code> response body if it specifies     a <code class="lang-kotlin">Content-Length</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash if the thread is interrupted while reading the public     suffix database.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Use relative resource path when loading the public suffix database.     Loading the resource using a path relative to the class prevents conflicts     when the OkHttp classes are relocated (shaded) by allowing multiple private     copies of the database.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Accept cookies for URLs that have an IPv6 address for a host.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't log the protocol (HTTP/1.1, h2) in HttpLoggingInterceptor if the     protocol isn't negotiated yet! Previously we'd log HTTP/1.1 by default, and     this was confusing.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Omit the message from MockWebServer's HTTP/2 <code class="lang-kotlin">:status</code> header.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Handle 'Expect: 100 Continue' properly in MockWebServer.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.8.1</h2>
+      <p class="paragraph"><i>2017-06-18</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Recover gracefully from stale coalesced connections. We had a bug where     connection coalescing (introduced in OkHttp 3.7.0) and stale connection     recovery could interact to cause a <code class="lang-kotlin">NoSuchElementException</code> crash in the     <code class="lang-kotlin">RouteSelector</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.8.0</h2>
+      <p class="paragraph"><i>2017-05-13</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>OkHttp now uses </strong><code class="strong lang-kotlin"><strong>@Nullable</strong></code><strong> to annotate all possibly-null values.</strong> We've     added a compile-time dependency on the JSR 305 annotations. This is a     <span data-unresolved-link=".aux_doc/maven_provided///PointingToDeclaration/">provided</span> dependency and does not need to be included in     your build configuration, <code class="lang-kotlin">.jar</code> file, or <code class="lang-kotlin">.apk</code>. We use     <code class="lang-kotlin">@ParametersAreNonnullByDefault</code> and all parameters and return types are     never null unless explicitly annotated <code class="lang-kotlin">@Nullable</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Warning: this release is source-incompatible for Kotlin users.</strong>     Nullability was previously ambiguous and lenient but now the compiler will     enforce strict null checks.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: The response message is now non-null. This is the &quot;Not Found&quot; in the     status line &quot;HTTP 404 Not Found&quot;. If you are building responses     programmatically (with <code class="lang-kotlin">new Response.Builder()</code>) you must now always supply     a message. An empty string <code class="lang-kotlin">&quot;&quot;</code> is permitted. This value was never null on     responses returned by OkHttp itself, and it was an old mistake to permit     application code to omit a message.</p>
+        </li>
+        <li>
+          <p class="paragraph">The challenge's scheme and realm are now non-null. If you are calling     <code class="lang-kotlin">new Challenge(scheme, realm)</code> you must provide non-null values. These were     never null in challenges created by OkHttp, but could have been null in     application code that creates challenges.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: The <code class="lang-kotlin">TlsVersion</code> of a <code class="lang-kotlin">Handshake</code> is now non-null. If you are calling     <code class="lang-kotlin">Handshake.get()</code> with a null TLS version, you must instead now provide a     non-null <code class="lang-kotlin">TlsVersion</code>. Cache responses persisted prior to OkHttp 3.0 did not     store a TLS version; for these unknown values the handshake is defaulted to     <code class="lang-kotlin">TlsVersion.SSL_3_0</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Okio 1.13.0.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-xml" theme="idea"> &lt;dependency&gt;<br>   &lt;groupId&gt;com.squareup.okio&lt;/groupId&gt;<br>   &lt;artifactId&gt;okio&lt;/artifactId&gt;<br>   &lt;version&gt;1.13.0&lt;/version&gt;<br> &lt;/dependency&gt;<br><br> com.squareup.okio:okio:1.13.0</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">Fix: gracefully recover when Android 7.0's sockets throw an unexpected     <code class="lang-kotlin">NullPointerException</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.7.0</h2>
+      <p class="paragraph"><i>2017-04-15</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>OkHttp no longer recovers from TLS handshake failures by attempting a TLSv1 connection.</strong>     The fallback was necessary for servers that implemented version negotiation incorrectly. Now     that 99.99% of servers do it right this fallback is obsolete.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Do not honor cookies set on a public domain. Previously a malicious site could inject     cookies on top-level domains like <code class="lang-kotlin">co.uk</code> because our cookie parser didn't honor the <span data-unresolved-link=".aux_doc/public_suffix///PointingToDeclaration/">public     suffix</span> list. Alongside this fix is a new API, <code class="lang-kotlin">HttpUrl.topPrivateDomain()</code>,     which returns the privately domain name if the URL has one.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Change <code class="lang-kotlin">MediaType.charset()</code> to return null for unexpected charsets.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't skip cache invalidation if the invalidating response has no body.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't use a cryptographic random number generator for web sockets. Some Android devices     implement <code class="lang-kotlin">SecureRandom</code> incorrectly!</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Correctly canonicalize IPv6 addresses in <code class="lang-kotlin">HttpUrl</code>. This prevented OkHttp from trusting     HTTPS certificates issued to certain IPv6 addresses.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't reuse connections after an unsuccessful <code class="lang-kotlin">Expect: 100-continue</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Handle either <code class="lang-kotlin">TLS_</code> or <code class="lang-kotlin">SSL_</code> prefixes for cipher suite names. This is necessary for     IBM JVMs that use the <code class="lang-kotlin">SSL_</code> prefix exclusively.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Reject HTTP/2 data frames if the stream ID is 0.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Okio 1.12.0.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-xml" theme="idea"> &lt;dependency&gt;<br>   &lt;groupId&gt;com.squareup.okio&lt;/groupId&gt;<br>   &lt;artifactId&gt;okio&lt;/artifactId&gt;<br>   &lt;version&gt;1.12.0&lt;/version&gt;<br> &lt;/dependency&gt;<br><br> com.squareup.okio:okio:1.12.0</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">New: Connection coalescing. OkHttp may reuse HTTP/2 connections across calls that share an IP     address and HTTPS certificate, even if their domain names are different.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: MockWebServer's <code class="lang-kotlin">RecordedRequest</code> exposes the requested <code class="lang-kotlin">HttpUrl</code> with <code class="lang-kotlin">getRequestUrl()</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.6.0</h2>
+      <p class="paragraph"><i>2017-01-29</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash with a &quot;cache is closed&quot; error when there is an error initializing the cache.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Calling <code class="lang-kotlin">disconnect()</code> on a connecting <code class="lang-kotlin">HttpUrlConnection</code> could cause it to retry in an     infinite loop! This regression was introduced in OkHttp 2.7.0.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Drop cookies that contain ASCII NULL and other bad characters. Previously such cookies     would cause OkHttp to crash when they were included in a request.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Release duplicated multiplexed connections. If we concurrently establish connections to an     HTTP/2 server, close all but the first connection.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Fail the HTTP/2 connection if first frame isn't <code class="lang-kotlin">SETTINGS</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Forbid spaces in header names.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't offer to do gzip if the request is partial.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: MockWebServer is now usable with JUnit 5. That update <span data-unresolved-link=".aux_doc/junit_5_rules///PointingToDeclaration/">broke the rules</span>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Support <code class="lang-kotlin">Expect: 100-continue</code> as a request header. Callers can use this header to     pessimistically hold off on transmitting a request body until a server gives the go-ahead.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Permit network interceptors to rewrite the host header for HTTP/2. This makes it possible     to do domain fronting.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: charset support for <code class="lang-kotlin">Credentials.basic()</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.5.0</h2>
+      <p class="paragraph"><i>2016-11-30</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Web Sockets are now a stable feature of OkHttp.</strong> Since being introduced as a beta feature in     OkHttp 2.3 our web socket client has matured. Connect to a server's web socket with     <code class="lang-kotlin">OkHttpClient.newWebSocket()</code>, send messages with <code class="lang-kotlin">send()</code>, and receive messages with the     <code class="lang-kotlin">WebSocketListener</code>.</p>
+          <p class="paragraph">The <code class="lang-kotlin">okhttp-ws</code> submodule is no longer available and <code class="lang-kotlin">okhttp-ws</code> artifacts from previous     releases of OkHttp are not compatible with OkHttp 3.5. When upgrading to the new package     please note that the <code class="lang-kotlin">WebSocket</code> and <code class="lang-kotlin">WebSocketCall</code> classes have been merged. Sending messages     is now asynchronous and they may be enqueued before the web socket is connected.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp no longer attempts a direct connection if the system's HTTP proxy fails.</strong> This     behavior was surprising because OkHttp was disregarding the user's specified configuration. If     you need to customize proxy fallback behavior, implement your own <code class="lang-kotlin">java.net.ProxySelector</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Support TLSv1.3 on devices that support it.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Share pooled connections across equivalent <code class="lang-kotlin">OkHttpClient</code> instances. Previous releases had     a bug where a shared connection pool did not guarantee shared connections in some cases.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Prefer the server's response body on all conditional cache misses. Previously we would     return the cached response's body if it had a newer <code class="lang-kotlin">Last-Modified</code> date.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Update the stored timestamp on conditional cache hits.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Optimized HTTP/2 request header encoding. More headers are HPACK-encoded and string     literals are now Huffman-encoded.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Expose <code class="lang-kotlin">Part</code> headers and body in <code class="lang-kotlin">Multipart</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Make <code class="lang-kotlin">ResponseBody.string()</code> and <code class="lang-kotlin">ResponseBody.charStream()</code> BOM-aware. If your HTTP     response body begins with a <span data-unresolved-link=".aux_doc/bom///PointingToDeclaration/">byte order mark</span> it will be consumed and used to select a     charset for the remaining bytes. Most applications should not need a byte order mark.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Okio 1.11.0.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-xml" theme="idea"> &lt;dependency&gt;<br>   &lt;groupId&gt;com.squareup.okio&lt;/groupId&gt;<br>   &lt;artifactId&gt;okio&lt;/artifactId&gt;<br>   &lt;version&gt;1.11.0&lt;/version&gt;<br> &lt;/dependency&gt;<br><br> com.squareup.okio:okio:1.11.0</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Avoid sending empty HTTP/2 data frames when there is no request body.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Add a leading <code class="lang-kotlin">.</code> for better domain matching in <code class="lang-kotlin">JavaNetCookieJar</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Gracefully recover from HTTP/2 connection shutdowns at start of request.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Be lenient if a <code class="lang-kotlin">MediaType</code>'s character set is <code class="lang-kotlin">'single-quoted'</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Allow horizontal tab characters in header values.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: When parsing HTTP authentication headers permit challenge parameters in any order.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.4.2</h2>
+      <p class="paragraph"><i>2016-11-03</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Recover gracefully when an HTTP/2 connection is shutdown. We had a     bug where shutdown HTTP/2 connections were considered usable. This caused     infinite loops when calls attempted to recover.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.4.1</h2>
+      <p class="paragraph"><i>2016-07-10</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>Fix a major bug in encoding HTTP headers.</strong> In 3.4.0 and 3.4.0-RC1 OkHttp     had an off-by-one bug in our HPACK encoder. This bug could have caused the     wrong headers to be emitted after a sequence of HTTP/2 requests! Everyone     who is using OkHttp 3.4.0 or 3.4.0-RC1 should upgrade for this bug fix.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.4.0</h2>
+      <p class="paragraph"><i>2016-07-08</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">New: Support dynamic table size changes to HPACK Encoder.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Use <code class="lang-kotlin">TreeMap</code> in <code class="lang-kotlin">Headers.toMultimap()</code>. This makes string lookups on     the returned map case-insensitive.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't share the OkHttpClient's <code class="lang-kotlin">Dispatcher</code> in <code class="lang-kotlin">HttpURLConnection</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.4.0-RC1</h2>
+      <p class="paragraph"><i>2016-07-02</i></p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>We’ve rewritten HttpURLConnection and HttpsURLConnection.</strong> Previously we     shared a single HTTP engine between two frontend APIs: <code class="lang-kotlin">HttpURLConnection</code>     and <code class="lang-kotlin">Call</code>. With this release we’ve rearranged things so that the     <code class="lang-kotlin">HttpURLConnection</code> frontend now delegates to the <code class="lang-kotlin">Call</code> APIs internally.     This has enabled substantial simplifications and optimizations in the OkHttp     core for both frontends.</p>
+          <p class="paragraph">For most HTTP requests the consequences of this change will be negligible.     If your application uses <code class="lang-kotlin">HttpURLConnection.connect()</code>,     <code class="lang-kotlin">setFixedLengthStreamingMode()</code>, or <code class="lang-kotlin">setChunkedStreamingMode()</code>, OkHttp will     now use a async dispatcher thread to establish the HTTP connection.</p>
+          <p class="paragraph">We don’t expect this change to have any behavior or performance     consequences. Regardless, please exercise your <code class="lang-kotlin">OkUrlFactory</code> and     <code class="lang-kotlin">HttpURLConnection</code> code when applying this update.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Cipher suites may now have arbitrary names.</strong> Previously <code class="lang-kotlin">CipherSuite</code> was     a Java enum and it was impossible to define new cipher suites without first     upgrading OkHttp. With this change it is now a regular Java class with     enum-like constants. Application code that uses enum methods on cipher     suites (<code class="lang-kotlin">ordinal()</code>, <code class="lang-kotlin">name()</code>, etc.) will break with this change.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: <code class="lang-kotlin">CertificatePinner</code> now matches canonicalized hostnames. Previously     this was case sensitive. This change should also make it easier to configure     certificate pinning for internationalized domain names.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don’t crash on non-ASCII <code class="lang-kotlin">ETag</code> headers. Previously OkHttp would reject     these headers when validating a cached response.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don’t allow remote peer to arbitrarily size the HPACK decoder dynamic     table.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Honor per-host configuration in Android’s network security config.     Previously disabling cleartext for any host would disable cleartext for all     hosts. Note that this setting is only available on Android 24+.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: HPACK compression is now dynamic. This should improve performance when     transmitting request headers over HTTP/2.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Dispatcher.setIdleCallback()</code> can be used to signal when there are no     calls in flight. This is useful for <span data-unresolved-link=".aux_doc/okhttp_idling_resource///PointingToDeclaration/">testing with     Espresso</span>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Okio 1.9.0.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-xml" theme="idea"> &lt;dependency&gt;<br>   &lt;groupId&gt;com.squareup.okio&lt;/groupId&gt;<br>   &lt;artifactId&gt;okio&lt;/artifactId&gt;<br>   &lt;version&gt;1.9.0&lt;/version&gt;<br> &lt;/dependency&gt;</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.3.1</h2>
+      <p class="paragraph"><i>2016-05-28</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: The plaintext check in HttpLoggingInterceptor incorrectly classified     newline characters as control characters. This is fixed.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't crash reading non-ASCII characters in HTTP/2 headers or in cached     HTTP headers.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Retain the response body when an attempt to open a web socket returns a     non-101 response code.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.3.0</h2>
+      <p class="paragraph"><i>2016-05-24</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Response.sentRequestAtMillis()</code> and <code class="lang-kotlin">receivedResponseAtMillis()</code>     methods track the system's local time when network calls are made. These     replace the <code class="lang-kotlin">OkHttp-Sent-Millis</code> and <code class="lang-kotlin">OkHttp-Received-Millis</code> headers that were     present in earlier versions of OkHttp.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Accept user-provided trust managers in <code class="lang-kotlin">OkHttpClient.Builder</code>. This     allows OkHttp to satisfy its TLS requirements directly. Otherwise OkHttp     will use reflection to extract the <code class="lang-kotlin">TrustManager</code> from the     <code class="lang-kotlin">SSLSocketFactory</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Support prerelease Java 9. This gets ALPN from the platform rather than     relying on the alpn-boot bootclasspath override.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">HttpLoggingInterceptor</code> now logs connection failures.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Upgrade to Okio 1.8.0.</p>
+          <div class="sample-container">
+            <pre><code class="block lang-xml" theme="idea"> &lt;dependency&gt;<br>   &lt;groupId&gt;com.squareup.okio&lt;/groupId&gt;<br>   &lt;artifactId&gt;okio&lt;/artifactId&gt;<br>   &lt;version&gt;1.8.0&lt;/version&gt;<br> &lt;/dependency&gt;</code></pre>
+<span class="top-right-position"><span class="copy-icon"></span>
+              <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+            </span></div>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Gracefully recover from a failure to rebuild the cache journal.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't corrupt cache entries when a cache entry is evicted while it is     being updated.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Make logging more consistent throughout OkHttp.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Log plaintext bodies only. This uses simple heuristics to differentiate     text from other data.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Recover from <code class="lang-kotlin">REFUSED_STREAM</code> errors in HTTP/2. This should improve     interoperability with Nginx 1.10.0, which <span data-unresolved-link=".aux_doc/nginx_959///PointingToDeclaration/">refuses</span> streams     created before HTTP/2 settings have been acknowledged.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Improve recovery from failed routes.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Accommodate tunneling proxies that close the connection after an auth     challenge.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Use the proxy authenticator when authenticating HTTP proxies. This     regression was introduced in OkHttp 3.0.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Fail fast if network interceptors transform the response body such that     closing it doesn't also close the underlying stream. We had a bug where     OkHttp would attempt to reuse a connection but couldn't because it was still     held by a prior request.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Ensure network interceptors always have access to the underlying     connection.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Use <code class="lang-kotlin">X509TrustManagerExtensions</code> on Android 17+.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Unblock waiting dispatchers on MockWebServer shutdown.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.2.0</h2>
+      <p class="paragraph"><i>2016-02-25</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Change the certificate pinner to always build full chains. This     prevents a potential crash when using certificate pinning with the Google     Play Services security provider.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Make IPv6 request lines consistent with Firefox and Chrome.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Recover gracefully when trimming the response cache fails.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Add multiple path segments using a single string in <code class="lang-kotlin">HttpUrl.Builder</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Support SHA-256 pins in certificate pinner.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.1.2</h2>
+      <p class="paragraph"><i>2016-02-10</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don’t crash when finding the trust manager on Robolectric. We attempted     to detect the host platform and got confused because Robolectric looks like     Android but isn’t!</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Change <code class="lang-kotlin">CertificatePinner</code> to skip sanitizing the certificate chain     when no certificates were pinned. This avoids an SSL failure in insecure     “trust everyone” configurations, such as when talking to a development     HTTPS server that has a self-signed certificate.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.1.1</h2>
+      <p class="paragraph"><i>2016-02-07</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Fix: Don't crash when finding the trust manager if the Play Services (GMS)     security provider is installed.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: The previous release introduced a performance regression on Android,     caused by looking up CA certificates. This is now fixed.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.1.0</h2>
+      <p class="paragraph"><i>2016-02-06</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">New: WebSockets now defer some writes. This should improve performance for     some applications.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Override <code class="lang-kotlin">equals()</code> and <code class="lang-kotlin">hashCode()</code> in our new cookie class. This     class now defines equality by value rather than by reference.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Handle 408 responses by retrying the request. This allows servers to     direct clients to retry rather than failing permanently.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Expose the framed protocol in <code class="lang-kotlin">Connection</code>. Previously this would     return the application-layer protocol (HTTP/1.1 or HTTP/1.0); now it always     returns the wire-layer protocol (HTTP/2, SPDY/3.1, or HTTP/1.1).</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Permit the trusted CA root to be pinned by <code class="lang-kotlin">CertificatePinner</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Silently ignore unknown HTTP/2 settings. Previously this would cause     the entire connection to fail.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don’t crash on unexpected charsets in the logging interceptor.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: <code class="lang-kotlin">OkHttpClient</code> is now non-final for the benefit of mocking frameworks.     Mocking sophisticated classes like <code class="lang-kotlin">OkHttpClient</code> is fragile and you     shouldn’t do it. But if that’s how you want to live your life we won’t stand     in your way!</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.0.1</h2>
+      <p class="paragraph"><i>2016-01-14</i></p>
+      <ul>
+        <li>
+          <p class="paragraph">Rollback OSGi support. This was causing library jars to include more classes     than expected, which interfered with Gradle builds.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.0.0</h2>
+      <p class="paragraph"><i>2016-01-13</i></p>
+      <p class="paragraph">This release commits to a stable 3.0 API. Read the 3.0.0-RC1 changes for advice on upgrading from 2.x to 3.x.</p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>The </strong><code class="strong lang-kotlin"><strong>Callback</strong></code><strong> interface now takes a </strong><code class="strong lang-kotlin"><strong>Call</strong></code>. This makes it easier to     check if the call was canceled from within the callback. When migrating     async calls to this new API, <code class="lang-kotlin">Call</code> is now the first parameter for both     <code class="lang-kotlin">onResponse()</code> and <code class="lang-kotlin">onFailure()</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: handle multiple cookies in <code class="lang-kotlin">JavaNetCookieJar</code> on Android.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: improve the default HTTP message in MockWebServer responses.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: don't leak file handles when a conditional GET throws.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Use charset specified by the request body content type in OkHttp's     logging interceptor.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't eagerly release pools on cache hits.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Make OkHttp OSGi ready.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Add already-implemented interfaces Closeable and Flushable to the cache.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 3.0.0-RC1</h2>
+      <p class="paragraph"><i>2016-01-02</i></p>
+      <p class="paragraph">OkHttp 3 is a major release focused on API simplicity and consistency. The API changes are numerous but most are cosmetic. Applications should be able to upgrade from the 2.x API to the 3.x API mechanically and without risk.</p>
+      <p class="paragraph">Because the release includes breaking API changes, we're changing the project's package name from <code class="lang-kotlin">com.squareup.okhttp</code> to <code class="lang-kotlin">okhttp3</code>. This should make it possible for large applications to migrate incrementally. The Maven group ID is now <code class="lang-kotlin">com.squareup.okhttp3</code>. For an explanation of this strategy, see Jake Wharton's post, <span data-unresolved-link=".aux_doc/major_versions///PointingToDeclaration/">Java Interoperability Policy for Major Version Updates</span>.</p>
+      <p class="paragraph">This release obsoletes OkHttp 2.x, and all code that uses OkHttp's <code class="lang-kotlin">com.squareup.okhttp</code> package should upgrade to the <code class="lang-kotlin">okhttp3</code> package. Libraries that depend on OkHttp should upgrade quickly to prevent applications from being stuck on the old version.</p>
+      <ul>
+        <li>
+          <p class="paragraph"><strong>There is no longer a global singleton connection pool.</strong> In OkHttp 2.x,     all <code class="lang-kotlin">OkHttpClient</code> instances shared a common connection pool by default.     In OkHttp 3.x, each new <code class="lang-kotlin">OkHttpClient</code> gets its own private connection pool.     Applications should avoid creating many connection pools as doing so     prevents connection reuse. Each connection pool holds its own set of     connections alive so applications that have many pools also risk exhausting     memory!</p>
+          <p class="paragraph">The best practice in OkHttp 3 is to create a single OkHttpClient instance     and share it throughout the application. Requests that needs a customized     client should call <code class="lang-kotlin">OkHttpClient.newBuilder()</code> on that shared instance.     This allows customization without the drawbacks of separate connection     pools.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttpClient is now stateless.</strong> In the 2.x API <code class="lang-kotlin">OkHttpClient</code> had getters     and setters. Internally each request was forced to make its own complete     snapshot of the <code class="lang-kotlin">OkHttpClient</code> instance to defend against racy configuration     changes. In 3.x, <code class="lang-kotlin">OkHttpClient</code> is now stateless and has a builder. Note     that this class is not strictly immutable as it has stateful members like     the connection pool and cache.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Get and Set prefixes are now avoided.</strong> With ubiquitous builders     throughout OkHttp these accessor prefixes aren't necessary. Previously     OkHttp used <i>get</i> and <i>set</i> prefixes sporadically which make the API     inconsistent and awkward to explore.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttpClient now implements the new </strong><code class="strong lang-kotlin"><strong>Call.Factory</strong></code><strong> interface.</strong> This     interface will make your code easier to test. When you test code that makes     HTTP requests, you can use this interface to replace the real <code class="lang-kotlin">OkHttpClient</code>     with your own mocks or fakes.</p>
+          <p class="paragraph">The interface will also let you use OkHttp's API with another HTTP client's     implementation. This is useful in sandboxed environments like Google App     Engine.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp now does cookies.</strong> We've replaced <code class="lang-kotlin">java.net.CookieHandler</code> with     a new interface, <code class="lang-kotlin">CookieJar</code> and added our own <code class="lang-kotlin">Cookie</code> model class. This     new cookie follows the latest RFC and supports the same cookie attributes     as modern web browsers.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Form and Multipart bodies are now modeled.</strong> We've replaced the opaque     <code class="lang-kotlin">FormEncodingBuilder</code> with the more powerful <code class="lang-kotlin">FormBody</code> and     <code class="lang-kotlin">FormBody.Builder</code> combo. Similarly we've upgraded <code class="lang-kotlin">MultipartBuilder</code> into     <code class="lang-kotlin">MultipartBody</code>, <code class="lang-kotlin">MultipartBody.Part</code>, and <code class="lang-kotlin">MultipartBody.Builder</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>The Apache HTTP client and HttpURLConnection APIs are deprecated.</strong> They     continue to work as they always have, but we're moving everything to the new     OkHttp 3 API. The <code class="lang-kotlin">okhttp-apache</code> and <code class="lang-kotlin">okhttp-urlconnection</code> modules should     be only be used to accelerate a transition to OkHttp's request/response API.     These deprecated modules will be dropped in an upcoming OkHttp 3.x release.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>Canceling batches of calls is now the application's responsibility.</strong>     The API to cancel calls by tag has been removed and replaced with a more     general mechanism. The dispatcher now exposes all in-flight calls via its     <code class="lang-kotlin">runningCalls()</code> and <code class="lang-kotlin">queuedCalls()</code> methods. You can write code that     selects calls by tag, host, or whatever, and invokes <code class="lang-kotlin">Call.cancel()</code> on the     ones that are no longer necessary.</p>
+        </li>
+        <li>
+          <p class="paragraph"><strong>OkHttp no longer uses the global </strong><code class="strong lang-kotlin"><strong>java.net.Authenticator</strong></code><strong> by default.</strong>     We've changed our <code class="lang-kotlin">Authenticator</code> interface to authenticate web and proxy     authentication failures through a single method. An adapter for the old     authenticator is available in the <code class="lang-kotlin">okhttp-urlconnection</code> module.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Don't throw <code class="lang-kotlin">IOException</code> on <code class="lang-kotlin">ResponseBody.contentLength()</code> or <code class="lang-kotlin">close()</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: Never throw converting an <code class="lang-kotlin">HttpUrl</code> to a <code class="lang-kotlin">java.net.URI</code>. This changes     the <code class="lang-kotlin">uri()</code> method to handle malformed percent-escapes and characters     forbidden by <code class="lang-kotlin">URI</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">Fix: When a connect times out, attempt an alternate route. Previously route     selection was less efficient when differentiating failures.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">Response.peekBody()</code> lets you access the response body without     consuming it. This may be handy for interceptors!</p>
+        </li>
+        <li>
+          <p class="paragraph">New: <code class="lang-kotlin">HttpUrl.newBuilder()</code> resolves a link to a builder.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Add the TLS version to the <code class="lang-kotlin">Handshake</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Drop <code class="lang-kotlin">Request.uri()</code> and <code class="lang-kotlin">Request#urlString()</code>. Just use     <code class="lang-kotlin">Request.url().uri()</code> and <code class="lang-kotlin">Request.url().toString()</code>.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Add URL to HTTP response logging.</p>
+        </li>
+        <li>
+          <p class="paragraph">New: Make <code class="lang-kotlin">HttpUrl</code> the blessed URL method of <code class="lang-kotlin">Request</code>.</p>
+        </li>
+      </ul>
+      <h2 class=""> Version 2.x</h2>
+      <p class="paragraph"><span data-unresolved-link=".aux_doc/changelog_2x.md///PointingToDeclaration/">Change log</span></p>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
