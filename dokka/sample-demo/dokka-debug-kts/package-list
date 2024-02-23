@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:me.beresnev.dokka.debug////PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/index.html
+$dokka.location:me.beresnev.dokka.debug//bar/#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/bar.html
+$dokka.location:me.beresnev.dokka.debug//foo/#/PointingToDeclaration/dokka-debug-kts/me.beresnev.dokka.debug/foo.html
+me.beresnev.dokka.debug
+
